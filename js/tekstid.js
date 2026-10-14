@@ -9,8 +9,8 @@
 const KONTAKT = {
   nimi: "Karel Saega",
   telefon: "+372 5639 1019",
-  email: "nimi@example.com",
-  facebook: "https://www.facebook.com/",
+  email: "karelsaega1992@gmail.com",
+  facebook: "https://www.facebook.com/karel.saega/",
 };
 
 // ---- Väljakutsetasu (kui tulen kliendi juurde koju) ----
