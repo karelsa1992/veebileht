@@ -9,9 +9,7 @@
 const KONTAKT = {
   nimi: "Karel Saega",
   telefon: "+372 5639 1019",
-  email: "karelsaega1992@gmail.com",
-  facebook: "", // kui siin on link, ilmub lehele Facebooki kaart
-};
+  email: "karelsaega1992@gmail.com",};
 
 // ---- Väljakutsetasu (kui tulen kliendi juurde koju) ----
 const VALJAKUTSE_TASU = "20 €";
@@ -112,8 +110,6 @@ const TEKSTID = {
   },
   telefon: { et: "Telefon", en: "Phone", ru: "Телефон", fi: "Puhelin" },
   email: { et: "E-post", en: "Email", ru: "Эл. почта", fi: "Sähköposti" },
-  facebook: { et: "Facebook", en: "Facebook", ru: "Facebook", fi: "Facebook" },
-  facebook_tekst: { et: "Kirjuta mulle", en: "Message me", ru: "Напишите мне", fi: "Lähetä viesti" },
   voi_kirjuta_otse: {
     et: "Või võta otse ühendust",
     en: "Or contact me directly",
