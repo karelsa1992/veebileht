@@ -1,2 +1,5 @@
 # Eeskujupildid, mis ei kuulu veebilehe juurde
 näidispildid/
+
+# Ajutised kontrollpildid
+.ajutine/

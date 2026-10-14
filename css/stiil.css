@@ -41,6 +41,38 @@ a  { color: var(--rohk); }
   padding: 0 20px;
 }
 
+/* ---------- Õrn liikuv taustamuster (trükkplaadi jooned) ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  top: -320px;
+  left: -320px;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url("../img/trykkplaat.svg") repeat;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+/* Liikumine ainult siis, kui külastaja pole seda arvutis välja lülitanud */
+@media (prefers-reduced-motion: no-preference) {
+  body::before { animation: taust-liigub 120s linear infinite; }
+
+  /* Kaardid ilmuvad kerimisel pehmelt */
+  .js-liikumine .ilmub {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .js-liikumine .ilmub.nahtav { opacity: 1; transform: none; }
+}
+
+@keyframes taust-liigub {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(320px, 320px); }
+}
+
 /* ---------- Päis ---------- */
 .pais {
   position: sticky;
@@ -128,7 +160,8 @@ a  { color: var(--rohk); }
 
 /* ---------- Osad ---------- */
 .osa { padding: 56px 0; }
-.osa:nth-of-type(odd) { background: var(--taust-tume); }
+/* Poolläbipaistev, et taustamuster paistaks ka siit läbi */
+.osa:nth-of-type(odd) { background: rgba(28, 46, 79, 0.04); }
 .juhatus { color: var(--tekst-hall); max-width: 680px; }
 
 .ruudustik {

@@ -73,7 +73,8 @@ function taidaTekstid() {
     if (liik === "email") {
       el.textContent = KONTAKT.email;
       el.href = "mailto:" + KONTAKT.email;
-    }  });
+    }
+  });
 
   // Keelenupud: märgi valitud keel
   document.querySelectorAll(".keel button").forEach((b) => {
@@ -220,7 +221,35 @@ if (menuuNupp && menuu) {
   });
 }
 
+// ---- Pehme ilmumine kerimisel ----
+// Kaardid ilmuvad õrnalt, kui need ekraanile jõuavad.
+// Tehakse ainult lehe avamisel (mitte keele vahetamisel).
+function lisaIlmumine() {
+  const vaiksem = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (vaiksem || !("IntersectionObserver" in window)) return;
+
+  document.documentElement.classList.add("js-liikumine");
+  const vaatleja = new IntersectionObserver(
+    (kirjed) => {
+      kirjed.forEach((k) => {
+        if (!k.isIntersecting) return;
+        const el = k.target;
+        el.classList.add("nahtav");
+        vaatleja.unobserve(el);
+        // Pärast ilmumist eemalda klassid, et kaartide muu liikumine (hover) töötaks
+        setTimeout(() => el.classList.remove("ilmub", "nahtav"), 700);
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll("main .kaart, .kogemus").forEach((el) => {
+    el.classList.add("ilmub");
+    vaatleja.observe(el);
+  });
+}
+
 const aasta = document.getElementById("aasta");
 if (aasta) aasta.textContent = new Date().getFullYear();
 
 taidaTekstid();
+lisaIlmumine();
