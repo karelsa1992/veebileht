@@ -90,6 +90,28 @@ const TEKSTID = {
     fi: "Kerron hinnan ennen korjausta. Jos jotain uutta ilmenee, kysyn ensin suostumuksesi.",
   },
 
+  garantii_pealkiri: { et: "Garantii", en: "Warranty", ru: "Гарантия", fi: "Takuu" },
+  garantii_tekst: {
+    et: "Tehtud tööle annan 3 kuud garantiid. Uutele varuosadele kehtib tootja garantii.",
+    en: "I give a 3-month warranty on my work. New parts are covered by the manufacturer's warranty.",
+    ru: "На выполненную работу даю гарантию 3 месяца. На новые запчасти действует гарантия производителя.",
+    fi: "Annan tekemälleni työlle 3 kuukauden takuun. Uusilla varaosilla on valmistajan takuu.",
+  },
+  tooaeg_pealkiri: { et: "Tööaeg", en: "Working hours", ru: "Время работы", fi: "Aukioloajat" },
+  tooaeg_tekst: {
+    et: "Esmaspäevast reedeni. Nädalavahetusel eelneval kokkuleppel.",
+    en: "Monday to Friday. Weekends by prior arrangement.",
+    ru: "С понедельника по пятницу. В выходные – по предварительной договорённости.",
+    fi: "Maanantaista perjantaihin. Viikonloppuisin sopimuksen mukaan.",
+  },
+  maksmine_pealkiri: { et: "Maksmine", en: "Payment", ru: "Оплата", fi: "Maksaminen" },
+  maksmine_tekst: {
+    et: "Maksad alles pärast töö tegemist – sularahas või pangaülekandega.",
+    en: "You pay only after the work is done – in cash or by bank transfer.",
+    ru: "Оплата только после выполнения работы – наличными или банковским переводом.",
+    fi: "Maksat vasta, kun työ on tehty – käteisellä tai tilisiirrolla.",
+  },
+
   // Minust
   minust_pealkiri: { et: "Minust", en: "About me", ru: "Обо мне", fi: "Minusta" },
   minust_tekst: {
@@ -170,10 +192,10 @@ const TEKSTID = {
   hind: { et: "Hind", en: "Price", ru: "Цена", fi: "Hinta" },
   alates: { et: "alates", en: "from", ru: "от", fi: "alkaen" },
   hinnakiri_markus: {
-    et: "Hinnad on töö hinnad. Varuosa hind lisandub ja sõltub seadme mudelist. Kodukülastusel lisandub väljakutsetasu {tasu} (ainult Tartu linnas).",
-    en: "Prices are for labour. The cost of parts is added and depends on the model. Home visits include a call-out fee of {tasu} (Tartu city only).",
-    ru: "Указана стоимость работы. Цена запчастей добавляется и зависит от модели. При выезде на дом добавляется плата за выезд {tasu} (только в черте Тарту).",
-    fi: "Hinnat ovat työn hintoja. Varaosien hinta lisätään ja riippuu mallista. Kotikäynnillä lisätään käyntimaksu {tasu} (vain Tarton kaupunki).",
+    et: "Hinnad on töö hinnad. Varuosa hind lisandub ja sõltub seadme mudelist. Kodukülastusel lisandub väljakutsetasu {tasu} (ainult Tartu linnas). Tööle 3 kuud garantiid, uutele varuosadele tootja garantii.",
+    en: "Prices are for labour. The cost of parts is added and depends on the model. Home visits include a call-out fee of {tasu} (Tartu city only). 3-month warranty on work, manufacturer's warranty on new parts.",
+    ru: "Указана стоимость работы. Цена запчастей добавляется и зависит от модели. При выезде на дом добавляется плата за выезд {tasu} (только в черте Тарту). Гарантия на работу 3 месяца, на новые запчасти – гарантия производителя.",
+    fi: "Hinnat ovat työn hintoja. Varaosien hinta lisätään ja riippuu mallista. Kotikäynnillä lisätään käyntimaksu {tasu} (vain Tarton kaupunki). Työllä 3 kuukauden takuu, uusilla varaosilla valmistajan takuu.",
   },
   ei_leia: {
     et: "Ei leidnud oma muret nimekirjast? Kirjuta või helista – leiame lahenduse.",

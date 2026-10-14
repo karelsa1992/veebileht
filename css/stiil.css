@@ -137,7 +137,7 @@ a  { color: var(--rohk); }
   gap: 18px;
   margin-top: 28px;
 }
-.ruudustik.kolm { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.ruudustik.kolm { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
 .kaart {
   background: var(--kaart);
