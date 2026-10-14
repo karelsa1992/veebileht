@@ -83,6 +83,20 @@ function taidaTekstid() {
   taidaSeadmeKaardid();
   taidaSeadmeLeht();
   taidaVormiSeadmed();
+  taidaKKK();
+}
+
+// ---- KKK: klõpsatavad küsimused ----
+function taidaKKK() {
+  const koht = document.getElementById("kkk-nimekiri");
+  if (!koht) return;
+  koht.innerHTML = KKK.map(
+    (x) => `
+      <details class="kaart">
+        <summary>${t(x.k)}</summary>
+        <p>${t(x.v)}</p>
+      </details>`
+  ).join("");
 }
 
 // ---- Kirjutamisvorm ----

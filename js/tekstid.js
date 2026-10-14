@@ -100,6 +100,15 @@ const TEKSTID = {
   },
   aastat_kogemust: { et: "aastat kogemust", en: "years of experience", ru: "лет опыта", fi: "vuotta kokemusta" },
 
+  // KKK
+  menuu_kkk: { et: "KKK", en: "FAQ", ru: "Вопросы", fi: "UKK" },
+  kkk_pealkiri: {
+    et: "Korduma kippuvad küsimused",
+    en: "Frequently asked questions",
+    ru: "Частые вопросы",
+    fi: "Usein kysytyt kysymykset",
+  },
+
   // Kontakt
   kontakt_pealkiri: { et: "Kontakt", en: "Contact", ru: "Контакты", fi: "Yhteystiedot" },
   kontakt_tekst: {
@@ -387,5 +396,124 @@ const SEADMED = [
       { nimi: { et: "Toiteploki remont", en: "Power supply repair", ru: "Ремонт блока питания", fi: "Virtalähteen korjaus" }, hind: "55 €", alates: true },
       { nimi: { et: "Ketta vahetus + süsteemi taastamine", en: "Drive replacement + system restore", ru: "Замена диска + восстановление системы", fi: "Levyn vaihto + järjestelmän palautus" }, hind: "35 €" },
     ],
+  },
+];
+
+// =====================================================================
+//  KKK – KORDUMA KIPPUVAD KÜSIMUSED
+//  k = küsimus, v = vastus. Uue küsimuse lisamiseks kopeeri üks plokk.
+// =====================================================================
+const KKK = [
+  {
+    k: {
+      et: "Kas mu failid ja pildid jäävad remondi ajal alles?",
+      en: "Will my files and photos be kept during the repair?",
+      ru: "Сохранятся ли мои файлы и фото во время ремонта?",
+      fi: "Säilyvätkö tiedostoni ja kuvani korjauksen aikana?",
+    },
+    v: {
+      et: "Enamasti jah – suurem osa remonditöödest andmeid ei puuduta. Kui töö võib andmeid ohustada (nt ketta vahetus või süsteemi uuesti paigaldamine), ütlen seda enne ja vajadusel teen varukoopia.",
+      en: "In most cases, yes – most repairs don't touch your data. If a job could put data at risk (e.g. replacing a drive or reinstalling the system), I tell you beforehand and make a backup if needed.",
+      ru: "Чаще всего да – большинство работ не затрагивает данные. Если работа может поставить данные под угрозу (например, замена диска или переустановка системы), я заранее предупрежу и при необходимости сделаю резервную копию.",
+      fi: "Useimmiten kyllä – suurin osa korjauksista ei koske tietoihin. Jos työ voi vaarantaa tiedot (esim. levyn vaihto tai järjestelmän uudelleenasennus), kerron siitä etukäteen ja teen tarvittaessa varmuuskopion.",
+    },
+  },
+  {
+    k: {
+      et: "Kas sa vaatad mu faile või pilte?",
+      en: "Do you look at my files or photos?",
+      ru: "Вы смотрите мои файлы или фото?",
+      fi: "Katsotko tiedostojani tai kuviani?",
+    },
+    v: {
+      et: "Ei. Sinu failid ja pildid on sinu omad – ma ei vaata, kopeeri ega jaga neid. Kui töö jaoks on vaja midagi kontrollida, küsin enne sinu luba.",
+      en: "No. Your files and photos are yours – I don't view, copy or share them. If I need to check something for the job, I ask for your permission first.",
+      ru: "Нет. Ваши файлы и фото принадлежат вам – я их не просматриваю, не копирую и не передаю. Если для работы нужно что-то проверить, сначала спрошу разрешения.",
+      fi: "En. Tiedostosi ja kuvasi ovat sinun – en katso, kopioi tai jaa niitä. Jos työn takia on tarkistettava jotain, kysyn ensin luvan.",
+    },
+  },
+  {
+    k: {
+      et: "Kas tasub parandada või osta uus?",
+      en: "Is it worth repairing or should I buy a new one?",
+      ru: "Стоит ли ремонтировать или лучше купить новое?",
+      fi: "Kannattaako korjata vai ostaa uusi?",
+    },
+    v: {
+      et: "Ütlen ausalt. Kui remont maksab peaaegu sama palju kui uus seade või seade on nii vana, et remont ei tasu end ära, ütlen seda kohe ja aitan leida parema lahenduse.",
+      en: "I'll tell you honestly. If the repair costs almost as much as a new device, or the device is too old for the repair to pay off, I'll say so right away and help you find a better solution.",
+      ru: "Скажу честно. Если ремонт стоит почти как новое устройство или устройство слишком старое, чтобы ремонт окупился, сразу об этом скажу и помогу найти лучшее решение.",
+      fi: "Kerron rehellisesti. Jos korjaus maksaa lähes yhtä paljon kuin uusi laite tai laite on niin vanha, ettei korjaus kannata, sanon sen heti ja autan löytämään paremman ratkaisun.",
+    },
+  },
+  {
+    k: {
+      et: "Mis saab siis, kui seadet ei õnnestu parandada?",
+      en: "What if the device can't be repaired?",
+      ru: "Что, если устройство не удастся отремонтировать?",
+      fi: "Entä jos laitetta ei saada korjattua?",
+    },
+    v: {
+      et: "Siis maksad ainult diagnostika eest. Selgitan, mis on viga ja millised on edasised võimalused.",
+      en: "Then you only pay for the diagnostics. I explain what the fault is and what your options are.",
+      ru: "Тогда вы платите только за диагностику. Я объясню, в чём неисправность и какие есть варианты.",
+      fi: "Silloin maksat vain vianmäärityksestä. Selitän, mikä vika on ja mitkä ovat vaihtoehdot.",
+    },
+  },
+  {
+    k: {
+      et: "Kui kaua remont aega võtab?",
+      en: "How long does a repair take?",
+      ru: "Сколько времени занимает ремонт?",
+      fi: "Kauanko korjaus kestää?",
+    },
+    v: {
+      et: "Lihtsamad tööd (puhastus, tarkvara, aku vahetus) saavad sageli valmis samal päeval. Kui varuosa tuleb tellida, võtab see tavaliselt mõnest päevast kuni nädalani. Ütlen aja enne töö algust.",
+      en: "Simple jobs (cleaning, software, battery replacement) are often done the same day. If a part has to be ordered, it usually takes a few days to a week. I tell you the time before starting.",
+      ru: "Простые работы (чистка, ПО, замена аккумулятора) часто выполняются в тот же день. Если нужно заказать запчасть, обычно это занимает от нескольких дней до недели. Срок назову до начала работ.",
+      fi: "Yksinkertaiset työt (puhdistus, ohjelmistot, akun vaihto) valmistuvat usein samana päivänä. Jos varaosa on tilattava, se kestää yleensä muutamasta päivästä viikkoon. Kerron ajan ennen työn aloittamista.",
+    },
+  },
+  {
+    k: {
+      et: "Kas kasutad originaalvaruosi?",
+      en: "Do you use original parts?",
+      ru: "Вы используете оригинальные запчасти?",
+      fi: "Käytätkö alkuperäisiä varaosia?",
+    },
+    v: {
+      et: "Võimalusel pakun valikut: originaalosa või kvaliteetne asendusosa, mis on tavaliselt odavam. Selgitan erinevuse ja hinna ning sina otsustad.",
+      en: "Where possible I offer a choice: an original part or a quality replacement part, which is usually cheaper. I explain the difference and the price, and you decide.",
+      ru: "По возможности предлагаю выбор: оригинальная запчасть или качественный аналог, который обычно дешевле. Объясню разницу и цену, а решение за вами.",
+      fi: "Mahdollisuuksien mukaan tarjoan valinnan: alkuperäinen osa tai laadukas korvaava osa, joka on yleensä edullisempi. Selitän eron ja hinnan, ja sinä päätät.",
+    },
+  },
+  {
+    k: {
+      et: "Kas pean seadme ise sinu juurde tooma?",
+      en: "Do I have to bring the device to you?",
+      ru: "Нужно ли самому привозить устройство?",
+      fi: "Pitääkö minun tuoda laite sinulle?",
+    },
+    v: {
+      et: "Ei pea. Tartu linnas tulen ka koju või kontorisse – väljakutsetasu on {tasu}. Kui tood seadme ise, väljakutsetasu ei ole.",
+      en: "No. Within Tartu I also come to your home or office – the call-out fee is {tasu}. If you bring the device yourself, there is no call-out fee.",
+      ru: "Нет. В пределах Тарту приеду домой или в офис – плата за выезд {tasu}. Если привезёте устройство сами, платы за выезд нет.",
+      fi: "Ei tarvitse. Tarton kaupungissa tulen myös kotiin tai toimistoon – käyntimaksu on {tasu}. Jos tuot laitteen itse, käyntimaksua ei ole.",
+    },
+  },
+  {
+    k: {
+      et: "Kas parandad ka vanemaid seadmeid?",
+      en: "Do you repair older devices too?",
+      ru: "Ремонтируете ли вы старые устройства?",
+      fi: "Korjaatko myös vanhempia laitteita?",
+    },
+    v: {
+      et: "Jah. Vanemate seadmete puhul sõltub palju sellest, kas varuosi on veel saada – selle kontrollin enne ja annan teada.",
+      en: "Yes. With older devices a lot depends on whether parts are still available – I check this beforehand and let you know.",
+      ru: "Да. Для старых устройств многое зависит от наличия запчастей – я заранее это проверю и сообщу.",
+      fi: "Kyllä. Vanhemmissa laitteissa paljon riippuu siitä, onko varaosia vielä saatavilla – tarkistan sen etukäteen ja kerron.",
+    },
   },
 ];
