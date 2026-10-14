@@ -420,20 +420,6 @@ const KKK = [
   },
   {
     k: {
-      et: "Kas sa vaatad mu faile või pilte?",
-      en: "Do you look at my files or photos?",
-      ru: "Вы смотрите мои файлы или фото?",
-      fi: "Katsotko tiedostojani tai kuviani?",
-    },
-    v: {
-      et: "Ei. Sinu failid ja pildid on sinu omad – ma ei vaata, kopeeri ega jaga neid. Kui töö jaoks on vaja midagi kontrollida, küsin enne sinu luba.",
-      en: "No. Your files and photos are yours – I don't view, copy or share them. If I need to check something for the job, I ask for your permission first.",
-      ru: "Нет. Ваши файлы и фото принадлежат вам – я их не просматриваю, не копирую и не передаю. Если для работы нужно что-то проверить, сначала спрошу разрешения.",
-      fi: "En. Tiedostosi ja kuvasi ovat sinun – en katso, kopioi tai jaa niitä. Jos työn takia on tarkistettava jotain, kysyn ensin luvan.",
-    },
-  },
-  {
-    k: {
       et: "Kas tasub parandada või osta uus?",
       en: "Is it worth repairing or should I buy a new one?",
       ru: "Стоит ли ремонтировать или лучше купить новое?",
