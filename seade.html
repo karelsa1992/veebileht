@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remont Tartus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stiil.css">
+</head>
+<body>
+
+  <!-- ===== PÄIS ===== -->
+  <header class="pais">
+    <div class="sisu pais-sisu">
+      <a class="logo" href="index.html">
+        <strong data-kontakt="nimi">Karel Saega</strong>
+        <span data-t="logo_alapealkiri"></span>
+      </a>
+      <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
+      <nav class="menuu">
+        <a href="index.html#teenused" data-t="menuu_teenused"></a>
+        <a href="index.html#kuidas" data-t="menuu_kuidas"></a>
+        <a href="index.html#minust" data-t="menuu_minust"></a>
+        <a href="index.html#kontakt" data-t="menuu_kontakt"></a>
+      </nav>
+      <div class="keel" aria-label="Keel / Language">
+        <button data-keel="et">ET</button>
+        <button data-keel="en">EN</button>
+        <button data-keel="ru">RU</button>
+        <button data-keel="fi">FI</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="osa">
+    <div class="sisu">
+      <a class="tagasi" href="index.html#teenused" data-t="tagasi"></a>
+      <!-- Seadme sisu tuleb failist tekstid.js -->
+      <div id="seade"></div>
+    </div>
+  </main>
+
+  <!-- ===== JALUS ===== -->
+  <footer class="jalus">
+    <div class="sisu">
+      © <span id="aasta"></span> <span data-kontakt="nimi">Karel Saega</span> · Tartu
+    </div>
+  </footer>
+
+  <script src="js/tekstid.js"></script>
+  <script src="js/leht.js"></script>
+</body>
+</html>

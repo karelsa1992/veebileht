@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arvutite ja telefonide remont Tartus</title>
+  <meta name="description" content="Arvutite, sülearvutite, nutitelefonide ja tahvelarvutite remont ja hooldus Tartus. Üle 15 aasta kogemust.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stiil.css">
+</head>
+<body>
+
+  <!-- ===== PÄIS ===== -->
+  <header class="pais">
+    <div class="sisu pais-sisu">
+      <a class="logo" href="index.html">
+        <strong data-kontakt="nimi">Karel Saega</strong>
+        <span data-t="logo_alapealkiri"></span>
+      </a>
+      <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
+      <nav class="menuu">
+        <a href="#teenused" data-t="menuu_teenused"></a>
+        <a href="#kuidas" data-t="menuu_kuidas"></a>
+        <a href="#minust" data-t="menuu_minust"></a>
+        <a href="#kontakt" data-t="menuu_kontakt"></a>
+      </nav>
+      <div class="keel" aria-label="Keel / Language">
+        <button data-keel="et">ET</button>
+        <button data-keel="en">EN</button>
+        <button data-keel="ru">RU</button>
+        <button data-keel="fi">FI</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== SUUR PEALKIRI ===== -->
+    <section class="hero">
+      <div class="sisu">
+        <h1 data-t="hero_pealkiri"></h1>
+        <p data-t="hero_tekst"></p>
+        <div class="nupud">
+          <a class="nupp" href="#kontakt" data-t="nupp_kontakt"></a>
+          <a class="nupp teine" href="#teenused" data-t="nupp_hinnad"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEENUSED (seadmete kaardid tulevad failist tekstid.js) ===== -->
+    <section id="teenused" class="osa">
+      <div class="sisu">
+        <h2 data-t="teenused_pealkiri"></h2>
+        <p class="juhatus" data-t="teenused_tekst"></p>
+        <div id="seadmed" class="ruudustik"></div>
+      </div>
+    </section>
+
+    <!-- ===== KUIDAS SEE KÄIB ===== -->
+    <section id="kuidas" class="osa">
+      <div class="sisu">
+        <h2 data-t="kuidas_pealkiri"></h2>
+        <div class="ruudustik kolm">
+          <div class="kaart">
+            <h3 data-t="koju_pealkiri"></h3>
+            <p data-t="koju_tekst"></p>
+          </div>
+          <div class="kaart">
+            <h3 data-t="too_pealkiri"></h3>
+            <p data-t="too_tekst"></p>
+          </div>
+          <div class="kaart">
+            <h3 data-t="hind_pealkiri"></h3>
+            <p data-t="hind_tekst"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MINUST ===== -->
+    <section id="minust" class="osa">
+      <div class="sisu minust">
+        <div class="kogemus">
+          <strong>15+</strong>
+          <span data-t="aastat_kogemust"></span>
+        </div>
+        <div>
+          <h2 data-t="minust_pealkiri"></h2>
+          <p data-t="minust_tekst"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section id="kontakt" class="osa">
+      <div class="sisu">
+        <h2 data-t="kontakt_pealkiri"></h2>
+        <p class="juhatus" data-t="kontakt_tekst"></p>
+        <div class="kontakt-ala">
+
+          <!-- Kirjutamisvorm (praegu näidis, ei saada veel midagi) -->
+          <form id="vorm" class="kaart vorm">
+            <h3 data-t="vorm_pealkiri"></h3>
+            <div class="vorm-rida">
+              <label>
+                <span data-t="vorm_nimi"></span>
+                <input type="text" name="nimi" required autocomplete="name">
+              </label>
+              <label>
+                <span data-t="vorm_kontakt"></span>
+                <input type="text" name="kontakt" required autocomplete="email">
+              </label>
+            </div>
+            <label>
+              <span data-t="vorm_seade"></span>
+              <select id="vorm-seade" name="seade" required></select>
+            </label>
+            <fieldset>
+              <legend data-t="vorm_viis"></legend>
+              <label class="valik"><input type="radio" name="viis" value="koju"> <span data-t="vorm_viis_koju"></span></label>
+              <label class="valik"><input type="radio" name="viis" value="toon"> <span data-t="vorm_viis_toon"></span></label>
+              <label class="valik"><input type="radio" name="viis" value="ei-tea" checked> <span data-t="vorm_viis_ei_tea"></span></label>
+            </fieldset>
+            <label>
+              <span data-t="vorm_kirjeldus"></span>
+              <textarea name="kirjeldus" rows="5" required data-tp="vorm_kirjeldus_vihje"></textarea>
+            </label>
+            <button type="submit" class="nupp" data-t="vorm_saada"></button>
+            <p id="vorm-teade" class="vorm-teade" hidden data-t="vorm_naidis_teade"></p>
+          </form>
+
+          <!-- Otse ühendust võtmine -->
+          <div class="kontaktid">
+            <h3 data-t="voi_kirjuta_otse"></h3>
+            <div class="kaart kontakt">
+              <h3 data-t="telefon"></h3>
+              <a data-kontakt="telefon" href="#"></a>
+            </div>
+            <div class="kaart kontakt">
+              <h3 data-t="email"></h3>
+              <a data-kontakt="email" href="#"></a>
+            </div>
+            <div class="kaart kontakt">
+              <h3 data-t="facebook"></h3>
+              <a data-kontakt="facebook" href="#" target="_blank" rel="noopener" data-t="facebook_tekst"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== JALUS ===== -->
+  <footer class="jalus">
+    <div class="sisu">
+      © <span id="aasta"></span> <span data-kontakt="nimi">Karel Saega</span> · Tartu
+    </div>
+  </footer>
+
+  <script src="js/tekstid.js"></script>
+  <script src="js/leht.js"></script>
+</body>
+</html>
