@@ -74,7 +74,12 @@ function taidaTekstid() {
       el.textContent = KONTAKT.email;
       el.href = "mailto:" + KONTAKT.email;
     }
-    if (liik === "facebook") el.href = KONTAKT.facebook;
+    if (liik === "facebook") {
+      el.href = KONTAKT.facebook;
+      // Kui Facebooki linki pole, peida kogu kaart
+      const kaart = el.closest(".kaart");
+      if (kaart) kaart.hidden = !KONTAKT.facebook;
+    }
   });
 
   // Keelenupud: märgi valitud keel

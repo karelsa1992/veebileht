@@ -10,7 +10,7 @@ const KONTAKT = {
   nimi: "Karel Saega",
   telefon: "+372 5639 1019",
   email: "karelsaega1992@gmail.com",
-  facebook: "https://www.facebook.com/karel.saega/",
+  facebook: "", // kui siin on link, ilmub lehele Facebooki kaart
 };
 
 // ---- Väljakutsetasu (kui tulen kliendi juurde koju) ----
