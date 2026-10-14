@@ -228,6 +228,60 @@ body::before {
 .kogemus strong { font-size: 2.6rem; color: var(--rohk); line-height: 1; }
 .kogemus span { font-size: 0.85rem; color: var(--tekst-hall); padding: 0 16px; }
 
+/* "Leia oma mure" abiline */
+.abiline { margin-top: 28px; max-width: 900px; }
+.abiline .samm { font-weight: 600; margin: 0 0 10px; }
+.abiline .samm:not(:first-child) { margin-top: 24px; }
+.valikud { display: flex; flex-wrap: wrap; gap: 8px; }
+.valik-nupp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border: 1px solid var(--joon);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--tekst);
+  cursor: pointer;
+}
+.valik-nupp:hover { border-color: var(--rohk); color: var(--rohk); }
+.valik-nupp[aria-pressed="true"] { background: var(--rohk); border-color: var(--rohk); color: #fff; }
+.ikoon.vaike { width: 22px; height: 22px; margin: 0; color: inherit; }
+.ikoon.vaike svg { stroke-width: 2.6; }
+
+.tulemus {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--joon);
+}
+.tulemus h3 { font-size: 0.85rem; color: var(--tekst-hall); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.tulemus > p { margin-bottom: 16px; }
+.tulemus-hind {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  background: var(--taust);
+  border-radius: 10px;
+}
+.tulemus-hind strong { white-space: nowrap; }
+.tulemus .markus { margin-top: 0; }
+.nupud-rida { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.nupud-rida .nupp { font: inherit; font-weight: 600; cursor: pointer; }
+.tekstinupp {
+  font: inherit;
+  font-size: 0.95rem;
+  background: none;
+  border: 0;
+  color: var(--tekst-hall);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 8px;
+}
+.tekstinupp:hover { color: var(--rohk); }
+
 /* KKK */
 .kkk { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 820px; }
 .kkk details { padding: 0; }

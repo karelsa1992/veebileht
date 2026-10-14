@@ -85,6 +85,102 @@ function taidaTekstid() {
   taidaSeadmeLeht();
   taidaVormiSeadmed();
   taidaKKK();
+  taidaAbiline();
+}
+
+// ---- "Leia oma mure" abiline ----
+// Klient valib seadme ja mure, abiline näitab põhjust ja hinda.
+const abiline = { seade: null, mure: null };
+
+// Hind hinnakirjast (otsib rea, mille eestikeelne nimi on sama)
+function leiaHind(seade, tooNimi) {
+  const h = seade.hinnad.find((x) => x.nimi.et === tooNimi);
+  if (!h) return null;
+  return { nimi: t(h.nimi), hind: (h.alates ? t(TEKSTID.alates) + " " : "") + h.hind };
+}
+
+function taidaAbiline() {
+  const koht = document.getElementById("abiline-sisu");
+  if (!koht) return;
+
+  // 1. samm: seadmed
+  let html =
+    `<p class="samm">${t(TEKSTID.abiline_samm1)}</p><div class="valikud">` +
+    SEADMED.filter((s) => MURED[s.id])
+      .map(
+        (s) => `
+        <button type="button" class="valik-nupp" data-seade="${s.id}" aria-pressed="${abiline.seade === s.id}">
+          <span class="ikoon vaike">${IKOONID[s.ikoon] || ""}</span>${t(s.nimi)}
+        </button>`
+      )
+      .join("") +
+    `</div>`;
+
+  // 2. samm: mured
+  const s = SEADMED.find((x) => x.id === abiline.seade);
+  if (s) {
+    html +=
+      `<p class="samm">${t(TEKSTID.abiline_samm2)}</p><div class="valikud">` +
+      MURED[s.id]
+        .map(
+          (m, i) => `
+          <button type="button" class="valik-nupp" data-mure="${i}" aria-pressed="${abiline.mure === i}">${t(m.mure)}</button>`
+        )
+        .join("") +
+      `</div>`;
+  }
+
+  // Tulemus
+  const m = s && abiline.mure !== null ? MURED[s.id][abiline.mure] : null;
+  if (m) {
+    const h = leiaHind(s, m.too);
+    html += `
+      <div class="tulemus">
+        <h3>${t(TEKSTID.abiline_pohjus)}</h3>
+        <p>${t(m.pohjus)}</p>
+        ${h ? `<h3>${t(TEKSTID.abiline_teenus)}</h3>
+        <p class="tulemus-hind"><span>${h.nimi}</span><strong>${h.hind}</strong></p>` : ""}
+        <p class="markus">${t(TEKSTID.abiline_markus)}</p>
+        <div class="nupud-rida">
+          <button type="button" class="nupp" data-tegevus="kysi">${t(TEKSTID.abiline_kysi)}</button>
+          <a class="nupp teine" href="seade.html?id=${s.id}">${t(TEKSTID.abiline_koik_hinnad)}</a>
+          <button type="button" class="tekstinupp" data-tegevus="uuesti">${t(TEKSTID.abiline_uuesti)}</button>
+        </div>
+      </div>`;
+  }
+
+  koht.innerHTML = html;
+}
+
+const abilineKoht = document.getElementById("abiline-sisu");
+if (abilineKoht) {
+  abilineKoht.addEventListener("click", (e) => {
+    const nupp = e.target.closest("button");
+    if (!nupp) return;
+
+    if (nupp.dataset.seade) {
+      abiline.seade = nupp.dataset.seade;
+      abiline.mure = null;
+      taidaAbiline();
+    } else if (nupp.dataset.mure !== undefined) {
+      abiline.mure = Number(nupp.dataset.mure);
+      taidaAbiline();
+      abilineKoht.querySelector(".tulemus").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } else if (nupp.dataset.tegevus === "uuesti") {
+      abiline.seade = null;
+      abiline.mure = null;
+      taidaAbiline();
+    } else if (nupp.dataset.tegevus === "kysi") {
+      // Täida kontaktivorm ette ja liigu selleni
+      const m = MURED[abiline.seade][abiline.mure];
+      const valik = document.getElementById("vorm-seade");
+      const tekst = document.querySelector("#vorm textarea");
+      if (valik) valik.value = abiline.seade;
+      if (tekst && !tekst.value.trim()) tekst.value = t(m.mure) + ". ";
+      document.getElementById("kontakt").scrollIntoView({ behavior: "smooth" });
+      if (tekst) tekst.focus({ preventScroll: true });
+    }
+  });
 }
 
 // ---- KKK: klõpsatavad küsimused ----

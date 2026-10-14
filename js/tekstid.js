@@ -122,6 +122,28 @@ const TEKSTID = {
   },
   aastat_kogemust: { et: "aastat kogemust", en: "years of experience", ru: "лет опыта", fi: "vuotta kokemusta" },
 
+  // "Leia oma mure" abiline
+  abiline_pealkiri: { et: "Leia oma mure", en: "Find your problem", ru: "Найдите свою проблему", fi: "Löydä ongelmasi" },
+  abiline_tekst: {
+    et: "Ei tea, mis teenust vajad? Vali seade ja mis juhtus – näed, mis võib viga olla ja mis see umbes maksab.",
+    en: "Not sure what service you need? Choose the device and what happened – you'll see the likely cause and the approximate price.",
+    ru: "Не знаете, какая услуга нужна? Выберите устройство и что случилось – увидите возможную причину и примерную цену.",
+    fi: "Etkö tiedä, mitä palvelua tarvitset? Valitse laite ja mitä tapahtui – näet todennäköisen syyn ja suuntaa-antavan hinnan.",
+  },
+  abiline_samm1: { et: "1. Mis seade?", en: "1. Which device?", ru: "1. Какое устройство?", fi: "1. Mikä laite?" },
+  abiline_samm2: { et: "2. Mis juhtus?", en: "2. What happened?", ru: "2. Что случилось?", fi: "2. Mitä tapahtui?" },
+  abiline_pohjus: { et: "Võimalik põhjus", en: "Likely cause", ru: "Возможная причина", fi: "Todennäköinen syy" },
+  abiline_teenus: { et: "Sobiv teenus", en: "Suitable service", ru: "Подходящая услуга", fi: "Sopiva palvelu" },
+  abiline_markus: {
+    et: "Täpse põhjuse ja hinna ütlen pärast seadme ülevaatamist. Varuosa hind lisandub.",
+    en: "I confirm the exact cause and price after checking the device. Parts are extra.",
+    ru: "Точную причину и цену назову после осмотра устройства. Запчасти оплачиваются отдельно.",
+    fi: "Kerron tarkan syyn ja hinnan laitteen tarkastuksen jälkeen. Varaosat erikseen.",
+  },
+  abiline_kysi: { et: "Küsi pakkumist", en: "Ask for a quote", ru: "Запросить цену", fi: "Pyydä tarjous" },
+  abiline_koik_hinnad: { et: "Vaata kõiki hindu", en: "See all prices", ru: "Все цены", fi: "Katso kaikki hinnat" },
+  abiline_uuesti: { et: "Alusta uuesti", en: "Start over", ru: "Начать заново", fi: "Aloita alusta" },
+
   // KKK
   menuu_kkk: { et: "KKK", en: "FAQ", ru: "Вопросы", fi: "UKK" },
   kkk_pealkiri: {
@@ -525,3 +547,326 @@ const KKK = [
     },
   },
 ];
+
+// =====================================================================
+//  "LEIA OMA MURE" ABILINE
+//  Iga seadme jaoks nimekiri muredest:
+//    mure   – mida klient näeb (nupu tekst)
+//    pohjus – võimalik põhjus
+//    too    – hinnakirja rea nimi (eesti keeles, täpselt nagu hinnakirjas).
+//             Selle järgi leitakse hind automaatselt.
+// =====================================================================
+const MURED = {
+  lauaarvutid: [
+    {
+      mure: { et: "Ei lülitu sisse", en: "Won't turn on", ru: "Не включается", fi: "Ei käynnisty" },
+      pohjus: {
+        et: "Sageli on rikkis toiteplokk, harvem emaplaat. Diagnostikaga selgub täpne põhjus.",
+        en: "Often a faulty power supply, less often the motherboard. Diagnostics reveal the exact cause.",
+        ru: "Часто неисправен блок питания, реже материнская плата. Диагностика покажет точную причину.",
+        fi: "Usein vika on virtalähteessä, harvemmin emolevyssä. Vianmääritys selvittää tarkan syyn.",
+      },
+      too: "Diagnostika",
+    },
+    {
+      mure: { et: "On väga aeglane", en: "Very slow", ru: "Очень медленный", fi: "Todella hidas" },
+      pohjus: {
+        et: "Tavaliselt aitab vana kõvaketta asendamine kiire SSD-kettaga või mälu lisamine.",
+        en: "Usually replacing an old hard drive with a fast SSD or adding memory helps.",
+        ru: "Обычно помогает замена старого жёсткого диска на быстрый SSD или добавление памяти.",
+        fi: "Yleensä auttaa vanhan kiintolevyn vaihto nopeaan SSD-levyyn tai muistin lisääminen.",
+      },
+      too: "Osa vahetus (ketas, mälu, toiteplokk)",
+    },
+    {
+      mure: { et: "Teeb müra või kuumeneb", en: "Noisy or overheating", ru: "Шумит или греется", fi: "Pitää ääntä tai kuumenee" },
+      pohjus: {
+        et: "Tõenäoliselt on sees tolm ja termopasta on kuivanud. Puhastus teeb arvuti jälle vaikseks ja jahedaks.",
+        en: "Most likely dust inside and dried thermal paste. Cleaning makes it quiet and cool again.",
+        ru: "Скорее всего, внутри пыль и высохла термопаста. Чистка вернёт тишину и нормальную температуру.",
+        fi: "Todennäköisesti sisällä on pölyä ja lämpötahna on kuivunut. Puhdistus tekee koneesta taas hiljaisen ja viileän.",
+      },
+      too: "Puhastus + termopasta vahetus",
+    },
+    {
+      mure: { et: "Viirused või imelikud aknad", en: "Viruses or strange pop-ups", ru: "Вирусы или странные окна", fi: "Viruksia tai outoja ikkunoita" },
+      pohjus: {
+        et: "Arvutisse on tõenäoliselt sattunud pahavara. Eemaldan selle ja kontrollin, et arvuti oleks puhas.",
+        en: "Malware has probably got onto the computer. I remove it and make sure the computer is clean.",
+        ru: "Вероятно, на компьютер попала вредоносная программа. Удалю её и проверю, что компьютер чист.",
+        fi: "Koneelle on todennäköisesti päässyt haittaohjelma. Poistan sen ja varmistan, että kone on puhdas.",
+      },
+      too: "Viiruste ja pahavara eemaldus",
+    },
+    {
+      mure: { et: "Windows ei käivitu", en: "Windows won't start", ru: "Windows не загружается", fi: "Windows ei käynnisty" },
+      pohjus: {
+        et: "Süsteem võib olla rikutud või ketas vigane. Vajadusel paigaldan Windowsi uuesti ja püüan failid päästa.",
+        en: "The system may be corrupted or the drive faulty. If needed I reinstall Windows and try to save your files.",
+        ru: "Система может быть повреждена или диск неисправен. При необходимости переустановлю Windows и постараюсь сохранить файлы.",
+        fi: "Järjestelmä voi olla vioittunut tai levy viallinen. Tarvittaessa asennan Windowsin uudelleen ja yritän pelastaa tiedostot.",
+      },
+      too: "Windowsi paigaldus koos draiveritega",
+    },
+  ],
+  sulearvutid: [
+    {
+      mure: { et: "Ekraan on katki", en: "Broken screen", ru: "Разбит экран", fi: "Näyttö rikki" },
+      pohjus: {
+        et: "Katkine või triipudega ekraan tuleb tavaliselt välja vahetada. Hind sõltub mudelist.",
+        en: "A broken or striped screen usually needs replacing. The price depends on the model.",
+        ru: "Разбитый экран или экран с полосами обычно нужно менять. Цена зависит от модели.",
+        fi: "Rikkinäinen tai raidallinen näyttö on yleensä vaihdettava. Hinta riippuu mallista.",
+      },
+      too: "Ekraani vahetus",
+    },
+    {
+      mure: { et: "Kuumeneb, ventilaator müriseb", en: "Overheats, fan is loud", ru: "Греется, шумит вентилятор", fi: "Kuumenee, tuuletin pitää ääntä" },
+      pohjus: {
+        et: "Jahutus on tolmu täis ja termopasta kuivanud. Puhastus lahendab selle enamasti täielikult.",
+        en: "The cooling is clogged with dust and the thermal paste has dried. Cleaning usually solves it completely.",
+        ru: "Система охлаждения забита пылью, термопаста высохла. Чистка обычно полностью решает проблему.",
+        fi: "Jäähdytys on täynnä pölyä ja lämpötahna kuivunut. Puhdistus ratkaisee asian yleensä kokonaan.",
+      },
+      too: "Puhastus + termopasta vahetus",
+    },
+    {
+      mure: { et: "Ei lae", en: "Won't charge", ru: "Не заряжается", fi: "Ei lataudu" },
+      pohjus: {
+        et: "Viga võib olla laadijas, laadimispesas või akus. Kontrollin kõik üle ja ütlen, mida on vaja vahetada.",
+        en: "The fault may be in the charger, the charging port or the battery. I check everything and tell you what needs replacing.",
+        ru: "Неисправность может быть в зарядке, разъёме или аккумуляторе. Проверю всё и скажу, что нужно заменить.",
+        fi: "Vika voi olla laturissa, latausliitännässä tai akussa. Tarkistan kaiken ja kerron, mitä pitää vaihtaa.",
+      },
+      too: "Laadimispesa remont",
+    },
+    {
+      mure: { et: "Vedelik läks peale", en: "Liquid spilled on it", ru: "Залит жидкостью", fi: "Nestettä kaatui päälle" },
+      pohjus: {
+        et: "Lülita arvuti kohe välja ja ära käivita seda uuesti. Mida kiiremini selle tood, seda suurem on võimalus see päästa.",
+        en: "Turn the laptop off right away and don't switch it on again. The sooner you bring it, the better the chance of saving it.",
+        ru: "Сразу выключите ноутбук и не включайте его снова. Чем быстрее привезёте, тем выше шанс его спасти.",
+        fi: "Sammuta kone heti äläkä käynnistä sitä uudelleen. Mitä nopeammin tuot sen, sitä paremmat mahdollisuudet sen pelastamiseen.",
+      },
+      too: "Vedelikukahjustuse puhastus",
+    },
+    {
+      mure: { et: "Klahvid ei tööta", en: "Keys don't work", ru: "Не работают клавиши", fi: "Näppäimet eivät toimi" },
+      pohjus: {
+        et: "Kui mitu klahvi ei tööta või need jäävad kinni, tuleb klaviatuur tavaliselt välja vahetada.",
+        en: "If several keys don't work or they stick, the keyboard usually needs replacing.",
+        ru: "Если не работают или залипают несколько клавиш, клавиатуру обычно нужно заменить.",
+        fi: "Jos useampi näppäin ei toimi tai ne juuttuvat, näppäimistö on yleensä vaihdettava.",
+      },
+      too: "Klaviatuuri vahetus",
+    },
+    {
+      mure: { et: "On väga aeglane", en: "Very slow", ru: "Очень медленный", fi: "Todella hidas" },
+      pohjus: {
+        et: "Vana kõvaketta asendamine SSD-kettaga teeb sülearvuti mitu korda kiiremaks. Failid ja programmid jäävad alles.",
+        en: "Replacing an old hard drive with an SSD makes a laptop several times faster. Your files and programs stay.",
+        ru: "Замена старого жёсткого диска на SSD ускоряет ноутбук в разы. Файлы и программы сохраняются.",
+        fi: "Vanhan kiintolevyn vaihto SSD-levyyn tekee koneesta moninkertaisesti nopeamman. Tiedostot ja ohjelmat säilyvät.",
+      },
+      too: "SSD paigaldus + süsteemi kopeerimine",
+    },
+  ],
+  nutitelefonid: [
+    {
+      mure: { et: "Ekraan on katki", en: "Broken screen", ru: "Разбит экран", fi: "Näyttö rikki" },
+      pohjus: {
+        et: "Katkine klaas või ekraan vahetatakse välja. Hind sõltub telefoni mudelist.",
+        en: "Broken glass or a broken display is replaced. The price depends on the phone model.",
+        ru: "Разбитое стекло или дисплей заменяется. Цена зависит от модели телефона.",
+        fi: "Rikkinäinen lasi tai näyttö vaihdetaan. Hinta riippuu puhelimen mallista.",
+      },
+      too: "Ekraani vahetus",
+    },
+    {
+      mure: { et: "Aku tühjeneb kiiresti", en: "Battery drains fast", ru: "Быстро садится батарея", fi: "Akku tyhjenee nopeasti" },
+      pohjus: {
+        et: "Aku on kulunud. Uus aku annab telefonile jälle terve päeva tööaega.",
+        en: "The battery is worn out. A new battery gives the phone a full day of use again.",
+        ru: "Аккумулятор изношен. С новым аккумулятором телефон снова проработает целый день.",
+        fi: "Akku on kulunut. Uusi akku antaa puhelimelle taas koko päivän käyttöajan.",
+      },
+      too: "Aku vahetus",
+    },
+    {
+      mure: { et: "Ei lae", en: "Won't charge", ru: "Не заряжается", fi: "Ei lataudu" },
+      pohjus: {
+        et: "Sageli on laadimispesas tolm või ebemed. Tihti aitab juba puhastus, vahel tuleb pesa vahetada.",
+        en: "Often there is dust or lint in the charging port. Cleaning often helps, sometimes the port must be replaced.",
+        ru: "Часто в разъёме зарядки пыль или ворс. Нередко помогает чистка, иногда разъём нужно заменить.",
+        fi: "Latausliitännässä on usein pölyä tai nukkaa. Puhdistus auttaa usein, joskus liitäntä on vaihdettava.",
+      },
+      too: "Laadimispesa puhastus / vahetus",
+    },
+    {
+      mure: { et: "Kukkus vette", en: "Dropped in water", ru: "Упал в воду", fi: "Putosi veteen" },
+      pohjus: {
+        et: "Lülita telefon välja, ära lae seda ega pane riisi sisse. Too see võimalikult kiiresti, siis on suurem võimalus see päästa.",
+        en: "Turn the phone off, don't charge it and don't put it in rice. Bring it as soon as possible for the best chance of saving it.",
+        ru: "Выключите телефон, не заряжайте и не кладите в рис. Привезите как можно скорее – так больше шансов его спасти.",
+        fi: "Sammuta puhelin, älä lataa sitä äläkä laita riisiin. Tuo se mahdollisimman pian, niin pelastamisen mahdollisuus on suurempi.",
+      },
+      too: "Diagnostika",
+    },
+    {
+      mure: { et: "Tagaklaas on katki", en: "Broken back glass", ru: "Разбито заднее стекло", fi: "Takalasi rikki" },
+      pohjus: {
+        et: "Katkine tagaklaas laseb sisse niiskust ja tolmu. Selle vahetamine kaitseb telefoni.",
+        en: "Broken back glass lets in moisture and dust. Replacing it protects the phone.",
+        ru: "Через разбитое заднее стекло внутрь попадают влага и пыль. Замена защитит телефон.",
+        fi: "Rikkinäisestä takalasista pääsee sisään kosteutta ja pölyä. Vaihto suojaa puhelinta.",
+      },
+      too: "Tagaklaasi vahetus",
+    },
+    {
+      mure: { et: "Hangub või taaskäivitub", en: "Freezes or restarts", ru: "Зависает или перезагружается", fi: "Jumittuu tai käynnistyy uudelleen" },
+      pohjus: {
+        et: "Sageli on põhjus tarkvaras. Taastan tarkvara ja kontrollin, et aku ja muu riistvara oleks korras.",
+        en: "Often the cause is software. I restore the software and check that the battery and other hardware are fine.",
+        ru: "Часто причина в программном обеспечении. Восстановлю ПО и проверю аккумулятор и другое железо.",
+        fi: "Syy on usein ohjelmistossa. Palautan ohjelmiston ja tarkistan, että akku ja muu laitteisto ovat kunnossa.",
+      },
+      too: "Tarkvara taastamine",
+    },
+  ],
+  tahvelarvutid: [
+    {
+      mure: { et: "Klaas või ekraan on katki", en: "Broken glass or screen", ru: "Разбито стекло или экран", fi: "Lasi tai näyttö rikki" },
+      pohjus: {
+        et: "Mõnel mudelil saab vahetada ainult klaasi, mõnel tuleb vahetada kogu ekraan. Ütlen enne täpse hinna.",
+        en: "On some models only the glass can be replaced, on others the whole screen. I tell you the exact price first.",
+        ru: "На одних моделях можно заменить только стекло, на других – весь экран. Сначала назову точную цену.",
+        fi: "Joissain malleissa voi vaihtaa pelkän lasin, toisissa koko näytön. Kerron tarkan hinnan ensin.",
+      },
+      too: "Puuteklaasi / ekraani vahetus",
+    },
+    {
+      mure: { et: "Aku tühjeneb kiiresti", en: "Battery drains fast", ru: "Быстро садится батарея", fi: "Akku tyhjenee nopeasti" },
+      pohjus: {
+        et: "Aku on kulunud. Uue akuga töötab tahvel jälle kaua.",
+        en: "The battery is worn out. With a new battery the tablet lasts long again.",
+        ru: "Аккумулятор изношен. С новым аккумулятором планшет снова работает долго.",
+        fi: "Akku on kulunut. Uudella akulla tabletti kestää taas pitkään.",
+      },
+      too: "Aku vahetus",
+    },
+    {
+      mure: { et: "Ei lae", en: "Won't charge", ru: "Не заряжается", fi: "Ei lataudu" },
+      pohjus: {
+        et: "Tavaliselt on viga laadimispesas või kaablis. Kontrollin ja parandan.",
+        en: "Usually the fault is in the charging port or cable. I check and repair it.",
+        ru: "Обычно неисправен разъём зарядки или кабель. Проверю и отремонтирую.",
+        fi: "Yleensä vika on latausliitännässä tai kaapelissa. Tarkistan ja korjaan.",
+      },
+      too: "Laadimispesa remont",
+    },
+    {
+      mure: { et: "Hangub või on aeglane", en: "Freezes or is slow", ru: "Зависает или тормозит", fi: "Jumittuu tai on hidas" },
+      pohjus: {
+        et: "Sageli aitab tarkvara taastamine. Enne seda salvestan võimalusel su andmed.",
+        en: "Restoring the software often helps. Before that I save your data if possible.",
+        ru: "Часто помогает восстановление ПО. Перед этим по возможности сохраню ваши данные.",
+        fi: "Ohjelmiston palautus auttaa usein. Sitä ennen tallennan tietosi, jos mahdollista.",
+      },
+      too: "Tarkvara taastamine",
+    },
+  ],
+  komponendid: [
+    {
+      mure: { et: "Mängides tekivad pildivead", en: "Graphics glitches while gaming", ru: "Артефакты в играх", fi: "Kuvavirheitä pelatessa" },
+      pohjus: {
+        et: "Ruudud, triibud või kaduv pilt viitavad tavaliselt videokaardi rikkele. Sageli saab selle parandada.",
+        en: "Squares, stripes or a disappearing picture usually point to a graphics card fault. It can often be repaired.",
+        ru: "Квадраты, полосы или пропадающее изображение обычно указывают на неисправность видеокарты. Часто её можно отремонтировать.",
+        fi: "Neliöt, raidat tai katoava kuva viittaavat yleensä näytönohjaimen vikaan. Sen voi usein korjata.",
+      },
+      too: "Videokaardi remont",
+    },
+    {
+      mure: { et: "Videokaart on kuum ja vali", en: "Graphics card hot and loud", ru: "Видеокарта горячая и шумная", fi: "Näytönohjain kuuma ja äänekäs" },
+      pohjus: {
+        et: "Termopasta ja termopadjad on aja jooksul kuivanud. Nende vahetus langetab temperatuuri ja müra.",
+        en: "The thermal paste and pads have dried over time. Replacing them lowers temperature and noise.",
+        ru: "Термопаста и термопрокладки со временем высохли. Их замена снижает температуру и шум.",
+        fi: "Lämpötahna ja lämpötyynyt ovat ajan myötä kuivuneet. Niiden vaihto laskee lämpötilaa ja melua.",
+      },
+      too: "Videokaardi puhastus + termopasta ja -padjad",
+    },
+    {
+      mure: { et: "Ei käivitu pärast vedelikku või äikest", en: "Dead after liquid or a power surge", ru: "Не включается после залития или грозы", fi: "Ei käynnisty nesteen tai ukkosen jälkeen" },
+      pohjus: {
+        et: "Tõenäoliselt on emaplaadil mõni komponent läbi põlenud. Diagnostikaga leian selle üles.",
+        en: "A component on the motherboard has probably burned out. I find it with diagnostics.",
+        ru: "Вероятно, на материнской плате сгорел какой-то компонент. Найду его при диагностике.",
+        fi: "Emolevyltä on todennäköisesti palanut jokin komponentti. Löydän sen vianmäärityksellä.",
+      },
+      too: "Emaplaadi / videokaardi diagnostika",
+    },
+    {
+      mure: { et: "Pesa või pistik on katki", en: "Broken port or connector", ru: "Сломан разъём", fi: "Liitäntä tai liitin rikki" },
+      pohjus: {
+        et: "Katkise USB-, toite- või muu pesa saab tavaliselt uue vastu välja joota.",
+        en: "A broken USB, power or other port can usually be desoldered and replaced with a new one.",
+        ru: "Сломанный USB-, силовой или другой разъём обычно можно перепаять на новый.",
+        fi: "Rikkinäinen USB-, virta- tai muu liitäntä voidaan yleensä juottaa uuteen.",
+      },
+      too: "Pistiku või komponendi jootmine",
+    },
+  ],
+  konsoolid: [
+    {
+      mure: { et: "Pilti ei tule", en: "No picture", ru: "Нет изображения", fi: "Ei kuvaa" },
+      pohjus: {
+        et: "Sageli on HDMI pesa kahjustunud, näiteks kui konsooli on liigutatud nii, et kaabel oli küljes.",
+        en: "Often the HDMI port is damaged, for example if the console was moved with the cable attached.",
+        ru: "Часто повреждён разъём HDMI, например если приставку двигали с подключённым кабелем.",
+        fi: "Usein HDMI-liitäntä on vaurioitunut, esimerkiksi jos konsolia on liikutettu kaapelin ollessa kiinni.",
+      },
+      too: "HDMI pesa vahetus",
+    },
+    {
+      mure: { et: "Müriseb või lülitub ise välja", en: "Loud or shuts itself off", ru: "Шумит или сама выключается", fi: "Pitää ääntä tai sammuu itsestään" },
+      pohjus: {
+        et: "Konsool kuumeneb üle, sest sees on tolm ja termopasta on kuivanud. Puhastus aitab.",
+        en: "The console overheats because of dust inside and dried thermal paste. Cleaning helps.",
+        ru: "Приставка перегревается из-за пыли и высохшей термопасты. Поможет чистка.",
+        fi: "Konsoli ylikuumenee sisällä olevan pölyn ja kuivuneen lämpötahnan takia. Puhdistus auttaa.",
+      },
+      too: "Puhastus + termopasta vahetus",
+    },
+    {
+      mure: { et: "Pult liigub ise", en: "Controller drifts", ru: "Джойстик «дрейфует»", fi: "Ohjain liikkuu itsestään" },
+      pohjus: {
+        et: "Puldi juhtkang on kulunud. Juhtkangi vahetus on palju odavam kui uus pult.",
+        en: "The controller stick is worn. Replacing the stick is much cheaper than a new controller.",
+        ru: "Стик джойстика изношен. Замена стика намного дешевле нового джойстика.",
+        fi: "Ohjaimen tikku on kulunut. Tikun vaihto on paljon edullisempaa kuin uusi ohjain.",
+      },
+      too: "Puldi juhtkangi vahetus",
+    },
+    {
+      mure: { et: "Ei loe plaate", en: "Won't read discs", ru: "Не читает диски", fi: "Ei lue levyjä" },
+      pohjus: {
+        et: "Plaadilugeja lääts või mehhanism on kulunud. Parandan või vahetan lugeja.",
+        en: "The disc drive's lens or mechanism is worn. I repair or replace the drive.",
+        ru: "Изношена линза или механизм дисковода. Отремонтирую или заменю привод.",
+        fi: "Levyaseman linssi tai mekanismi on kulunut. Korjaan tai vaihdan aseman.",
+      },
+      too: "Plaadilugeja remont",
+    },
+    {
+      mure: { et: "Ei lülitu sisse", en: "Won't turn on", ru: "Не включается", fi: "Ei käynnisty" },
+      pohjus: {
+        et: "Sageli on rikkis toiteplokk. Kontrollin ja parandan selle.",
+        en: "Often the power supply is faulty. I check and repair it.",
+        ru: "Часто неисправен блок питания. Проверю и отремонтирую.",
+        fi: "Usein vika on virtalähteessä. Tarkistan ja korjaan sen.",
+      },
+      too: "Toiteploki remont",
+    },
+  ],
+};
