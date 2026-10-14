@@ -8,7 +8,7 @@
 // ---- Kontaktandmed (vaheta need oma päris andmete vastu) ----
 const KONTAKT = {
   nimi: "Karel Saega",
-  telefon: "+372 5000 0000",
+  telefon: "+372 5639 1019",
   email: "nimi@example.com",
   facebook: "https://www.facebook.com/",
 };
