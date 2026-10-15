@@ -1172,10 +1172,10 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Kus andmed liiguvad", en: "Where the data goes", ru: "Куда передаются данные", fi: "Minne tiedot kulkevat" },
       tekst: {
-        et: "Kontaktivormi sõnum jõuab minuni e-postiga teenuse Web3Forms kaudu ja seda hoitakse minu e-postkastis (Gmail). Lehe kirjatüüp laaditakse Google Fonts teenusest, mille käigus näeb Google sinu IP-aadressi.",
-        en: "Messages from the contact form reach me by email via the Web3Forms service and are kept in my mailbox (Gmail). The page font is loaded from Google Fonts, which means Google sees your IP address.",
-        ru: "Сообщение из контактной формы приходит мне на эл. почту через сервис Web3Forms и хранится в моём почтовом ящике (Gmail). Шрифт страницы загружается из Google Fonts, при этом Google видит ваш IP-адрес.",
-        fi: "Yhteydenottolomakkeen viesti tulee minulle sähköpostitse Web3Forms-palvelun kautta, ja sitä säilytetään sähköpostissani (Gmail). Sivun fontti ladataan Google Fonts -palvelusta, jolloin Google näkee IP-osoitteesi.",
+        et: "Kontaktivormi sõnum jõuab minuni e-postiga teenuse Web3Forms kaudu ja seda hoitakse minu e-postkastis (Gmail).",
+        en: "Messages from the contact form reach me by email via the Web3Forms service and are kept in my mailbox (Gmail).",
+        ru: "Сообщение из контактной формы приходит мне на эл. почту через сервис Web3Forms и хранится в моём почтовом ящике (Gmail).",
+        fi: "Yhteydenottolomakkeen viesti tulee minulle sähköpostitse Web3Forms-palvelun kautta, ja sitä säilytetään sähköpostissani (Gmail).",
       },
     },
     {
