@@ -6,6 +6,16 @@
 
 const KEELED = ["et", "en", "ru", "fi"];
 
+// Mis seadet või nõuannet see leht näitab. Iga seadme ja nõuande leht on loodud
+// abiprogrammiga _tee-lehed.py ja selle id on kirjas <body data-id="...">.
+const LEHE_ID = document.body.dataset.id || new URLSearchParams(location.search).get("id");
+
+// Vanad aadressid (seade.html?id=... ja nouanne.html?id=...) suunatakse uutele
+if (!document.body.dataset.id && LEHE_ID) {
+  if (document.getElementById("seade")) location.replace("/" + LEHE_ID);
+  if (document.getElementById("nouanne")) location.replace("/nouanded/" + LEHE_ID);
+}
+
 // Seadmete ikoonid (lihtsad joonpildid)
 const IKOONID = {
   lauaarvuti:
@@ -166,7 +176,7 @@ function taidaNouandeKaardid() {
   if (!koht) return;
   koht.innerHTML = NOUANDED.map(
     (n) => `
-      <a class="kaart nouandekaart" href="nouanne.html?id=${n.id}">
+      <a class="kaart nouandekaart" href="/nouanded/${n.id}">
         <span class="ikoon">${IKOONID[n.ikoon] || ""}</span>
         <h3>${t(n.pealkiri)}</h3>
         <p>${t(n.lyhike)}</p>
@@ -180,8 +190,7 @@ function taidaNouanne() {
   const koht = document.getElementById("nouanne");
   if (!koht) return;
 
-  const id = new URLSearchParams(location.search).get("id");
-  const n = NOUANDED.find((x) => x.id === id);
+  const n = NOUANDED.find((x) => x.id === LEHE_ID);
   if (!n) {
     koht.innerHTML = `<p>${t(TEKSTID.nouannet_ei_leitud)}</p>`;
     return;
@@ -215,7 +224,7 @@ function taidaNouanne() {
       </section>
       <div class="kaart uleskutse">
         <p>${t(TEKSTID.nouanne_abi)}</p>
-        <a class="nupp" href="./#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
+        <a class="nupp" href="/#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
       </div>
     </article>`;
 }
@@ -275,7 +284,7 @@ function taidaAbiline() {
         <p class="markus">${t(TEKSTID.abiline_markus)}</p>
         <div class="nupud-rida">
           <button type="button" class="nupp" data-tegevus="kysi">${t(TEKSTID.abiline_kysi)}</button>
-          <a class="nupp teine" href="seade.html?id=${s.id}">${t(TEKSTID.abiline_koik_hinnad)}</a>
+          <a class="nupp teine" href="/${s.id}">${t(TEKSTID.abiline_koik_hinnad)}</a>
           <button type="button" class="tekstinupp" data-tegevus="uuesti">${t(TEKSTID.abiline_uuesti)}</button>
         </div>
       </div>`;
@@ -408,7 +417,7 @@ function taidaSeadmeKaardid() {
   if (!koht) return;
   koht.innerHTML = SEADMED.map(
     (s) => `
-      <a class="kaart seadmekaart" href="seade.html?id=${s.id}">
+      <a class="kaart seadmekaart" href="/${s.id}">
         <span class="ikoon">${IKOONID[s.ikoon] || ""}</span>
         <h3>${t(s.nimi)}</h3>
         <p>${t(s.lyhike)}</p>
@@ -435,9 +444,9 @@ function taidaSeadmeLeht() {
   const { eelmine, jargmine, koht: nr } = naabrid(s.id);
   const nav = `
     <nav class="seadme-nav">
-      <a class="seadme-nool" href="seade.html?id=${eelmine.id}" data-vaheta="-1">‹ <span>${t(eelmine.nimi)}</span></a>
+      <a class="seadme-nool" href="/${eelmine.id}" data-vaheta="-1">‹ <span>${t(eelmine.nimi)}</span></a>
       <span class="punktid">${SEADMED.map((x, j) => `<span class="punkt${j === nr ? " aktiivne" : ""}"></span>`).join("")}</span>
-      <a class="seadme-nool paremale" href="seade.html?id=${jargmine.id}" data-vaheta="1"><span>${t(jargmine.nimi)}</span> ›</a>
+      <a class="seadme-nool paremale" href="/${jargmine.id}" data-vaheta="1"><span>${t(jargmine.nimi)}</span> ›</a>
     </nav>
     <p class="libista-vihje">${t(TEKSTID.libista_vihje)}</p>`;
 
@@ -461,7 +470,7 @@ function taidaSeadmeLeht() {
       </div>
     </div>
 
-    <img class="seade-pilt" src="img/seadmed/${s.id}.webp" alt="${t(s.nimi)}" onerror="this.remove()">
+    <img class="seade-pilt" src="/img/seadmed/${s.id}.webp" alt="${t(s.nimi)}" onerror="this.remove()">
 
     <div class="seade-sisu">
       <section class="kaart">
@@ -481,13 +490,13 @@ function taidaSeadmeLeht() {
 
     <div class="kaart uleskutse">
       <p>${t(TEKSTID.ei_leia)}</p>
-      <a class="nupp" href="./#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
+      <a class="nupp" href="/#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
     </div>`;
 }
 
 // ---- Seadmete vahetamine (nooled ja telefonis libistamine) ----
 // Mis seadet seadme lehel praegu näidatakse (algul võetakse lehe aadressist)
-let praeguneSeade = new URLSearchParams(location.search).get("id");
+let praeguneSeade = LEHE_ID;
 
 function naabrid(id) {
   const n = SEADMED.length;
@@ -509,14 +518,14 @@ function vahetaSeadet(suund) {
   praeguneSeade = uus.id;
   try {
     // Uuenda ka aadressiriba (arvutist avatud failil brauser seda ei luba)
-    history.replaceState(null, "", "?id=" + uus.id);
+    history.replaceState(null, "", "/" + uus.id);
   } catch (e) {}
   taidaSeadmeLeht();
   window.scrollTo(0, 0);
 
   // Loendur: arvesta seadme vahetust eraldi lehevaatamisena
   if (window.goatcounter && window.goatcounter.count) {
-    window.goatcounter.count({ path: location.pathname + location.search });
+    window.goatcounter.count({ path: location.pathname });
   }
 
   const koht = document.getElementById("seade");

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kasa.ee/</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=lauaarvutid</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=sulearvutid</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=nutitelefonid</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=tahvelarvutid</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=komponendid</loc></url>
-  <url><loc>https://kasa.ee/seade.html?id=konsoolid</loc></url>
-  <url><loc>https://kasa.ee/nouanne.html?id=vesi</loc></url>
-  <url><loc>https://kasa.ee/nouanne.html?id=kuumus</loc></url>
-  <url><loc>https://kasa.ee/nouanne.html?id=aku</loc></url>
-  <url><loc>https://kasa.ee/nouanne.html?id=aeglane</loc></url>
-  <url><loc>https://kasa.ee/privaatsus.html</loc></url>
+  <url><loc>https://kasa.ee/lauaarvutid</loc></url>
+  <url><loc>https://kasa.ee/sulearvutid</loc></url>
+  <url><loc>https://kasa.ee/nutitelefonid</loc></url>
+  <url><loc>https://kasa.ee/tahvelarvutid</loc></url>
+  <url><loc>https://kasa.ee/komponendid</loc></url>
+  <url><loc>https://kasa.ee/konsoolid</loc></url>
+  <url><loc>https://kasa.ee/nouanded/vesi</loc></url>
+  <url><loc>https://kasa.ee/nouanded/kuumus</loc></url>
+  <url><loc>https://kasa.ee/nouanded/aku</loc></url>
+  <url><loc>https://kasa.ee/nouanded/aeglane</loc></url>
+  <url><loc>https://kasa.ee/privaatsus</loc></url>
 </urlset>
