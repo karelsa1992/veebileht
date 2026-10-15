@@ -282,6 +282,30 @@ body::before {
 }
 .tekstinupp:hover { color: var(--rohk); }
 
+/* Nõuanded */
+.ruudustik.nouanded { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.nouandekaart {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--tekst);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.nouandekaart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(28, 46, 79, 0.12);
+}
+.nouandekaart .ikoon { width: 40px; height: 40px; }
+.nouandekaart p { font-size: 0.92rem; color: var(--tekst-hall); flex-grow: 1; }
+.nouandekaart .lisa { font-size: 0.9rem; font-weight: 600; color: var(--rohk); }
+
+.artikkel { max-width: 780px; }
+.artikkel > .kaart { margin-bottom: 18px; }
+.artikkel .kaart h2 { font-size: 1.25rem; }
+.kaart.hoiatus { border-left: 4px solid #a33a3a; }
+.kaart.hoiatus h2 { color: #8a2e2e; }
+.kaart.hoiatus .nimekiri li::marker { color: #a33a3a; }
+
 /* KKK */
 .kkk { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 820px; }
 .kkk details { padding: 0; }
@@ -425,7 +449,7 @@ body::before {
   cursor: pointer;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 960px) {
   .pais-sisu { gap: 12px; }
   .menuu-nupp { display: block; order: 3; }
   .keel { order: 2; }

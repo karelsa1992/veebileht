@@ -18,6 +18,14 @@ const IKOONID = {
     '<svg viewBox="0 0 48 48"><rect x="7" y="5" width="34" height="38" rx="3"/><path d="M11 10h26v26H11z"/><circle cx="24" cy="39.5" r="1.3"/></svg>',
   konsool:
     '<svg viewBox="0 0 48 48"><path d="M15 14h18a10 10 0 0 1 10 10v4a8 8 0 0 1-14 5.3L27 31h-6l-2 2.3A8 8 0 0 1 5 28v-4a10 10 0 0 1 10-10z"/><path d="M14 20v8M10 24h8"/><circle cx="32" cy="22" r="1.4"/><circle cx="36" cy="26" r="1.4"/></svg>',
+  tilk:
+    '<svg viewBox="0 0 48 48"><path d="M24 5C24 5 11 20 11 29a13 13 0 0 0 26 0C37 20 24 5 24 5z"/><path d="M18 30a6 6 0 0 0 6 6"/></svg>',
+  kraadiklaas:
+    '<svg viewBox="0 0 48 48"><path d="M20 28V9a4 4 0 0 1 8 0v19a8 8 0 1 1-8 0z"/><path d="M24 31V16"/><circle cx="24" cy="34" r="3"/><path d="M32 12h4M32 18h4M32 24h4"/></svg>',
+  aku:
+    '<svg viewBox="0 0 48 48"><rect x="15" y="9" width="18" height="34" rx="3"/><path d="M20 5h8"/><path d="M26 17l-5 9h6l-5 9"/></svg>',
+  kiirus:
+    '<svg viewBox="0 0 48 48"><path d="M8 34a16 16 0 1 1 32 0"/><path d="M24 34l-7-9"/><circle cx="24" cy="34" r="2.5"/><path d="M12 22l2.5 1.5M24 16v3M36 22l-2.5 1.5"/></svg>',
   kiip:
     '<svg viewBox="0 0 48 48"><rect x="13" y="13" width="22" height="22" rx="2"/><rect x="19" y="19" width="10" height="10" rx="1"/><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"/></svg>',
 };
@@ -86,6 +94,68 @@ function taidaTekstid() {
   taidaVormiSeadmed();
   taidaKKK();
   taidaAbiline();
+  taidaNouandeKaardid();
+  taidaNouanne();
+}
+
+// ---- Nõuanded: kaardid avalehel ----
+function taidaNouandeKaardid() {
+  const koht = document.getElementById("nouanded-nimekiri");
+  if (!koht) return;
+  koht.innerHTML = NOUANDED.map(
+    (n) => `
+      <a class="kaart nouandekaart" href="nouanne.html?id=${n.id}">
+        <span class="ikoon">${IKOONID[n.ikoon] || ""}</span>
+        <h3>${t(n.pealkiri)}</h3>
+        <p>${t(n.lyhike)}</p>
+        <span class="lisa">${t(TEKSTID.loe_edasi)} →</span>
+      </a>`
+  ).join("");
+}
+
+// ---- Ühe nõuande leht ----
+function taidaNouanne() {
+  const koht = document.getElementById("nouanne");
+  if (!koht) return;
+
+  const id = new URLSearchParams(location.search).get("id");
+  const n = NOUANDED.find((x) => x.id === id);
+  if (!n) {
+    koht.innerHTML = `<p>${t(TEKSTID.nouannet_ei_leitud)}</p>`;
+    return;
+  }
+
+  document.title = t(n.pealkiri) + " – " + KONTAKT.nimi;
+
+  const plokid = n.plokid
+    .map(
+      (p) => `
+      <section class="kaart${p.hoiatus ? " hoiatus" : ""}">
+        <h2>${t(p.pealkiri)}</h2>
+        <ul class="nimekiri">${p.punktid.map((x) => `<li>${t(x)}</li>`).join("")}</ul>
+      </section>`
+    )
+    .join("");
+
+  koht.innerHTML = `
+    <article class="artikkel">
+      <div class="seade-pais">
+        <span class="ikoon suur">${IKOONID[n.ikoon] || ""}</span>
+        <div>
+          <h1>${t(n.pealkiri)}</h1>
+          <p class="juhatus">${t(n.sissejuhatus)}</p>
+        </div>
+      </div>
+      ${plokid}
+      <section class="kaart">
+        <h2>${t(TEKSTID.millal_pealkiri)}</h2>
+        <p>${t(n.millal)}</p>
+      </section>
+      <div class="kaart uleskutse">
+        <p>${t(TEKSTID.nouanne_abi)}</p>
+        <a class="nupp" href="index.html#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
+      </div>
+    </article>`;
 }
 
 // ---- "Leia oma mure" abiline ----

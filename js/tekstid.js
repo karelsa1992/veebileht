@@ -144,6 +144,26 @@ const TEKSTID = {
   abiline_koik_hinnad: { et: "Vaata kõiki hindu", en: "See all prices", ru: "Все цены", fi: "Katso kaikki hinnat" },
   abiline_uuesti: { et: "Alusta uuesti", en: "Start over", ru: "Начать заново", fi: "Aloita alusta" },
 
+  // Nõuanded
+  menuu_nouanded: { et: "Nõuanded", en: "Tips", ru: "Советы", fi: "Vinkit" },
+  nouanded_pealkiri: { et: "Kasulikud nõuanded", en: "Useful tips", ru: "Полезные советы", fi: "Hyödyllisiä vinkkejä" },
+  nouanded_tekst: {
+    et: "Lühikesed juhendid, mis aitavad sul seadet hoida ja hädaolukorras õigesti käituda.",
+    en: "Short guides to help you look after your devices and act right in an emergency.",
+    ru: "Короткие инструкции, которые помогут беречь технику и правильно действовать в экстренной ситуации.",
+    fi: "Lyhyitä ohjeita laitteiden hoitoon ja oikeaan toimintaan hätätilanteessa.",
+  },
+  loe_edasi: { et: "Loe edasi", en: "Read more", ru: "Читать", fi: "Lue lisää" },
+  koik_nouanded: { et: "← Kõik nõuanded", en: "← All tips", ru: "← Все советы", fi: "← Kaikki vinkit" },
+  millal_pealkiri: { et: "Millal remonti tuua?", en: "When to bring it in?", ru: "Когда обращаться в ремонт?", fi: "Milloin tuoda korjattavaksi?" },
+  nouanne_abi: {
+    et: "Kas vajad abi? Kirjuta või helista – vastan esimesel võimalusel.",
+    en: "Need help? Write or call – I'll reply as soon as possible.",
+    ru: "Нужна помощь? Напишите или позвоните – отвечу при первой возможности.",
+    fi: "Tarvitsetko apua? Kirjoita tai soita – vastaan mahdollisimman pian.",
+  },
+  nouannet_ei_leitud: { et: "Seda nõuannet ei leitud.", en: "Tip not found.", ru: "Совет не найден.", fi: "Vinkkiä ei löytynyt." },
+
   // KKK
   menuu_kkk: { et: "KKK", en: "FAQ", ru: "Вопросы", fi: "UKK" },
   kkk_pealkiri: {
@@ -870,3 +890,202 @@ const MURED = {
     },
   ],
 };
+
+// =====================================================================
+//  NÕUANDED (juhendid)
+//  Igal juhendil on:
+//    id, ikoon     – ära muuda
+//    pealkiri      – juhendi pealkiri
+//    lyhike        – lühike tekst avalehe kaardil
+//    sissejuhatus  – esimene lõik juhendi lehel
+//    plokid        – nimekirjad; hoiatus: true teeb ploki punaseks ääreks
+//    millal        – "Millal remonti tuua?" vastus
+// =====================================================================
+const NOUANDED = [
+  {
+    id: "vesi",
+    ikoon: "tilk",
+    pealkiri: {
+      et: "Telefon kukkus vette – mida teha kohe",
+      en: "Phone fell in water – what to do right away",
+      ru: "Телефон упал в воду – что делать сразу",
+      fi: "Puhelin putosi veteen – mitä tehdä heti",
+    },
+    lyhike: {
+      et: "Esimesed minutid on kõige tähtsamad. Need sammud suurendavad võimalust telefon päästa.",
+      en: "The first minutes matter most. These steps improve the chance of saving your phone.",
+      ru: "Первые минуты – самые важные. Эти шаги повышают шанс спасти телефон.",
+      fi: "Ensimmäiset minuutit ovat tärkeimmät. Nämä askeleet parantavat mahdollisuutta pelastaa puhelin.",
+    },
+    sissejuhatus: {
+      et: "Vesi ise ei riku telefoni kohe. Kahju teeb elektrivool, mis läheb märjas telefonis valesse kohta, ja aja jooksul tekkiv korrosioon (roostetamine). Seepärast on tähtis tegutseda kiiresti.",
+      en: "Water itself doesn't ruin a phone instantly. The damage is done by electric current going where it shouldn't inside a wet phone, and by corrosion that develops over time. That's why acting quickly matters.",
+      ru: "Сама вода не портит телефон мгновенно. Вред наносит электрический ток, который во влажном телефоне идёт не туда, и коррозия, развивающаяся со временем. Поэтому важно действовать быстро.",
+      fi: "Vesi itsessään ei riko puhelinta heti. Vahingon tekee märässä puhelimessa väärään paikkaan kulkeva sähkövirta ja ajan myötä syntyvä korroosio. Siksi on tärkeää toimia nopeasti.",
+    },
+    plokid: [
+      {
+        pealkiri: { et: "Tee kohe", en: "Do right away", ru: "Сделайте сразу", fi: "Tee heti" },
+        punktid: [
+          { et: "Võta telefon veest välja ja lülita see välja.", en: "Take the phone out of the water and turn it off.", ru: "Достаньте телефон из воды и выключите его.", fi: "Ota puhelin vedestä ja sammuta se." },
+          { et: "Ära pane telefoni laadima ega ühenda ühtegi juhet.", en: "Don't charge it or connect any cables.", ru: "Не ставьте на зарядку и не подключайте никаких проводов.", fi: "Älä lataa puhelinta äläkä kytke mitään johtoja." },
+          { et: "Eemalda ümbris ja SIM-kaardi alus.", en: "Remove the case and the SIM tray.", ru: "Снимите чехол и выньте лоток SIM-карты.", fi: "Poista suojakuori ja SIM-korttikelkka." },
+          { et: "Kuivata telefon väljast pehme lapiga ja hoia seda laadimispesaga allapoole.", en: "Dry the outside with a soft cloth and hold it with the charging port facing down.", ru: "Протрите телефон снаружи мягкой тканью и держите разъёмом зарядки вниз.", fi: "Kuivaa puhelin ulkoa pehmeällä liinalla ja pidä latausliitäntä alaspäin." },
+          { et: "Too telefon võimalikult kiiresti remonti – kõige parem samal päeval.", en: "Bring the phone for repair as soon as possible – ideally the same day.", ru: "Как можно скорее принесите телефон в ремонт – лучше в тот же день.", fi: "Tuo puhelin korjattavaksi mahdollisimman pian – mieluiten samana päivänä." },
+        ],
+      },
+      {
+        pealkiri: { et: "Ära tee", en: "Don't", ru: "Не делайте", fi: "Älä tee" },
+        hoiatus: true,
+        punktid: [
+          { et: "Ära pane telefoni riisi sisse – see ei kuivata telefoni seest ja riisitolm võib pesadesse minna.", en: "Don't put it in rice – it doesn't dry the inside and rice dust can get into the ports.", ru: "Не кладите в рис – он не высушит телефон внутри, а рисовая пыль может попасть в разъёмы.", fi: "Älä laita puhelinta riisiin – se ei kuivaa sisältä ja riisipöly voi mennä liitäntöihin." },
+          { et: "Ära kuivata fööniga ega radiaatoril – kuumus võib telefoni kahjustada.", en: "Don't use a hair dryer or a radiator – heat can damage the phone.", ru: "Не сушите феном или на батарее – тепло может повредить телефон.", fi: "Älä kuivaa hiustenkuivaajalla tai patterilla – kuumuus voi vahingoittaa puhelinta." },
+          { et: "Ära raputa telefoni – vesi võib liikuda veel sügavamale.", en: "Don't shake the phone – water can move even deeper inside.", ru: "Не трясите телефон – вода может проникнуть ещё глубже.", fi: "Älä ravista puhelinta – vesi voi siirtyä vielä syvemmälle." },
+          { et: "Ära lülita telefoni sisse \"proovimiseks\".", en: "Don't switch it on \"just to check\".", ru: "Не включайте телефон «для проверки».", fi: "Älä käynnistä puhelinta \"kokeeksi\"." },
+        ],
+      },
+    ],
+    millal: {
+      et: "Kohe. Isegi kui telefon tundub töötavat, võib korrosioon selle mõne päeva või nädala pärast rikkuda. Mida varem telefon puhastatakse, seda suurem on võimalus see päästa.",
+      en: "Right away. Even if the phone seems to work, corrosion can break it within days or weeks. The sooner it is cleaned, the better the chance of saving it.",
+      ru: "Сразу. Даже если телефон кажется рабочим, коррозия может вывести его из строя через несколько дней или недель. Чем раньше его почистить, тем выше шанс спасти.",
+      fi: "Heti. Vaikka puhelin näyttäisi toimivan, korroosio voi rikkoa sen päivien tai viikkojen kuluttua. Mitä aiemmin se puhdistetaan, sitä paremmat mahdollisuudet sen pelastamiseen.",
+    },
+  },
+  {
+    id: "kuumus",
+    ikoon: "kraadiklaas",
+    pealkiri: {
+      et: "Kuidas hoida sülearvutit jahedana",
+      en: "How to keep your laptop cool",
+      ru: "Как не допустить перегрева ноутбука",
+      fi: "Miten pitää kannettava viileänä",
+    },
+    lyhike: {
+      et: "Ülekuumenemine teeb arvuti aeglaseks ja lühendab selle eluiga. Mõned lihtsad nipid aitavad.",
+      en: "Overheating makes a computer slow and shortens its life. A few simple tips help.",
+      ru: "Перегрев замедляет компьютер и сокращает срок его службы. Помогут несколько простых советов.",
+      fi: "Ylikuumeneminen hidastaa konetta ja lyhentää sen ikää. Muutama yksinkertainen vinkki auttaa.",
+    },
+    sissejuhatus: {
+      et: "Kui arvuti läheb liiga kuumaks, aeglustab see end ise, et mitte kahjustuda. Pikemas plaanis kannatavad kuumuse tõttu aku ja teised osad.",
+      en: "When a computer gets too hot, it slows itself down to avoid damage. In the long run the battery and other parts suffer from the heat.",
+      ru: "Когда компьютер слишком нагревается, он сам снижает скорость, чтобы не повредиться. В долгосрочной перспективе от жары страдают аккумулятор и другие детали.",
+      fi: "Kun kone kuumenee liikaa, se hidastaa itseään välttääkseen vauriot. Pitkällä aikavälillä kuumuudesta kärsivät akku ja muut osat.",
+    },
+    plokid: [
+      {
+        pealkiri: { et: "Mida saad ise teha", en: "What you can do yourself", ru: "Что можно сделать самому", fi: "Mitä voit tehdä itse" },
+        punktid: [
+          { et: "Kasuta arvutit kõval ja tasasel pinnal – laual, mitte voodis ega diivanil.", en: "Use the laptop on a hard, flat surface – a desk, not a bed or sofa.", ru: "Ставьте ноутбук на твёрдую ровную поверхность – стол, а не кровать или диван.", fi: "Käytä konetta kovalla ja tasaisella alustalla – pöydällä, ei sängyllä tai sohvalla." },
+          { et: "Ära kata kinni õhuavasid (tavaliselt arvuti all ja küljel).", en: "Don't block the air vents (usually on the bottom and sides).", ru: "Не закрывайте вентиляционные отверстия (обычно снизу и сбоку).", fi: "Älä peitä tuuletusaukkoja (yleensä pohjassa ja sivuilla)." },
+          { et: "Sulge programmid, mida sa parajasti ei kasuta.", en: "Close programs you are not using.", ru: "Закрывайте программы, которыми не пользуетесь.", fi: "Sulje ohjelmat, joita et juuri käytä." },
+          { et: "Hoia Windows ja draiverid uuendatud.", en: "Keep Windows and drivers up to date.", ru: "Своевременно обновляйте Windows и драйверы.", fi: "Pidä Windows ja ajurit ajan tasalla." },
+          { et: "Vajadusel kasuta jahutusalust.", en: "Use a cooling pad if needed.", ru: "При необходимости используйте охлаждающую подставку.", fi: "Käytä tarvittaessa jäähdytysalustaa." },
+        ],
+      },
+      {
+        pealkiri: { et: "Märgid, et arvuti kuumeneb üle", en: "Signs of overheating", ru: "Признаки перегрева", fi: "Merkit ylikuumenemisesta" },
+        punktid: [
+          { et: "Ventilaator müriseb pidevalt valjult.", en: "The fan is constantly loud.", ru: "Вентилятор постоянно громко шумит.", fi: "Tuuletin pitää jatkuvasti kovaa ääntä." },
+          { et: "Arvuti põhi on nii kuum, et seda on ebamugav süles hoida.", en: "The bottom is too hot to keep on your lap comfortably.", ru: "Дно ноутбука настолько горячее, что его неудобно держать на коленях.", fi: "Pohja on niin kuuma, ettei konetta voi pitää sylissä." },
+          { et: "Arvuti aeglustub või lülitub ootamatult välja.", en: "The computer slows down or shuts off unexpectedly.", ru: "Компьютер тормозит или неожиданно выключается.", fi: "Kone hidastuu tai sammuu yllättäen." },
+        ],
+      },
+    ],
+    millal: {
+      et: "Kui arvuti on üle kahe aasta vana ja seda pole kunagi puhastatud, on sees peaaegu kindlasti tolm. Puhastus ja termopasta vahetus annab enamasti suure vahe.",
+      en: "If the laptop is over two years old and has never been cleaned, there is almost certainly dust inside. Cleaning and new thermal paste usually make a big difference.",
+      ru: "Если ноутбуку больше двух лет и его ни разу не чистили, внутри почти наверняка пыль. Чистка и замена термопасты обычно дают заметный результат.",
+      fi: "Jos kone on yli kaksi vuotta vanha eikä sitä ole koskaan puhdistettu, sisällä on lähes varmasti pölyä. Puhdistus ja lämpötahnan vaihto tekevät yleensä suuren eron.",
+    },
+  },
+  {
+    id: "aku",
+    ikoon: "aku",
+    pealkiri: {
+      et: "Märgid, et aku hakkab otsa saama",
+      en: "Signs your battery is wearing out",
+      ru: "Признаки того, что аккумулятор изнашивается",
+      fi: "Merkit siitä, että akku on loppumassa",
+    },
+    lyhike: {
+      et: "Kuidas aru saada, et telefoni või sülearvuti aku vajab vahetust – ja millal on asi ohtlik.",
+      en: "How to tell that a phone or laptop battery needs replacing – and when it's dangerous.",
+      ru: "Как понять, что аккумулятор телефона или ноутбука пора менять – и когда это опасно.",
+      fi: "Miten tunnistaa, että puhelimen tai kannettavan akku on vaihdettava – ja milloin se on vaarallista.",
+    },
+    sissejuhatus: {
+      et: "Aku kulub iga laadimisega natuke. Tavaliselt on telefoni aku paari-kolme aasta pärast märgatavalt nõrgem kui uuena.",
+      en: "A battery wears a little with every charge. Usually a phone battery is noticeably weaker after two or three years.",
+      ru: "Аккумулятор немного изнашивается с каждой зарядкой. Обычно через два-три года аккумулятор телефона заметно слабее, чем новый.",
+      fi: "Akku kuluu hieman jokaisella latauksella. Yleensä puhelimen akku on parin–kolmen vuoden jälkeen selvästi heikompi kuin uutena.",
+    },
+    plokid: [
+      {
+        pealkiri: { et: "Tavalised märgid", en: "Common signs", ru: "Обычные признаки", fi: "Tavalliset merkit" },
+        punktid: [
+          { et: "Aku tühjeneb palju kiiremini kui varem.", en: "The battery drains much faster than before.", ru: "Батарея садится гораздо быстрее, чем раньше.", fi: "Akku tyhjenee paljon nopeammin kuin ennen." },
+          { et: "Seade lülitub välja, kuigi näitab veel 10–30% laetust.", en: "The device shuts off even though it still shows 10–30% charge.", ru: "Устройство выключается, хотя показывает ещё 10–30 % заряда.", fi: "Laite sammuu, vaikka näyttää vielä 10–30 % varausta." },
+          { et: "Laetus hüppab järsku, näiteks 40% pealt 10% peale.", en: "The charge level jumps suddenly, e.g. from 40% to 10%.", ru: "Заряд резко скачет, например с 40 % до 10 %.", fi: "Varaus hyppää äkillisesti, esim. 40 %:sta 10 %:iin." },
+          { et: "Seade läheb laadimise ajal tavalisest kuumemaks.", en: "The device gets hotter than usual while charging.", ru: "Во время зарядки устройство греется сильнее обычного.", fi: "Laite kuumenee latauksen aikana tavallista enemmän." },
+        ],
+      },
+      {
+        pealkiri: { et: "Ohtlik: paisunud aku", en: "Dangerous: swollen battery", ru: "Опасно: вздутый аккумулятор", fi: "Vaarallista: turvonnut akku" },
+        hoiatus: true,
+        punktid: [
+          { et: "Kui ekraan või tagakaas kerkib üles või seade ei ole enam sirge, võib aku olla paisunud.", en: "If the screen or back cover lifts up or the device is no longer flat, the battery may be swollen.", ru: "Если экран или задняя крышка приподнимаются или корпус перестал быть ровным, аккумулятор может быть вздут.", fi: "Jos näyttö tai takakansi nousee tai laite ei ole enää suora, akku voi olla turvonnut." },
+          { et: "Lõpeta kohe seadme kasutamine ja laadimine.", en: "Stop using and charging the device immediately.", ru: "Немедленно прекратите пользоваться устройством и заряжать его.", fi: "Lopeta laitteen käyttö ja lataus heti." },
+          { et: "Ära vajuta ega torka akut – paisunud aku võib süttida.", en: "Don't press or puncture the battery – a swollen battery can catch fire.", ru: "Не давите и не прокалывайте аккумулятор – вздутый аккумулятор может загореться.", fi: "Älä paina tai puhkaise akkua – turvonnut akku voi syttyä palamaan." },
+        ],
+      },
+    ],
+    millal: {
+      et: "Kui märkad tavalisi märke, tasub aku vahetada – uue akuga on seade jälle nagu uus. Paisunud aku puhul too seade remonti kohe.",
+      en: "If you notice the common signs, it's worth replacing the battery – with a new one the device feels new again. With a swollen battery, bring the device in immediately.",
+      ru: "Если заметили обычные признаки, стоит заменить аккумулятор – с новым устройство снова как новое. При вздутом аккумуляторе принесите устройство в ремонт сразу.",
+      fi: "Jos huomaat tavalliset merkit, akku kannattaa vaihtaa – uudella akulla laite on taas kuin uusi. Turvonneen akun kanssa tuo laite korjattavaksi heti.",
+    },
+  },
+  {
+    id: "aeglane",
+    ikoon: "kiirus",
+    pealkiri: {
+      et: "Arvuti on aeglane – mida ise proovida",
+      en: "Slow computer – what to try yourself",
+      ru: "Компьютер тормозит – что попробовать самому",
+      fi: "Hidas tietokone – mitä kokeilla itse",
+    },
+    lyhike: {
+      et: "Enne remonti tasub proovida neid lihtsaid samme. Sageli aitavad juba need.",
+      en: "Before a repair, try these simple steps. Often they are enough.",
+      ru: "Перед ремонтом стоит попробовать эти простые шаги. Часто их уже достаточно.",
+      fi: "Ennen korjausta kannattaa kokeilla näitä yksinkertaisia askeleita. Usein ne riittävät.",
+    },
+    sissejuhatus: {
+      et: "Aeglusel võib olla palju põhjuseid. Osa neist saad ise mõne minutiga kõrvaldada.",
+      en: "Slowness can have many causes. Some you can fix yourself in a few minutes.",
+      ru: "У медленной работы может быть много причин. Некоторые из них можно устранить самому за несколько минут.",
+      fi: "Hitaudella voi olla monta syytä. Osan voit korjata itse muutamassa minuutissa.",
+    },
+    plokid: [
+      {
+        pealkiri: { et: "Proovi ise", en: "Try yourself", ru: "Попробуйте сами", fi: "Kokeile itse" },
+        punktid: [
+          { et: "Taaskäivita arvuti – vali menüüst \"Taaskäivita\", mitte ainult kaas kinni ja lahti.", en: "Restart the computer – choose \"Restart\" from the menu, don't just close and open the lid.", ru: "Перезагрузите компьютер – выберите «Перезагрузка» в меню, а не просто закройте и откройте крышку.", fi: "Käynnistä kone uudelleen – valitse valikosta \"Käynnistä uudelleen\", älä vain sulje ja avaa kantta." },
+          { et: "Vaata, mitu programmi käivitub koos arvutiga: vajuta Ctrl + Shift + Esc ja ava vahekaart \"Käivitus\". Lülita välja need, mida sa kohe ei vaja.", en: "Check how many programs start with the computer: press Ctrl + Shift + Esc and open the \"Startup\" tab. Disable the ones you don't need right away.", ru: "Посмотрите, сколько программ запускается вместе с компьютером: нажмите Ctrl + Shift + Esc и откройте вкладку «Автозагрузка». Отключите ненужные.", fi: "Katso, montako ohjelmaa käynnistyy koneen mukana: paina Ctrl + Shift + Esc ja avaa \"Käynnistys\"-välilehti. Poista käytöstä ne, joita et heti tarvitse." },
+          { et: "Kontrolli, et kettal oleks vaba ruumi – vähemalt 10–15%.", en: "Make sure the drive has free space – at least 10–15%.", ru: "Проверьте, что на диске есть свободное место – хотя бы 10–15 %.", fi: "Varmista, että levyllä on vapaata tilaa – vähintään 10–15 %." },
+          { et: "Tee Windowsi uuendused ära.", en: "Install Windows updates.", ru: "Установите обновления Windows.", fi: "Asenna Windows-päivitykset." },
+          { et: "Kontrolli arvutit viirusetõrjega – Windowsi enda turbeprogramm on selleks piisav.", en: "Scan the computer for viruses – Windows' own security app is enough.", ru: "Проверьте компьютер антивирусом – встроенной защиты Windows достаточно.", fi: "Tarkista kone virustorjunnalla – Windowsin oma suojaus riittää." },
+        ],
+      },
+    ],
+    millal: {
+      et: "Kui ükski samm ei aidanud, on arvutis tõenäoliselt vana kõvaketas, liiga vähe mälu või riistvara viga. Vana kõvaketta vahetus SSD vastu on sageli suurim kiiruse tõus, mida arvutile teha saab.",
+      en: "If none of the steps helped, the computer probably has an old hard drive, too little memory or a hardware fault. Replacing an old hard drive with an SSD is often the biggest speed boost you can give a computer.",
+      ru: "Если ничего не помогло, вероятно, в компьютере старый жёсткий диск, мало памяти или аппаратная неисправность. Замена старого диска на SSD – часто самое большое ускорение, которое можно дать компьютеру.",
+      fi: "Jos mikään ei auttanut, koneessa on todennäköisesti vanha kiintolevy, liian vähän muistia tai laitevika. Vanhan kiintolevyn vaihto SSD:hen on usein suurin nopeusparannus, jonka koneelle voi tehdä.",
+    },
+  },
+];
