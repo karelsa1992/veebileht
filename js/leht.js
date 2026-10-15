@@ -215,7 +215,7 @@ function taidaNouanne() {
       </section>
       <div class="kaart uleskutse">
         <p>${t(TEKSTID.nouanne_abi)}</p>
-        <a class="nupp" href="index.html#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
+        <a class="nupp" href="./#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
       </div>
     </article>`;
 }
@@ -481,7 +481,7 @@ function taidaSeadmeLeht() {
 
     <div class="kaart uleskutse">
       <p>${t(TEKSTID.ei_leia)}</p>
-      <a class="nupp" href="index.html#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
+      <a class="nupp" href="./#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
     </div>`;
 }
 
