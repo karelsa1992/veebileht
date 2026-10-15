@@ -117,12 +117,18 @@ body::before {
 .logo {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   color: var(--tekst);
   line-height: 1.2;
   margin-right: auto;
 }
-.logo strong { font-size: 1.35rem; color: var(--rohk); }
+.logo-nimi {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--rohk);
+  text-decoration: none;
+}
 .logo span { font-size: 0.8rem; color: var(--tekst-hall); }
 
 .menuu { display: flex; gap: 22px; }
