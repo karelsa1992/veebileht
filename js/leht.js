@@ -337,6 +337,8 @@ function taidaSeadmeLeht() {
       </div>
     </div>
 
+    <img class="seade-pilt" src="img/seadmed/${s.id}.webp" alt="${t(s.nimi)}" onerror="this.remove()">
+
     <div class="seade-sisu">
       <section class="kaart">
         <h2>${t(TEKSTID.mida_teen)}</h2>
@@ -406,7 +408,7 @@ function lisaIlmumine() {
         setTimeout(() => el.classList.remove("ilmub", "nahtav"), 700);
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0 }
   );
   document.querySelectorAll("main .kaart, .kogemus").forEach((el) => {
     el.classList.add("ilmub");
