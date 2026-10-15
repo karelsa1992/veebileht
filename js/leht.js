@@ -149,7 +149,7 @@ function taidaKiirnupud() {
     `<a class="kiirnupp" href="tel:${KONTAKT.telefon.replaceAll(" ", "")}" aria-label="${t(TEKSTID.helista)}">${IKOONID.helista}</a>`;
 }
 
-// ---- Privaatsusteate leht ----
+// ---- Privaatsusteabe leht ----
 function taidaPrivaatsus() {
   const koht = document.getElementById("privaatsus");
   if (!koht) return;

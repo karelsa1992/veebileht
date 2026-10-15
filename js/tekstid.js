@@ -245,7 +245,7 @@ const TEKSTID = {
     ru: "Ваши данные используются только для ответа на ваш запрос.",
     fi: "Käytän tietojasi vain kyselyysi vastaamiseen.",
   },
-  privaatsus_link: { et: "Privaatsusteade", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
+  privaatsus_link: { et: "Privaatsusteave", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
 
   // WhatsApp ja helistamine
   whatsapp: { et: "WhatsApp", en: "WhatsApp", ru: "WhatsApp", fi: "WhatsApp" },
@@ -1130,11 +1130,11 @@ const NOUANDED = [
 ];
 
 // =====================================================================
-//  PRIVAATSUSTEADE (leht privaatsus.html)
+//  PRIVAATSUSTEAVE (leht privaatsus.html)
 //  {email} ja {telefon} asendatakse automaatselt kontaktandmetega.
 // =====================================================================
 const PRIVAATSUS = {
-  pealkiri: { et: "Privaatsusteade", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
+  pealkiri: { et: "Privaatsusteave", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
   sissejuhatus: {
     et: "Siin on lihtsalt kirjas, milliseid andmeid ma kogun, miks ja kuidas neid hoian.",
     en: "This page explains in plain words what data I collect, why, and how I keep it.",
