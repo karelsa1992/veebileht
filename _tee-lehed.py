@@ -6,7 +6,8 @@
 #  võetakse failist js/tekstid.js.
 #
 #  Käivita uuesti, kui muudad seade.html-i või nouanne.html-i või lisad
-#  tekstid.js-i uue seadme või nõuande:
+#  tekstid.js-i uue seadme või nõuande. Käivita ka pärast iga muudatust
+#  failides css/stiil.css, js/leht.js või js/tekstid.js (uuendab versiooninumbrid):
 #      python3 _tee-lehed.py
 #
 #  (Alakriips nime alguses tähendab, et GitHub seda faili internetti ei pane.)
@@ -52,6 +53,18 @@ def tee_leht(mall, kirje_id, pealkiri, kirjeldus, url):
                   f'  <link rel="canonical" href="{url}">', 1)
     return s
 
+
+# Kujundus- ja programmifailidele versiooninumber (nt stiil.css?v=3f9a2c1b).
+# Kui fail muutub, muutub number ja brauser laeb uue faili, mitte vana mälust.
+import hashlib
+for fail in ["css/stiil.css", "js/leht.js", "js/tekstid.js"]:
+    versioon = hashlib.md5((KAUST / fail).read_bytes()).hexdigest()[:8]
+    for leht in ["index.html", "seade.html", "nouanne.html", "privaatsus.html"]:
+        tee = KAUST / leht
+        sisu = tee.read_text(encoding="utf-8")
+        uus = re.sub(r'"/' + re.escape(fail) + r'(\?v=\w+)?"', f'"/{fail}?v={versioon}"', sisu)
+        if uus != sisu:
+            tee.write_text(uus, encoding="utf-8")
 
 tekstid = (KAUST / "js" / "tekstid.js").read_text(encoding="utf-8")
 seadme_mall = (KAUST / "seade.html").read_text(encoding="utf-8")
