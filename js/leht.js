@@ -470,7 +470,7 @@ function taidaSeadmeLeht() {
       </div>
     </div>
 
-    <img class="seade-pilt" src="/img/seadmed/${s.id}.webp" alt="${t(s.nimi)}" onerror="this.remove()">
+    <img class="seade-pilt" src="/img/seadmed/${s.id}.webp" alt="${t(s.nimi)}" width="1200" height="800" fetchpriority="high" onerror="this.remove()">
 
     <div class="seade-sisu">
       <section class="kaart">
@@ -492,6 +492,11 @@ function taidaSeadmeLeht() {
       <p>${t(TEKSTID.ei_leia)}</p>
       <a class="nupp" href="/#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
     </div>`;
+
+  // Laadi kõrvalseadmete pildid ette, et noolega edasi minnes oleks pilt kohe olemas
+  setTimeout(() => {
+    [eelmine, jargmine].forEach((x) => (new Image().src = `/img/seadmed/${x.id}.webp`));
+  }, 1500);
 }
 
 // ---- Seadmete vahetamine (nooled ja telefonis libistamine) ----

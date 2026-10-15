@@ -59,7 +59,7 @@ def tee_leht(mall, kirje_id, pealkiri, kirjeldus, url):
 import hashlib
 for fail in ["css/stiil.css", "js/leht.js", "js/tekstid.js"]:
     versioon = hashlib.md5((KAUST / fail).read_bytes()).hexdigest()[:8]
-    for leht in ["index.html", "seade.html", "nouanne.html", "privaatsus.html"]:
+    for leht in ["index.html", "seade.html", "nouanne.html", "privaatsus.html", "404.html"]:
         tee = KAUST / leht
         sisu = tee.read_text(encoding="utf-8")
         uus = re.sub(r'"/' + re.escape(fail) + r'(\?v=\w+)?"', f'"/{fail}?v={versioon}"', sisu)
@@ -77,6 +77,9 @@ for kirje_id, plokk in kirjed(tekstid, "SEADMED"):
     nimi = eesti_tekst(plokk, "nimi")
     url = f"{AADRESS}/{kirje_id}"
     leht = tee_leht(seadme_mall, kirje_id, nimi, eesti_tekst(plokk, "lyhike") + " Kodukülastus Tartu linnas.", url)
+    # Seadme pilt hakkab laadima kohe lehe avamisel, mitte alles siis, kui programm selle lehele paneb
+    if (KAUST / "img" / "seadmed" / f"{kirje_id}.webp").exists():
+        leht = leht.replace('  <link rel="stylesheet"', f'  <link rel="preload" href="/img/seadmed/{kirje_id}.webp" as="image" fetchpriority="high">\n  <link rel="stylesheet"', 1)
     (KAUST / f"{kirje_id}.html").write_text(leht, encoding="utf-8")
     aadressid.append(url)
 

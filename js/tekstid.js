@@ -260,6 +260,13 @@ const TEKSTID = {
 
   // Seadme leht
   tagasi_avalehele: { et: "← Avalehele", en: "← Home", ru: "← На главную", fi: "← Etusivulle" },
+  viga_pealkiri: { et: "Lehte ei leitud", en: "Page not found", ru: "Страница не найдена", fi: "Sivua ei löytynyt" },
+  viga_tekst: {
+    et: "Sellist lehte ei ole. Võib-olla on aadressis trükiviga või on leht vahepeal ära kolinud.",
+    en: "This page doesn't exist. There may be a typo in the address, or the page may have moved.",
+    ru: "Такой страницы нет. Возможно, в адресе опечатка или страница была перемещена.",
+    fi: "Tällaista sivua ei ole. Osoitteessa voi olla kirjoitusvirhe, tai sivu on siirretty.",
+  },
   tagasi: { et: "← Kõik seadmed", en: "← All devices", ru: "← Все устройства", fi: "← Kaikki laitteet" },
   libista_vihje: {
     et: "Libista sõrmega külgedele, et näha teisi seadmeid",

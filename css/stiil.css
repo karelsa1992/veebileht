@@ -104,8 +104,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(230, 234, 238, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(230, 234, 238, 0.97);
   border-bottom: 1px solid var(--joon);
 }
 .pais-sisu {
@@ -437,6 +436,10 @@ body::before {
   font-weight: 500;
 }
 .tagasi:hover { text-decoration: underline; }
+
+/* Vealeht (404) */
+.vealeht { text-align: center; padding: 48px 0 80px; }
+.vealeht .juhatus { margin-left: auto; margin-right: auto; }
 
 /* Eelmise/järgmise seadme rida ja täpid */
 #seade { touch-action: pan-y pinch-zoom; }
