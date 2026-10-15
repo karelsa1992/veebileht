@@ -42,12 +42,6 @@ const TEKSTID = {
     ru: "Ремонт компьютеров и телефонов в Тарту",
     fi: "Tietokoneiden ja puhelimien korjaus Tartossa",
   },
-  hero_tekst: {
-    et: "Üle 15 aasta kogemust. Parandan lauaarvuteid, sülearvuteid, nutitelefone, tahvelarvuteid ja mängukonsoole – vajadusel kuni emaplaadi ja videokaardi tasemeni.",
-    en: "Over 15 years of experience. I repair desktops, laptops, smartphones, tablets and game consoles – down to motherboard and graphics card level if needed.",
-    ru: "Опыт более 15 лет. Ремонтирую настольные компьютеры, ноутбуки, смартфоны, планшеты и игровые приставки – при необходимости вплоть до материнской платы и видеокарты.",
-    fi: "Yli 15 vuoden kokemus. Korjaan pöytäkoneita, kannettavia, älypuhelimia, tabletteja ja pelikonsoleita – tarvittaessa emolevy- ja näytönohjaintasolle asti.",
-  },
   nupp_kontakt: { et: "Võta ühendust", en: "Get in touch", ru: "Связаться", fi: "Ota yhteyttä" },
   nupp_hinnad: { et: "Vaata teenuseid ja hindu", en: "Services and prices", ru: "Услуги и цены", fi: "Palvelut ja hinnat" },
 

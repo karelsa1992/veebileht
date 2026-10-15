@@ -51,13 +51,13 @@ body::before {
   bottom: 0;
   z-index: -1;
   background: url("../img/trykkplaat.svg") repeat;
-  opacity: 0.035;
+  opacity: 0.05;
   pointer-events: none;
 }
 
 /* Liikumine ainult siis, kui külastaja pole seda arvutis välja lülitanud */
 @media (prefers-reduced-motion: no-preference) {
-  body::before { animation: taust-liigub 120s linear infinite; }
+  body::before { animation: taust-liigub 60s linear infinite; }
 
   /* Kaardid ilmuvad kerimisel pehmelt */
   .js-liikumine .ilmub {
