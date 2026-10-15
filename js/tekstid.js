@@ -16,7 +16,7 @@ const KONTAKT = {
 // ---- Kontaktivormi võti (Web3Forms) ----
 // Kleebi siia jutumärkide vahele võti, mille Web3Forms sulle meilile saatis.
 // Kuni see on tühi, on vorm ainult näidis ega saada midagi.
-const VORMI_VOTI = "";
+const VORMI_VOTI = "23606d7e-cf40-4304-ba4d-85648d916098";
 
 // ---- Väljakutsetasu (kui tulen kliendi juurde koju) ----
 const VALJAKUTSE_TASU = "20 €";
