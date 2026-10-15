@@ -5,7 +5,6 @@ pilte tasuta kasutada, ka tööalaselt, ilma autori nime märkimata.
 
 | Fail | Pexelsi leht |
 |---|---|
-| minust.webp | https://www.pexels.com/photo/a-person-holding-soldering-iron-9242885/ |
 | seadmed/lauaarvutid.webp | https://www.pexels.com/photo/open-computer-case-ready-for-tech-setup-34241801/ |
 | seadmed/sulearvutid.webp | https://www.pexels.com/photo/a-man-fixing-a-laptop-7639370/ |
 | seadmed/nutitelefonid.webp | https://www.pexels.com/photo/a-hand-fixing-an-electronic-device-using-screwdriver-6755075/ |
