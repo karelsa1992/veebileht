@@ -3,8 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arvutite ja telefonide remont Tartus</title>
-  <meta name="description" content="Arvutite, sülearvutite, nutitelefonide ja tahvelarvutite remont ja hooldus Tartus. Üle 15 aasta kogemust.">
+  <link rel="icon" href="img/ikoon.svg" type="image/svg+xml">
+  <meta name="description" content="Arvutite, sülearvutite, nutitelefonide, tahvelarvutite ja mängukonsoolide remont ja hooldus Tartus. Üle 15 aasta kogemust, kodukülastus Tartu linnas, tööle 3 kuud garantiid.">
+  <!-- Lingi eelvaade (Facebook, WhatsApp, Messenger jne) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karel Saega">
+  <meta property="og:locale" content="et_EE">
+  <meta property="og:title" content="Arvutite ja telefonide remont Tartus – Karel Saega">
+  <meta property="og:description" content="Arvutite, sülearvutite, nutitelefonide, tahvelarvutite ja mängukonsoolide remont ja hooldus Tartus. Üle 15 aasta kogemust, kodukülastus Tartu linnas, tööle 3 kuud garantiid.">
+  <meta property="og:image" content="https://karelsa1992.github.io/veebileht/img/jagamine.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://karelsa1992.github.io/veebileht/">
+  <link rel="canonical" href="https://karelsa1992.github.io/veebileht/">
+  <!-- Info Google'ile: see on remonditeenus Tartus -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Karel Saega",
+    "description": "Arvutite, sülearvutite, nutitelefonide, tahvelarvutite ja mängukonsoolide remont ja hooldus Tartus. Üle 15 aasta kogemust, kodukülastus Tartu linnas, tööle 3 kuud garantiid.",
+    "url": "https://karelsa1992.github.io/veebileht/",
+    "image": "https://karelsa1992.github.io/veebileht/img/jagamine.jpg",
+    "telephone": "+37256391019",
+    "email": "karelsaega1992@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Tartu", "addressCountry": "EE" },
+    "areaServed": { "@type": "City", "name": "Tartu" }
+  }
+  </script>
+  <title>Arvutite ja telefonide remont Tartus – Karel Saega</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -160,8 +188,14 @@
               <span data-t="vorm_kirjeldus"></span>
               <textarea name="kirjeldus" rows="5" required data-tp="vorm_kirjeldus_vihje"></textarea>
             </label>
+            <!-- Robotite lõks: inimene seda lahtrit ei näe ega täida -->
+            <input type="checkbox" name="botcheck" class="robotilõks" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="nupp" data-t="vorm_saada"></button>
-            <p id="vorm-teade" class="vorm-teade" hidden data-t="vorm_naidis_teade"></p>
+            <p class="vorm-privaatsus">
+              <span data-t="vorm_privaatsus"></span>
+              <a href="privaatsus.html" data-t="privaatsus_link"></a>
+            </p>
+            <p id="vorm-teade" class="vorm-teade" hidden></p>
           </form>
 
           <!-- Otse ühendust võtmine -->
@@ -175,6 +209,10 @@
               <h3 data-t="email"></h3>
               <a data-kontakt="email" href="#"></a>
             </div>
+            <div class="kaart kontakt">
+              <h3 data-t="whatsapp"></h3>
+              <a data-kontakt="whatsapp" href="#" target="_blank" rel="noopener" data-t="whatsapp_tekst"></a>
+            </div>
           </div>
         </div>
       </div>
@@ -185,6 +223,7 @@
   <footer class="jalus">
     <div class="sisu">
       © <span id="aasta"></span> <span data-kontakt="nimi">Karel Saega</span> · Tartu
+      · <a href="privaatsus.html" data-t="privaatsus_link"></a>
     </div>
   </footer>
 

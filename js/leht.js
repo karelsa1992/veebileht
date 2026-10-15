@@ -26,6 +26,10 @@ const IKOONID = {
     '<svg viewBox="0 0 48 48"><rect x="15" y="9" width="18" height="34" rx="3"/><path d="M20 5h8"/><path d="M26 17l-5 9h6l-5 9"/></svg>',
   kiirus:
     '<svg viewBox="0 0 48 48"><path d="M8 34a16 16 0 1 1 32 0"/><path d="M24 34l-7-9"/><circle cx="24" cy="34" r="2.5"/><path d="M12 22l2.5 1.5M24 16v3M36 22l-2.5 1.5"/></svg>',
+  helista:
+    '<svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+  whatsapp:
+    '<svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>',
   kiip:
     '<svg viewBox="0 0 48 48"><rect x="13" y="13" width="22" height="22" rx="2"/><rect x="19" y="19" width="10" height="10" rx="1"/><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"/></svg>',
 };
@@ -53,7 +57,20 @@ let keel = loeKeel();
 function t(tekst) {
   if (!tekst) return "";
   const s = tekst[keel] || tekst.et || "";
-  return s.replaceAll("{tasu}", VALJAKUTSE_TASU);
+  return s
+    .replaceAll("{tasu}", VALJAKUTSE_TASU)
+    .replaceAll("{email}", KONTAKT.email)
+    .replaceAll("{telefon}", KONTAKT.telefon);
+}
+
+// Sama, aga alati eesti keeles (kirjad, mis tulevad sulle endale)
+function eestiKeeles(tekst) {
+  return (tekst.et || "").replaceAll("{tasu}", VALJAKUTSE_TASU);
+}
+
+// WhatsAppi link koos valmis algusega sõnumile
+function whatsappLink() {
+  return "https://wa.me/" + KONTAKT.whatsapp.replace(/\D/g, "") + "?text=" + encodeURIComponent(t(TEKSTID.whatsapp_sonum));
 }
 
 // ---- Tekstide lehele panemine ----
@@ -82,6 +99,12 @@ function taidaTekstid() {
       el.textContent = KONTAKT.email;
       el.href = "mailto:" + KONTAKT.email;
     }
+    if (liik === "whatsapp") {
+      el.href = KONTAKT.whatsapp ? whatsappLink() : "#";
+      // Kui WhatsAppi numbrit pole, peida kogu kaart
+      const kaart = el.closest(".kaart");
+      if (kaart) kaart.hidden = !KONTAKT.whatsapp;
+    }
   });
 
   // Keelenupud: märgi valitud keel
@@ -96,6 +119,45 @@ function taidaTekstid() {
   taidaAbiline();
   taidaNouandeKaardid();
   taidaNouanne();
+  taidaPrivaatsus();
+  taidaKiirnupud();
+}
+
+// ---- Telefoni nurganupud: Helista ja WhatsApp ----
+function taidaKiirnupud() {
+  let koht = document.querySelector(".kiirnupud");
+  if (!koht) {
+    koht = document.createElement("div");
+    koht.className = "kiirnupud";
+    document.body.appendChild(koht);
+  }
+  const whatsapp = KONTAKT.whatsapp
+    ? `<a class="kiirnupp" href="${whatsappLink()}" target="_blank" rel="noopener" aria-label="WhatsApp">${IKOONID.whatsapp}</a>`
+    : "";
+  koht.innerHTML =
+    whatsapp +
+    `<a class="kiirnupp" href="tel:${KONTAKT.telefon.replaceAll(" ", "")}" aria-label="${t(TEKSTID.helista)}">${IKOONID.helista}</a>`;
+}
+
+// ---- Privaatsusteate leht ----
+function taidaPrivaatsus() {
+  const koht = document.getElementById("privaatsus");
+  if (!koht) return;
+  document.title = t(PRIVAATSUS.pealkiri) + " – " + KONTAKT.nimi;
+  koht.innerHTML = `
+    <article class="artikkel">
+      <h1>${t(PRIVAATSUS.pealkiri)}</h1>
+      <p class="juhatus">${t(PRIVAATSUS.sissejuhatus)}</p>
+      ${PRIVAATSUS.osad
+        .map(
+          (o) => `
+        <section class="kaart">
+          <h2>${t(o.pealkiri)}</h2>
+          <p>${t(o.tekst)}</p>
+        </section>`
+        )
+        .join("")}
+    </article>`;
 }
 
 // ---- Nõuanded: kaardid avalehel ----
@@ -279,12 +341,64 @@ function taidaVormiSeadmed() {
   valik.value = valitud;
 }
 
-// Praegu on vorm näidis: see ei saada midagi ära, vaid näitab teadet.
+// Vormi saatmine. Kui VORMI_VOTI (tekstid.js) on tühi, on vorm ainult näidis.
 const vorm = document.getElementById("vorm");
 if (vorm) {
-  vorm.addEventListener("submit", (e) => {
+  vorm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    document.getElementById("vorm-teade").hidden = false;
+    const teade = document.getElementById("vorm-teade");
+    const nupp = vorm.querySelector('button[type="submit"]');
+    teade.className = "vorm-teade";
+
+    if (!VORMI_VOTI) {
+      teade.textContent = t(TEKSTID.vorm_naidis_teade);
+      teade.hidden = false;
+      return;
+    }
+
+    const v = new FormData(vorm);
+    if (v.get("botcheck")) return; // robotite lõks: inimene seda lahtrit ei näe
+
+    const seade = SEADMED.find((s) => s.id === v.get("seade"));
+    const viisid = { koju: TEKSTID.vorm_viis_koju, toon: TEKSTID.vorm_viis_toon, "ei-tea": TEKSTID.vorm_viis_ei_tea };
+    const kontakt = String(v.get("kontakt")).trim();
+    const seadmeNimi = seade ? eestiKeeles(seade.nimi) : eestiKeeles(TEKSTID.vorm_muu);
+
+    // Need andmed tulevad sulle meilile
+    const andmed = {
+      access_key: VORMI_VOTI,
+      subject: "Uus päring veebilehelt: " + seadmeNimi,
+      from_name: "Veebileht",
+      "Nimi": v.get("nimi"),
+      "Telefon või e-post": kontakt,
+      "Seade": seadmeNimi,
+      "Kuidas sobib": eestiKeeles(viisid[v.get("viis")] || TEKSTID.vorm_viis_ei_tea),
+      "Mure": v.get("kirjeldus"),
+      "Lehe keel": keel,
+    };
+    // Kui klient andis e-posti, saad meilile otse "Vasta" vajutada
+    if (kontakt.includes("@")) andmed.email = kontakt;
+
+    nupp.disabled = true;
+    nupp.textContent = t(TEKSTID.vorm_saadan);
+    try {
+      const vastus = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(andmed),
+      });
+      const tulemus = await vastus.json();
+      if (!tulemus.success) throw new Error(tulemus.message);
+      vorm.reset();
+      teade.textContent = t(TEKSTID.vorm_saadetud);
+      teade.classList.add("onnestus");
+    } catch (viga) {
+      teade.textContent = t(TEKSTID.vorm_viga);
+      teade.classList.add("viga");
+    }
+    teade.hidden = false;
+    nupp.disabled = false;
+    nupp.textContent = t(TEKSTID.vorm_saada);
   });
 }
 

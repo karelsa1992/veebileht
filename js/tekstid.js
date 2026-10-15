@@ -9,7 +9,14 @@
 const KONTAKT = {
   nimi: "Karel Saega",
   telefon: "+372 5639 1019",
-  email: "karelsaega1992@gmail.com",};
+  email: "karelsaega1992@gmail.com",
+  whatsapp: "+372 5639 1019", // kui see on tühi (""), WhatsAppi nuppe ei näidata
+};
+
+// ---- Kontaktivormi võti (Web3Forms) ----
+// Kleebi siia jutumärkide vahele võti, mille Web3Forms sulle meilile saatis.
+// Kuni see on tühi, on vorm ainult näidis ega saada midagi.
+const VORMI_VOTI = "";
 
 // ---- Väljakutsetasu (kui tulen kliendi juurde koju) ----
 const VALJAKUTSE_TASU = "20 €";
@@ -219,8 +226,40 @@ const TEKSTID = {
     ru: "Сейчас эта форма – образец, и сообщение пока не отправляется. Пожалуйста, позвоните или напишите на эл. почту.",
     fi: "Tämä lomake on toistaiseksi esimerkki, eikä viestiä vielä lähetetä. Soita tai lähetä sähköpostia.",
   },
+  vorm_saadan: { et: "Saadan…", en: "Sending…", ru: "Отправка…", fi: "Lähetetään…" },
+  vorm_saadetud: {
+    et: "Aitäh! Sõnum on saadetud. Vastan esimesel võimalusel.",
+    en: "Thank you! Your message has been sent. I will reply as soon as possible.",
+    ru: "Спасибо! Сообщение отправлено. Отвечу при первой возможности.",
+    fi: "Kiitos! Viesti on lähetetty. Vastaan mahdollisimman pian.",
+  },
+  vorm_viga: {
+    et: "Saatmine ebaõnnestus. Palun proovi uuesti või helista / kirjuta e-posti teel.",
+    en: "Sending failed. Please try again or call / send an email.",
+    ru: "Не удалось отправить. Попробуйте ещё раз или позвоните / напишите на эл. почту.",
+    fi: "Lähetys epäonnistui. Yritä uudelleen tai soita / lähetä sähköpostia.",
+  },
+  vorm_privaatsus: {
+    et: "Kasutan sinu andmeid ainult sinu päringule vastamiseks.",
+    en: "I use your data only to reply to your enquiry.",
+    ru: "Ваши данные используются только для ответа на ваш запрос.",
+    fi: "Käytän tietojasi vain kyselyysi vastaamiseen.",
+  },
+  privaatsus_link: { et: "Privaatsusteade", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
+
+  // WhatsApp ja helistamine
+  whatsapp: { et: "WhatsApp", en: "WhatsApp", ru: "WhatsApp", fi: "WhatsApp" },
+  whatsapp_tekst: { et: "Kirjuta mulle", en: "Message me", ru: "Напишите мне", fi: "Lähetä viesti" },
+  whatsapp_sonum: {
+    et: "Tere! Kirjutan veebilehe kaudu. Mul on mure seadmega: ",
+    en: "Hello! I'm writing via your website. I have a problem with a device: ",
+    ru: "Здравствуйте! Пишу через сайт. У меня проблема с устройством: ",
+    fi: "Hei! Kirjoitan verkkosivun kautta. Minulla on ongelma laitteen kanssa: ",
+  },
+  helista: { et: "Helista", en: "Call", ru: "Позвонить", fi: "Soita" },
 
   // Seadme leht
+  tagasi_avalehele: { et: "← Avalehele", en: "← Home", ru: "← На главную", fi: "← Etusivulle" },
   tagasi: { et: "← Kõik seadmed", en: "← All devices", ru: "← Все устройства", fi: "← Kaikki laitteet" },
   libista_vihje: {
     et: "Libista sõrmega külgedele, et näha teisi seadmeid",
@@ -1089,3 +1128,82 @@ const NOUANDED = [
     },
   },
 ];
+
+// =====================================================================
+//  PRIVAATSUSTEADE (leht privaatsus.html)
+//  {email} ja {telefon} asendatakse automaatselt kontaktandmetega.
+// =====================================================================
+const PRIVAATSUS = {
+  pealkiri: { et: "Privaatsusteade", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
+  sissejuhatus: {
+    et: "Siin on lihtsalt kirjas, milliseid andmeid ma kogun, miks ja kuidas neid hoian.",
+    en: "This page explains in plain words what data I collect, why, and how I keep it.",
+    ru: "Здесь простыми словами написано, какие данные я собираю, зачем и как их храню.",
+    fi: "Tällä sivulla kerrotaan selkeästi, mitä tietoja kerään, miksi ja miten säilytän niitä.",
+  },
+  osad: [
+    {
+      pealkiri: { et: "Kes andmete eest vastutab", en: "Who is responsible", ru: "Кто отвечает за данные", fi: "Kuka vastaa tiedoista" },
+      tekst: {
+        et: "Andmete eest vastutab Karel Saega, Tartu. Küsimuste korral kirjuta {email} või helista {telefon}.",
+        en: "Karel Saega, Tartu, is responsible for the data. For questions, write to {email} or call {telefon}.",
+        ru: "За данные отвечает Карел Саэга, Тарту. По вопросам пишите на {email} или звоните {telefon}.",
+        fi: "Tiedoista vastaa Karel Saega, Tartto. Kysymyksissä kirjoita osoitteeseen {email} tai soita {telefon}.",
+      },
+    },
+    {
+      pealkiri: { et: "Milliseid andmeid kogun", en: "What data I collect", ru: "Какие данные я собираю", fi: "Mitä tietoja kerään" },
+      tekst: {
+        et: "Kui saadad kontaktivormi kaudu päringu, saan sinu nime, telefoninumbri või e-posti, seadme andmed ja sinu kirjelduse probleemist. Kui helistad või kirjutad (ka WhatsAppis), näen sinu numbrit ja sõnumit.",
+        en: "When you send an enquiry through the contact form, I receive your name, phone number or email, device details and your description of the problem. When you call or write (including on WhatsApp), I see your number and message.",
+        ru: "Когда вы отправляете запрос через контактную форму, я получаю ваше имя, номер телефона или эл. почту, данные устройства и описание проблемы. Когда вы звоните или пишете (в том числе в WhatsApp), я вижу ваш номер и сообщение.",
+        fi: "Kun lähetät kyselyn yhteydenottolomakkeella, saan nimesi, puhelinnumerosi tai sähköpostisi, laitteen tiedot ja kuvauksesi ongelmasta. Kun soitat tai kirjoitat (myös WhatsAppissa), näen numerosi ja viestisi.",
+      },
+    },
+    {
+      pealkiri: { et: "Milleks andmeid kasutan", en: "Why I use the data", ru: "Для чего я использую данные", fi: "Mihin käytän tietoja" },
+      tekst: {
+        et: "Ainult selleks, et sinu päringule vastata, hinda pakkuda ja remonti teha. Ma ei saada sulle reklaami ega anna sinu andmeid kellelegi edasi.",
+        en: "Only to reply to your enquiry, give a price and carry out the repair. I don't send you advertising or pass your data on to anyone.",
+        ru: "Только для того, чтобы ответить на ваш запрос, назвать цену и выполнить ремонт. Я не присылаю рекламу и никому не передаю ваши данные.",
+        fi: "Vain kyselyysi vastaamiseen, hinnan antamiseen ja korjauksen tekemiseen. En lähetä sinulle mainoksia enkä luovuta tietojasi kenellekään.",
+      },
+    },
+    {
+      pealkiri: { et: "Kus andmed liiguvad", en: "Where the data goes", ru: "Куда передаются данные", fi: "Minne tiedot kulkevat" },
+      tekst: {
+        et: "Kontaktivormi sõnum jõuab minuni e-postiga teenuse Web3Forms kaudu ja seda hoitakse minu e-postkastis (Gmail). Lehe kirjatüüp laaditakse Google Fonts teenusest, mille käigus näeb Google sinu IP-aadressi.",
+        en: "Messages from the contact form reach me by email via the Web3Forms service and are kept in my mailbox (Gmail). The page font is loaded from Google Fonts, which means Google sees your IP address.",
+        ru: "Сообщение из контактной формы приходит мне на эл. почту через сервис Web3Forms и хранится в моём почтовом ящике (Gmail). Шрифт страницы загружается из Google Fonts, при этом Google видит ваш IP-адрес.",
+        fi: "Yhteydenottolomakkeen viesti tulee minulle sähköpostitse Web3Forms-palvelun kautta, ja sitä säilytetään sähköpostissani (Gmail). Sivun fontti ladataan Google Fonts -palvelusta, jolloin Google näkee IP-osoitteesi.",
+      },
+    },
+    {
+      pealkiri: { et: "Kui kaua andmeid hoian", en: "How long I keep the data", ru: "Как долго я храню данные", fi: "Kuinka kauan säilytän tietoja" },
+      tekst: {
+        et: "Nii kaua, kui on vaja töö tegemiseks ja garantiiaja küsimuste lahendamiseks. Seejärel kustutan need.",
+        en: "As long as needed to do the work and handle any warranty questions. After that I delete them.",
+        ru: "Столько, сколько нужно для выполнения работы и решения вопросов в течение гарантийного срока. После этого я их удаляю.",
+        fi: "Niin kauan kuin on tarpeen työn tekemiseksi ja takuuajan kysymysten hoitamiseksi. Sen jälkeen poistan ne.",
+      },
+    },
+    {
+      pealkiri: { et: "Sinu õigused", en: "Your rights", ru: "Ваши права", fi: "Oikeutesi" },
+      tekst: {
+        et: "Sul on õigus küsida, milliseid andmeid sinu kohta hoian, ja paluda neid parandada või kustutada – kirjuta {email}. Kui leiad, et sinu andmeid on kasutatud valesti, võid pöörduda Andmekaitse Inspektsiooni poole (www.aki.ee).",
+        en: "You have the right to ask what data I hold about you and to have it corrected or deleted – write to {email}. If you believe your data has been misused, you can contact the Estonian Data Protection Inspectorate (www.aki.ee).",
+        ru: "Вы вправе узнать, какие данные о вас я храню, и попросить их исправить или удалить – напишите на {email}. Если считаете, что ваши данные использованы неправильно, можете обратиться в Инспекцию по защите данных Эстонии (www.aki.ee).",
+        fi: "Sinulla on oikeus kysyä, mitä tietoja sinusta säilytän, ja pyytää niiden korjaamista tai poistamista – kirjoita osoitteeseen {email}. Jos katsot, että tietojasi on käytetty väärin, voit kääntyä Viron tietosuojaviranomaisen puoleen (www.aki.ee).",
+      },
+    },
+    {
+      pealkiri: { et: "Küpsised", en: "Cookies", ru: "Файлы cookie", fi: "Evästeet" },
+      tekst: {
+        et: "Leht ei kasuta jälgimisküpsiseid ega reklaamivõrke. Brauser jätab meelde ainult valitud keele, kuni vahekaart on lahti.",
+        en: "The site uses no tracking cookies or advertising networks. The browser only remembers the chosen language while the tab is open.",
+        ru: "Сайт не использует отслеживающие cookie и рекламные сети. Браузер запоминает только выбранный язык, пока вкладка открыта.",
+        fi: "Sivusto ei käytä seurantaevästeitä eikä mainosverkostoja. Selain muistaa vain valitun kielen, kun välilehti on auki.",
+      },
+    },
+  ],
+};
