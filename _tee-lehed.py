@@ -19,7 +19,7 @@ from pathlib import Path
 
 KAUST = Path(__file__).parent
 AADRESS = "https://kasa.ee"
-NIMI = "Karel Saega"
+NIMI = "KASA"  # lehe nimi pealkirjades ja lingi eelvaates (isikunime ei näidata)
 
 
 def eesti_tekst(plokk, vali):

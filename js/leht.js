@@ -153,7 +153,7 @@ function taidaKiirnupud() {
 function taidaPrivaatsus() {
   const koht = document.getElementById("privaatsus");
   if (!koht) return;
-  document.title = t(PRIVAATSUS.pealkiri) + " – " + KONTAKT.nimi;
+  document.title = t(PRIVAATSUS.pealkiri) + " – " + KONTAKT.lehe_nimi;
   koht.innerHTML = `
     <article class="artikkel">
       <h1>${t(PRIVAATSUS.pealkiri)}</h1>
@@ -196,7 +196,7 @@ function taidaNouanne() {
     return;
   }
 
-  document.title = t(n.pealkiri) + " – " + KONTAKT.nimi;
+  document.title = t(n.pealkiri) + " – " + KONTAKT.lehe_nimi;
 
   const plokid = n.plokid
     .map(
@@ -438,7 +438,7 @@ function taidaSeadmeLeht() {
     return;
   }
 
-  document.title = t(s.nimi) + " – " + KONTAKT.nimi;
+  document.title = t(s.nimi) + " – " + KONTAKT.lehe_nimi;
 
   // Eelmise ja järgmise seadme lingid + täpid, millisel seadmel oled
   const { eelmine, jargmine, koht: nr } = naabrid(s.id);

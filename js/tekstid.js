@@ -8,6 +8,7 @@
 // ---- Kontaktandmed (vaheta need oma päris andmete vastu) ----
 const KONTAKT = {
   nimi: "Karel Saega",
+  lehe_nimi: "KASA", // brauseri vahelehe pealkirjas ja lingi jagamisel
   telefon: "+372 5639 1019",
   email: "karelsaega1992@gmail.com",
   whatsapp: "+372 5639 1019", // kui see on tühi (""), WhatsAppi nuppe ei näidata
