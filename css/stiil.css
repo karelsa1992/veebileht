@@ -335,8 +335,7 @@ body::before {
 #seadmed { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 
 /* Pildid: summutatud värvid, et sobiksid lehe toonidega */
-.seade-pilt,
-.minust-pilt {
+.seade-pilt {
   display: block;
   object-fit: cover;
   border-radius: var(--ymarus);
@@ -344,7 +343,6 @@ body::before {
   filter: saturate(0.65);
 }
 .seade-pilt { width: 100%; height: 240px; margin-bottom: 18px; }
-.minust-pilt { width: 220px; height: 260px; flex-shrink: 0; }
 
 /* Kontakt */
 .kontakt-ala {
@@ -487,7 +485,6 @@ body::before {
   .sisu { padding: 0 16px; }
   .hero { padding: 48px 0 40px; }
   .minust { flex-direction: column; text-align: center; }
-  .minust-pilt { width: 100%; height: 200px; }
   .seade-pilt { height: 180px; }
   .seade-pais { flex-direction: column; text-align: center; }
   .logo span { display: none; }
