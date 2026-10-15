@@ -403,6 +403,43 @@ body::before {
 }
 .tagasi:hover { text-decoration: underline; }
 
+/* Eelmise/järgmise seadme rida ja täpid */
+#seade { touch-action: pan-y pinch-zoom; }
+.seadme-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.seadme-nool {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 0;
+}
+.seadme-nool.paremale { justify-content: flex-end; }
+.seadme-nool span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.seadme-nool:hover span { text-decoration: underline; }
+.punktid { display: flex; gap: 6px; flex-shrink: 0; }
+.punkt { width: 8px; height: 8px; border-radius: 50%; background: var(--joon); }
+.punkt.aktiivne { background: var(--rohk); }
+.libista-vihje { display: none; text-align: center; font-size: 0.85rem; color: var(--tekst-hall); margin: -16px 0 20px; }
+@media (hover: none) and (pointer: coarse) {
+  .libista-vihje { display: block; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #seade { transition: transform 0.2s ease; }
+  .tuleb-paremalt { animation: tuleb-paremalt 0.3s ease; }
+  .tuleb-vasakult { animation: tuleb-vasakult 0.3s ease; }
+}
+@keyframes tuleb-paremalt { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes tuleb-vasakult { from { transform: translateX(-40px); opacity: 0; } to { transform: none; opacity: 1; } }
+
 .seade-pais { display: flex; gap: 24px; align-items: center; margin-bottom: 32px; }
 .seade-pais .ikoon { margin: 0; }
 

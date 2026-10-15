@@ -308,8 +308,7 @@ function taidaSeadmeLeht() {
   const koht = document.getElementById("seade");
   if (!koht) return;
 
-  const id = new URLSearchParams(location.search).get("id");
-  const s = SEADMED.find((x) => x.id === id);
+  const s = SEADMED.find((x) => x.id === praeguneSeade);
 
   if (!s) {
     koht.innerHTML = `<p>${t(TEKSTID.seadet_ei_leitud)}</p>`;
@@ -317,6 +316,16 @@ function taidaSeadmeLeht() {
   }
 
   document.title = t(s.nimi) + " – " + KONTAKT.nimi;
+
+  // Eelmise ja järgmise seadme lingid + täpid, millisel seadmel oled
+  const { eelmine, jargmine, koht: nr } = naabrid(s.id);
+  const nav = `
+    <nav class="seadme-nav">
+      <a class="seadme-nool" href="seade.html?id=${eelmine.id}" data-vaheta="-1">‹ <span>${t(eelmine.nimi)}</span></a>
+      <span class="punktid">${SEADMED.map((x, j) => `<span class="punkt${j === nr ? " aktiivne" : ""}"></span>`).join("")}</span>
+      <a class="seadme-nool paremale" href="seade.html?id=${jargmine.id}" data-vaheta="1"><span>${t(jargmine.nimi)}</span> ›</a>
+    </nav>
+    <p class="libista-vihje">${t(TEKSTID.libista_vihje)}</p>`;
 
   const read = s.hinnad
     .map(
@@ -329,6 +338,7 @@ function taidaSeadmeLeht() {
     .join("");
 
   koht.innerHTML = `
+    ${nav}
     <div class="seade-pais">
       <span class="ikoon suur">${IKOONID[s.ikoon] || ""}</span>
       <div>
@@ -359,6 +369,98 @@ function taidaSeadmeLeht() {
       <p>${t(TEKSTID.ei_leia)}</p>
       <a class="nupp" href="index.html#kontakt">${t(TEKSTID.nupp_kontakt)}</a>
     </div>`;
+}
+
+// ---- Seadmete vahetamine (nooled ja telefonis libistamine) ----
+// Mis seadet seadme lehel praegu näidatakse (algul võetakse lehe aadressist)
+let praeguneSeade = new URLSearchParams(location.search).get("id");
+
+function naabrid(id) {
+  const n = SEADMED.length;
+  const i = SEADMED.findIndex((x) => x.id === id);
+  return { eelmine: SEADMED[(i - 1 + n) % n], jargmine: SEADMED[(i + 1) % n], koht: i };
+}
+
+function vaiksemLiikumine() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+// suund: 1 = järgmine seade, -1 = eelmine seade
+function vahetaSeadet(suund) {
+  if (!SEADMED.some((x) => x.id === praeguneSeade)) return;
+  const { eelmine, jargmine } = naabrid(praeguneSeade);
+  const uus = suund > 0 ? jargmine : eelmine;
+
+  // Vahetame sisu ilma lehte uuesti laadimata
+  praeguneSeade = uus.id;
+  try {
+    // Uuenda ka aadressiriba (arvutist avatud failil brauser seda ei luba)
+    history.replaceState(null, "", "?id=" + uus.id);
+  } catch (e) {}
+  taidaSeadmeLeht();
+  window.scrollTo(0, 0);
+
+  const koht = document.getElementById("seade");
+  if (!vaiksemLiikumine()) {
+    koht.classList.remove("tuleb-paremalt", "tuleb-vasakult");
+    void koht.offsetWidth; // lase animatsioonil uuesti alata
+    koht.classList.add(suund > 0 ? "tuleb-paremalt" : "tuleb-vasakult");
+  }
+}
+
+const seadeKoht = document.getElementById("seade");
+if (seadeKoht) {
+  // Klõps eelmise/järgmise seadme nimel
+  seadeKoht.addEventListener("click", (e) => {
+    const link = e.target.closest("[data-vaheta]");
+    if (!link) return;
+    e.preventDefault();
+    vahetaSeadet(Number(link.dataset.vaheta));
+  });
+
+  // Telefonis: sõrmega külgedele libistamine
+  let puude = null;
+  seadeKoht.addEventListener(
+    "touchstart",
+    (e) => {
+      if (e.touches.length !== 1) return (puude = null);
+      puude = { x: e.touches[0].clientX, y: e.touches[0].clientY, suund: null };
+    },
+    { passive: true }
+  );
+  seadeKoht.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!puude) return;
+      const dx = e.touches[0].clientX - puude.x;
+      const dy = e.touches[0].clientY - puude.y;
+      // Otsusta, kas inimene kerib üles-alla või libistab külgedele
+      if (!puude.suund && (Math.abs(dx) > 10 || Math.abs(dy) > 10)) {
+        puude.suund = Math.abs(dx) > Math.abs(dy) ? "kylg" : "yles-alla";
+      }
+      // Leht liigub sõrme järel kaasa
+      if (puude.suund === "kylg" && !vaiksemLiikumine()) {
+        seadeKoht.style.transition = "none";
+        seadeKoht.style.transform = `translateX(${dx * 0.5}px)`;
+      }
+    },
+    { passive: true }
+  );
+  const lopeta = (e) => {
+    if (!puude) return;
+    const dx = e.changedTouches[0].clientX - puude.x;
+    const kylg = puude.suund === "kylg";
+    puude = null;
+    seadeKoht.style.transition = "";
+    seadeKoht.style.transform = "";
+    if (kylg && Math.abs(dx) > 70) vahetaSeadet(dx < 0 ? 1 : -1);
+  };
+  seadeKoht.addEventListener("touchend", lopeta);
+  seadeKoht.addEventListener("touchcancel", () => {
+    puude = null;
+    seadeKoht.style.transition = "";
+    seadeKoht.style.transform = "";
+  });
 }
 
 // ---- Käivitamine ----

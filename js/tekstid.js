@@ -222,6 +222,12 @@ const TEKSTID = {
 
   // Seadme leht
   tagasi: { et: "← Kõik seadmed", en: "← All devices", ru: "← Все устройства", fi: "← Kaikki laitteet" },
+  libista_vihje: {
+    et: "Libista sõrmega külgedele, et näha teisi seadmeid",
+    en: "Swipe sideways to see other devices",
+    ru: "Проведите пальцем в сторону, чтобы увидеть другие устройства",
+    fi: "Pyyhkäise sivulle nähdäksesi muut laitteet",
+  },
   mida_teen: { et: "Mida ma teen", en: "What I do", ru: "Что я делаю", fi: "Mitä teen" },
   hinnakiri: { et: "Hinnakiri", en: "Price list", ru: "Прайс-лист", fi: "Hinnasto" },
   too: { et: "Töö", en: "Service", ru: "Работа", fi: "Työ" },
