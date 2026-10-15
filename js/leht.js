@@ -514,6 +514,11 @@ function vahetaSeadet(suund) {
   taidaSeadmeLeht();
   window.scrollTo(0, 0);
 
+  // Loendur: arvesta seadme vahetust eraldi lehevaatamisena
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: location.pathname + location.search });
+  }
+
   const koht = document.getElementById("seade");
   if (!vaiksemLiikumine()) {
     koht.classList.remove("tuleb-paremalt", "tuleb-vasakult");

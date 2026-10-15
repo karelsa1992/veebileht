@@ -1199,10 +1199,10 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Küpsised", en: "Cookies", ru: "Файлы cookie", fi: "Evästeet" },
       tekst: {
-        et: "Leht ei kasuta jälgimisküpsiseid ega reklaamivõrke. Brauser jätab meelde ainult valitud keele, kuni vahekaart on lahti.",
-        en: "The site uses no tracking cookies or advertising networks. The browser only remembers the chosen language while the tab is open.",
-        ru: "Сайт не использует отслеживающие cookie и рекламные сети. Браузер запоминает только выбранный язык, пока вкладка открыта.",
-        fi: "Sivusto ei käytä seurantaevästeitä eikä mainosverkostoja. Selain muistaa vain valitun kielen, kun välilehti on auki.",
+        et: "Leht ei kasuta jälgimisküpsiseid ega reklaamivõrke. Brauser jätab meelde ainult valitud keele, kuni vahekaart on lahti. Külastuste loendamiseks kasutan teenust GoatCounter, mis ei kasuta küpsiseid ega kogu isikuandmeid.",
+        en: "The site uses no tracking cookies or advertising networks. The browser only remembers the chosen language while the tab is open. To count visits I use GoatCounter, which uses no cookies and collects no personal data.",
+        ru: "Сайт не использует отслеживающие cookie и рекламные сети. Браузер запоминает только выбранный язык, пока вкладка открыта. Для подсчёта посещений я использую сервис GoatCounter, который не использует cookie и не собирает персональные данные.",
+        fi: "Sivusto ei käytä seurantaevästeitä eikä mainosverkostoja. Selain muistaa vain valitun kielen, kun välilehti on auki. Käyntien laskemiseen käytän GoatCounter-palvelua, joka ei käytä evästeitä eikä kerää henkilötietoja.",
       },
     },
   ],
