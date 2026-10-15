@@ -74,7 +74,7 @@ const TEKSTID = {
     et: "Tulen koju või kontorisse Tartu linna piires. Väljakutsetasu on {tasu}, millele lisandub tehtud töö hind.",
     en: "I come to your home or office within the city of Tartu. The call-out fee is {tasu}, plus the price of the work done.",
     ru: "Приеду домой или в офис в пределах города Тарту. Плата за выезд – {tasu}, плюс стоимость работы.",
-    fi: "Tulen kotiin tai toimistoon Tarton kaupungin alueella. Käyntimaksu on {tasu}, minkä lisäksi tulee tehdyn työn hinta.",
+    fi: "Tulen kotiin tai toimistoon Tarton kaupungin alueella. Käyntimaksu on {tasu}, ja sen lisäksi maksat tehdystä työstä.",
   },
   too_pealkiri: { et: "Too seade minu juurde", en: "Bring your device to me", ru: "Привезите устройство ко мне", fi: "Tuo laite minulle" },
   too_tekst: {
@@ -83,9 +83,9 @@ const TEKSTID = {
     ru: "Договоримся об удобном времени, и я сообщу адрес. В этом случае платы за выезд нет.",
     fi: "Sovimme sopivan ajan ja kerron osoitteen. Tällöin käyntimaksua ei ole.",
   },
-  hind_pealkiri: { et: "Hind enne tööd", en: "Price before work", ru: "Цена до начала работ", fi: "Hinta ennen työtä" },
+  hind_pealkiri: { et: "Hind enne tööd", en: "Price agreed upfront", ru: "Цена до начала работ", fi: "Hinta ennen työtä" },
   hind_tekst: {
-    et: "Enne remonti ütlen sulle hinna. Kui midagi selgub juurde, küsin enne sinu nõusolekut.",
+    et: "Enne remonti ütlen sulle hinna. Kui töö käigus selgub midagi uut, küsin enne jätkamist sinu nõusolekut.",
     en: "I tell you the price before the repair. If anything new comes up, I ask for your approval first.",
     ru: "Я называю цену до ремонта. Если выяснится что-то ещё, сначала спрошу вашего согласия.",
     fi: "Kerron hinnan ennen korjausta. Jos jotain uutta ilmenee, kysyn ensin suostumuksesi.",
@@ -98,7 +98,7 @@ const TEKSTID = {
     ru: "На выполненную работу даю гарантию 3 месяца. На новые запчасти действует гарантия производителя.",
     fi: "Annan tekemälleni työlle 3 kuukauden takuun. Uusilla varaosilla on valmistajan takuu.",
   },
-  tooaeg_pealkiri: { et: "Tööaeg", en: "Working hours", ru: "Время работы", fi: "Aukioloajat" },
+  tooaeg_pealkiri: { et: "Tööaeg", en: "Working hours", ru: "Время работы", fi: "Työajat" },
   tooaeg_tekst: {
     et: "Esmaspäevast reedeni. Nädalavahetusel eelneval kokkuleppel.",
     en: "Monday to Friday. Weekends by prior arrangement.",
@@ -150,11 +150,11 @@ const TEKSTID = {
   nouanded_pealkiri: { et: "Kasulikud nõuanded", en: "Useful tips", ru: "Полезные советы", fi: "Hyödyllisiä vinkkejä" },
   nouanded_tekst: {
     et: "Lühikesed juhendid, mis aitavad sul seadet hoida ja hädaolukorras õigesti käituda.",
-    en: "Short guides to help you look after your devices and act right in an emergency.",
+    en: "Short guides to help you look after your devices and do the right thing in an emergency.",
     ru: "Короткие инструкции, которые помогут беречь технику и правильно действовать в экстренной ситуации.",
     fi: "Lyhyitä ohjeita laitteiden hoitoon ja oikeaan toimintaan hätätilanteessa.",
   },
-  loe_edasi: { et: "Loe edasi", en: "Read more", ru: "Читать", fi: "Lue lisää" },
+  loe_edasi: { et: "Loe edasi", en: "Read more", ru: "Читать далее", fi: "Lue lisää" },
   koik_nouanded: { et: "← Kõik nõuanded", en: "← All tips", ru: "← Все советы", fi: "← Kaikki vinkit" },
   millal_pealkiri: { et: "Millal remonti tuua?", en: "When to bring it in?", ru: "Когда обращаться в ремонт?", fi: "Milloin tuoda korjattavaksi?" },
   nouanne_abi: {
@@ -234,7 +234,7 @@ const TEKSTID = {
     fi: "Kiitos! Viesti on lähetetty. Vastaan mahdollisimman pian.",
   },
   vorm_viga: {
-    et: "Saatmine ebaõnnestus. Palun proovi uuesti või helista / kirjuta e-posti teel.",
+    et: "Saatmine ebaõnnestus. Palun proovi uuesti, helista või saada e-kiri.",
     en: "Sending failed. Please try again or call / send an email.",
     ru: "Не удалось отправить. Попробуйте ещё раз или позвоните / напишите на эл. почту.",
     fi: "Lähetys epäonnistui. Yritä uudelleen tai soita / lähetä sähköpostia.",
@@ -272,7 +272,7 @@ const TEKSTID = {
     et: "Libista sõrmega külgedele, et näha teisi seadmeid",
     en: "Swipe sideways to see other devices",
     ru: "Проведите пальцем в сторону, чтобы увидеть другие устройства",
-    fi: "Pyyhkäise sivulle nähdäksesi muut laitteet",
+    fi: "Pyyhkäise sivuttain nähdäksesi muut laitteet",
   },
   mida_teen: { et: "Mida ma teen", en: "What I do", ru: "Что я делаю", fi: "Mitä teen" },
   hinnakiri: { et: "Hinnakiri", en: "Price list", ru: "Прайс-лист", fi: "Hinnasto" },
@@ -280,8 +280,8 @@ const TEKSTID = {
   hind: { et: "Hind", en: "Price", ru: "Цена", fi: "Hinta" },
   alates: { et: "alates", en: "from", ru: "от", fi: "alkaen" },
   hinnakiri_markus: {
-    et: "Hinnad on töö hinnad. Varuosa hind lisandub ja sõltub seadme mudelist. Kodukülastusel lisandub väljakutsetasu {tasu} (ainult Tartu linnas). Tööle 3 kuud garantiid, uutele varuosadele tootja garantii.",
-    en: "Prices are for labour. The cost of parts is added and depends on the model. Home visits include a call-out fee of {tasu} (Tartu city only). 3-month warranty on work, manufacturer's warranty on new parts.",
+    et: "Hinnad on ainult töö eest. Varuosa hind lisandub ja sõltub seadme mudelist. Kodukülastusel lisandub väljakutsetasu {tasu} (ainult Tartu linnas). Tööle 3 kuud garantiid, uutele varuosadele tootja garantii.",
+    en: "Prices are for labour. The cost of parts is added and depends on the model. Home visits have an added call-out fee of {tasu} (Tartu city only). 3-month warranty on work, manufacturer's warranty on new parts.",
     ru: "Указана стоимость работы. Цена запчастей добавляется и зависит от модели. При выезде на дом добавляется плата за выезд {tasu} (только в черте Тарту). Гарантия на работу 3 месяца, на новые запчасти – гарантия производителя.",
     fi: "Hinnat ovat työn hintoja. Varaosien hinta lisätään ja riippuu mallista. Kotikäynnillä lisätään käyntimaksu {tasu} (vain Tarton kaupunki). Työllä 3 kuukauden takuu, uusilla varaosilla valmistajan takuu.",
   },
@@ -325,7 +325,7 @@ const SEADMED = [
       et: "Kui arvuti ei käivitu, on aeglane, kuumeneb või teeb müra, leian põhjuse ja parandan. Aitan ka arvutit uuendada või uue arvuti osadest kokku panna.",
       en: "If your computer won't start, is slow, overheats or is noisy, I find the cause and fix it. I can also upgrade your PC or build a new one from parts.",
       ru: "Если компьютер не включается, тормозит, перегревается или шумит – найду причину и устраню. Также помогу модернизировать ПК или собрать новый из комплектующих.",
-      fi: "Jos tietokone ei käynnisty, on hidas, kuumenee tai pitää ääntä, etsin syyn ja korjaan sen. Autan myös päivittämään koneen tai kokoamaan uuden osista.",
+      fi: "Jos tietokone ei käynnisty, on hidas, kuumenee tai on äänekäs, etsin syyn ja korjaan sen. Autan myös päivittämään koneen tai kokoamaan uuden osista.",
     },
     mida: [
       { et: "Rikete otsimine ja parandamine", en: "Fault finding and repair", ru: "Диагностика и устранение неисправностей", fi: "Vianetsintä ja korjaus" },
@@ -373,7 +373,7 @@ const SEADMED = [
       { nimi: { et: "Windowsi paigaldus koos draiveritega", en: "Windows installation with drivers", ru: "Установка Windows с драйверами", fi: "Windows-asennus ajureineen" }, hind: "40 €" },
       { nimi: { et: "Ekraani vahetus", en: "Screen replacement", ru: "Замена экрана", fi: "Näytön vaihto" }, hind: "40 €", alates: true },
       { nimi: { et: "Klaviatuuri vahetus", en: "Keyboard replacement", ru: "Замена клавиатуры", fi: "Näppäimistön vaihto" }, hind: "35 €", alates: true },
-      { nimi: { et: "SSD paigaldus + süsteemi kopeerimine", en: "SSD install + system cloning", ru: "Установка SSD + перенос системы", fi: "SSD-asennus + kloonaus" }, hind: "35 €" },
+      { nimi: { et: "SSD-ketta paigaldus + süsteemi kopeerimine", en: "SSD install + system cloning", ru: "Установка SSD + перенос системы", fi: "SSD-asennus + kloonaus" }, hind: "35 €" },
       { nimi: { et: "Laadimispesa remont", en: "Charging port repair", ru: "Ремонт разъёма зарядки", fi: "Latausliitännän korjaus" }, hind: "50 €", alates: true },
       { nimi: { et: "Vedelikukahjustuse puhastus", en: "Liquid damage cleaning", ru: "Чистка после залития", fi: "Nestevaurion puhdistus" }, hind: "60 €", alates: true },
     ],
@@ -454,9 +454,9 @@ const SEADMED = [
     },
     kirjeldus: {
       et: "Kui teised ütlevad, et emaplaat või videokaart tuleb välja vahetada, saab selle sageli hoopis parandada. Otsin üles katkise komponendi ja vahetan selle – see on tavaliselt odavam kui uus plaat.",
-      en: "When others say a motherboard or graphics card must be replaced, it can often be repaired instead. I find the faulty component and replace it – usually cheaper than a new board.",
+      en: "When others say a motherboard or graphics card must be replaced, it can often be repaired instead. I find the faulty component and replace it – which is usually cheaper than a new board.",
       ru: "Когда говорят, что материнскую плату или видеокарту нужно менять, её часто можно отремонтировать. Нахожу неисправный компонент и заменяю его – обычно это дешевле новой платы.",
-      fi: "Kun muut sanovat, että emolevy tai näytönohjain on vaihdettava, sen voi usein korjata. Etsin viallisen komponentin ja vaihdan sen – yleensä edullisempaa kuin uusi levy.",
+      fi: "Kun muut sanovat, että emolevy tai näytönohjain on vaihdettava, sen voi usein korjata. Etsin viallisen komponentin ja vaihdan sen – se on yleensä edullisempaa kuin uusi levy.",
     },
     mida: [
       { et: "Emaplaadi rikete otsimine", en: "Motherboard fault finding", ru: "Поиск неисправностей материнской платы", fi: "Emolevyn vianetsintä" },
@@ -479,20 +479,20 @@ const SEADMED = [
     ikoon: "konsool",
     nimi: { et: "Mängukonsoolid", en: "Game consoles", ru: "Игровые приставки", fi: "Pelikonsolit" },
     lyhike: {
-      et: "PlayStation, Xbox, Nintendo: puhastus, HDMI pesa, pultide remont.",
+      et: "PlayStation, Xbox, Nintendo: puhastus, HDMI-pesa, pultide remont.",
       en: "PlayStation, Xbox, Nintendo: cleaning, HDMI port, controller repair.",
       ru: "PlayStation, Xbox, Nintendo: чистка, разъём HDMI, ремонт джойстиков.",
       fi: "PlayStation, Xbox, Nintendo: puhdistus, HDMI-liitäntä, ohjainten korjaus.",
     },
     kirjeldus: {
-      et: "Remondin ja hooldan PlayStationi, Xboxi ja Nintendo konsoole. Kui konsool on mürarikas, kuumeneb, ei näita pilti või pult liigub ise, leian põhjuse ja parandan.",
-      en: "I repair and service PlayStation, Xbox and Nintendo consoles. If your console is noisy, overheats, shows no picture or the controller drifts, I find the cause and fix it.",
+      et: "Remondin ja hooldan PlayStationi, Xboxi ja Nintendo konsoole. Kui konsool on mürarikas, kuumeneb, ei näita pilti või puldi juhtkang liigub ise, leian põhjuse ja parandan.",
+      en: "I repair and service PlayStation, Xbox and Nintendo consoles. If your console is noisy, overheats, shows no picture or the controller stick drifts, I find the cause and fix it.",
       ru: "Ремонтирую и обслуживаю приставки PlayStation, Xbox и Nintendo. Если приставка шумит, перегревается, нет изображения или джойстик «дрейфует» – найду причину и устраню.",
-      fi: "Korjaan ja huollan PlayStation-, Xbox- ja Nintendo-konsoleita. Jos konsoli pitää ääntä, kuumenee, ei näytä kuvaa tai ohjain liikkuu itsestään, etsin syyn ja korjaan sen.",
+      fi: "Korjaan ja huollan PlayStation-, Xbox- ja Nintendo-konsoleita. Jos konsoli on äänekäs, kuumenee, ei näytä kuvaa tai ohjain liikkuu itsestään, etsin syyn ja korjaan sen.",
     },
     mida: [
       { et: "Tolmust puhastus ja termopasta vahetus", en: "Dust cleaning and thermal paste replacement", ru: "Чистка от пыли и замена термопасты", fi: "Pölynpuhdistus ja lämpötahnan vaihto" },
-      { et: "HDMI pesa vahetus (pilti ei tule)", en: "HDMI port replacement (no picture)", ru: "Замена разъёма HDMI (нет изображения)", fi: "HDMI-liitännän vaihto (ei kuvaa)" },
+      { et: "HDMI-pesa vahetus (pilti ei tule)", en: "HDMI port replacement (no picture)", ru: "Замена разъёма HDMI (нет изображения)", fi: "HDMI-liitännän vaihto (ei kuvaa)" },
       { et: "Pultide remont (juhtkang liigub ise, nupud ei tööta)", en: "Controller repair (stick drift, buttons not working)", ru: "Ремонт джойстиков (дрейф стика, не работают кнопки)", fi: "Ohjainten korjaus (tikku liikkuu itsestään, napit eivät toimi)" },
       { et: "Plaadilugeja ja toiteploki remont", en: "Disc drive and power supply repair", ru: "Ремонт дисковода и блока питания", fi: "Levyaseman ja virtalähteen korjaus" },
       { et: "Kõvaketta / SSD vahetus ja süsteemi taastamine", en: "Hard drive / SSD replacement and system restore", ru: "Замена диска / SSD и восстановление системы", fi: "Kiintolevyn / SSD:n vaihto ja järjestelmän palautus" },
@@ -500,7 +500,7 @@ const SEADMED = [
     hinnad: [
       { nimi: { et: "Diagnostika", en: "Diagnostics", ru: "Диагностика", fi: "Vianmääritys" }, hind: "20 €" },
       { nimi: { et: "Puhastus + termopasta vahetus", en: "Cleaning + thermal paste", ru: "Чистка + замена термопасты", fi: "Puhdistus + lämpötahna" }, hind: "45 €" },
-      { nimi: { et: "HDMI pesa vahetus", en: "HDMI port replacement", ru: "Замена разъёма HDMI", fi: "HDMI-liitännän vaihto" }, hind: "60 €", alates: true },
+      { nimi: { et: "HDMI-pesa vahetus", en: "HDMI port replacement", ru: "Замена разъёма HDMI", fi: "HDMI-liitännän vaihto" }, hind: "60 €", alates: true },
       { nimi: { et: "Puldi juhtkangi vahetus", en: "Controller stick replacement", ru: "Замена стика джойстика", fi: "Ohjaimen tikun vaihto" }, hind: "25 €", alates: true },
       { nimi: { et: "Plaadilugeja remont", en: "Disc drive repair", ru: "Ремонт дисковода", fi: "Levyaseman korjaus" }, hind: "50 €", alates: true },
       { nimi: { et: "Toiteploki remont", en: "Power supply repair", ru: "Ремонт блока питания", fi: "Virtalähteen korjaus" }, hind: "55 €", alates: true },
@@ -525,7 +525,7 @@ const KKK = [
       et: "Enamasti jah – suurem osa remonditöödest andmeid ei puuduta. Kui töö võib andmeid ohustada (nt ketta vahetus või süsteemi uuesti paigaldamine), ütlen seda enne ja vajadusel teen varukoopia.",
       en: "In most cases, yes – most repairs don't touch your data. If a job could put data at risk (e.g. replacing a drive or reinstalling the system), I tell you beforehand and make a backup if needed.",
       ru: "Чаще всего да – большинство работ не затрагивает данные. Если работа может поставить данные под угрозу (например, замена диска или переустановка системы), я заранее предупрежу и при необходимости сделаю резервную копию.",
-      fi: "Useimmiten kyllä – suurin osa korjauksista ei koske tietoihin. Jos työ voi vaarantaa tiedot (esim. levyn vaihto tai järjestelmän uudelleenasennus), kerron siitä etukäteen ja teen tarvittaessa varmuuskopion.",
+      fi: "Useimmiten kyllä – suurin osa korjauksista ei vaikuta tietoihin. Jos työ voi vaarantaa tiedot (esim. levyn vaihto tai järjestelmän uudelleenasennus), kerron siitä etukäteen ja teen tarvittaessa varmuuskopion.",
     },
   },
   {
@@ -645,7 +645,7 @@ const MURED = {
       too: "Osa vahetus (ketas, mälu, toiteplokk)",
     },
     {
-      mure: { et: "Teeb müra või kuumeneb", en: "Noisy or overheating", ru: "Шумит или греется", fi: "Pitää ääntä tai kuumenee" },
+      mure: { et: "Teeb müra või kuumeneb", en: "Noisy or overheating", ru: "Шумит или греется", fi: "Äänekäs tai kuumenee" },
       pohjus: {
         et: "Tõenäoliselt on sees tolm ja termopasta on kuivanud. Puhastus teeb arvuti jälle vaikseks ja jahedaks.",
         en: "Most likely dust inside and dried thermal paste. Cleaning makes it quiet and cool again.",
@@ -655,7 +655,7 @@ const MURED = {
       too: "Puhastus + termopasta vahetus",
     },
     {
-      mure: { et: "Viirused või imelikud aknad", en: "Viruses or strange pop-ups", ru: "Вирусы или странные окна", fi: "Viruksia tai outoja ikkunoita" },
+      mure: { et: "Viirused või imelikud hüpikaknad", en: "Viruses or strange pop-ups", ru: "Вирусы или странные окна", fi: "Viruksia tai outoja ikkunoita" },
       pohjus: {
         et: "Arvutisse on tõenäoliselt sattunud pahavara. Eemaldan selle ja kontrollin, et arvuti oleks puhas.",
         en: "Malware has probably got onto the computer. I remove it and make sure the computer is clean.",
@@ -687,7 +687,7 @@ const MURED = {
       too: "Ekraani vahetus",
     },
     {
-      mure: { et: "Kuumeneb, ventilaator müriseb", en: "Overheats, fan is loud", ru: "Греется, шумит вентилятор", fi: "Kuumenee, tuuletin pitää ääntä" },
+      mure: { et: "Kuumeneb, ventilaator müriseb", en: "Overheats, fan is loud", ru: "Греется, шумит вентилятор", fi: "Kuumenee, tuuletin on äänekäs" },
       pohjus: {
         et: "Jahutus on tolmu täis ja termopasta kuivanud. Puhastus lahendab selle enamasti täielikult.",
         en: "The cooling is clogged with dust and the thermal paste has dried. Cleaning usually solves it completely.",
@@ -734,7 +734,7 @@ const MURED = {
         ru: "Замена старого жёсткого диска на SSD ускоряет ноутбук в разы. Файлы и программы сохраняются.",
         fi: "Vanhan kiintolevyn vaihto SSD-levyyn tekee koneesta moninkertaisesti nopeamman. Tiedostot ja ohjelmat säilyvät.",
       },
-      too: "SSD paigaldus + süsteemi kopeerimine",
+      too: "SSD-ketta paigaldus + süsteemi kopeerimine",
     },
   ],
   nutitelefonid: [
@@ -774,7 +774,7 @@ const MURED = {
         et: "Lülita telefon välja, ära lae seda ega pane riisi sisse. Too see võimalikult kiiresti, siis on suurem võimalus see päästa.",
         en: "Turn the phone off, don't charge it and don't put it in rice. Bring it as soon as possible for the best chance of saving it.",
         ru: "Выключите телефон, не заряжайте и не кладите в рис. Привезите как можно скорее – так больше шансов его спасти.",
-        fi: "Sammuta puhelin, älä lataa sitä äläkä laita riisiin. Tuo se mahdollisimman pian, niin pelastamisen mahdollisuus on suurempi.",
+        fi: "Sammuta puhelin, älä lataa sitä äläkä laita riisiin. Tuo se mahdollisimman pian, niin mahdollisuus pelastaa se on suurempi.",
       },
       too: "Diagnostika",
     },
@@ -793,7 +793,7 @@ const MURED = {
       pohjus: {
         et: "Sageli on põhjus tarkvaras. Taastan tarkvara ja kontrollin, et aku ja muu riistvara oleks korras.",
         en: "Often the cause is software. I restore the software and check that the battery and other hardware are fine.",
-        ru: "Часто причина в программном обеспечении. Восстановлю ПО и проверю аккумулятор и другое железо.",
+        ru: "Часто причина в программном обеспечении. Восстановлю ПО и проверю аккумулятор и остальные компоненты.",
         fi: "Syy on usein ohjelmistossa. Palautan ohjelmiston ja tarkistan, että akku ja muu laitteisto ovat kunnossa.",
       },
       too: "Tarkvara taastamine",
@@ -814,7 +814,7 @@ const MURED = {
       mure: { et: "Aku tühjeneb kiiresti", en: "Battery drains fast", ru: "Быстро садится батарея", fi: "Akku tyhjenee nopeasti" },
       pohjus: {
         et: "Aku on kulunud. Uue akuga töötab tahvel jälle kaua.",
-        en: "The battery is worn out. With a new battery the tablet lasts long again.",
+        en: "The battery is worn out. With a new battery, the tablet lasts a long time again.",
         ru: "Аккумулятор изношен. С новым аккумулятором планшет снова работает долго.",
         fi: "Akku on kulunut. Uudella akulla tabletti kestää taas pitkään.",
       },
@@ -853,9 +853,9 @@ const MURED = {
       too: "Videokaardi remont",
     },
     {
-      mure: { et: "Videokaart on kuum ja vali", en: "Graphics card hot and loud", ru: "Видеокарта горячая и шумная", fi: "Näytönohjain kuuma ja äänekäs" },
+      mure: { et: "Videokaart kuumeneb ja teeb müra", en: "Graphics card hot and loud", ru: "Видеокарта горячая и шумная", fi: "Näytönohjain kuuma ja äänekäs" },
       pohjus: {
-        et: "Termopasta ja termopadjad on aja jooksul kuivanud. Nende vahetus langetab temperatuuri ja müra.",
+        et: "Termopasta ja termopadjad on aja jooksul kuivanud. Nende vahetamine alandab temperatuuri ja vähendab müra.",
         en: "The thermal paste and pads have dried over time. Replacing them lowers temperature and noise.",
         ru: "Термопаста и термопрокладки со временем высохли. Их замена снижает температуру и шум.",
         fi: "Lämpötahna ja lämpötyynyt ovat ajan myötä kuivuneet. Niiden vaihto laskee lämpötilaa ja melua.",
@@ -863,7 +863,7 @@ const MURED = {
       too: "Videokaardi puhastus + termopasta ja -padjad",
     },
     {
-      mure: { et: "Ei käivitu pärast vedelikku või äikest", en: "Dead after liquid or a power surge", ru: "Не включается после залития или грозы", fi: "Ei käynnisty nesteen tai ukkosen jälkeen" },
+      mure: { et: "Ei käivitu pärast vedelikukahjustust või äikest", en: "Dead after liquid or a power surge", ru: "Не включается после залития или грозы", fi: "Ei käynnisty nesteen tai ukkosen jälkeen" },
       pohjus: {
         et: "Tõenäoliselt on emaplaadil mõni komponent läbi põlenud. Diagnostikaga leian selle üles.",
         en: "A component on the motherboard has probably burned out. I find it with diagnostics.",
@@ -875,10 +875,10 @@ const MURED = {
     {
       mure: { et: "Pesa või pistik on katki", en: "Broken port or connector", ru: "Сломан разъём", fi: "Liitäntä tai liitin rikki" },
       pohjus: {
-        et: "Katkise USB-, toite- või muu pesa saab tavaliselt uue vastu välja joota.",
+        et: "Katkise USB-, toite- või muu pesa saab tavaliselt välja joota ja uue vastu vahetada.",
         en: "A broken USB, power or other port can usually be desoldered and replaced with a new one.",
         ru: "Сломанный USB-, силовой или другой разъём обычно можно перепаять на новый.",
-        fi: "Rikkinäinen USB-, virta- tai muu liitäntä voidaan yleensä juottaa uuteen.",
+        fi: "Rikkinäinen USB-, virta- tai muu liitäntä voidaan yleensä vaihtaa uuteen juottamalla.",
       },
       too: "Pistiku või komponendi jootmine",
     },
@@ -887,15 +887,15 @@ const MURED = {
     {
       mure: { et: "Pilti ei tule", en: "No picture", ru: "Нет изображения", fi: "Ei kuvaa" },
       pohjus: {
-        et: "Sageli on HDMI pesa kahjustunud, näiteks kui konsooli on liigutatud nii, et kaabel oli küljes.",
+        et: "Sageli on HDMI-pesa kahjustunud, näiteks kui konsooli on liigutatud nii, et kaabel oli ühendatud.",
         en: "Often the HDMI port is damaged, for example if the console was moved with the cable attached.",
         ru: "Часто повреждён разъём HDMI, например если приставку двигали с подключённым кабелем.",
         fi: "Usein HDMI-liitäntä on vaurioitunut, esimerkiksi jos konsolia on liikutettu kaapelin ollessa kiinni.",
       },
-      too: "HDMI pesa vahetus",
+      too: "HDMI-pesa vahetus",
     },
     {
-      mure: { et: "Müriseb või lülitub ise välja", en: "Loud or shuts itself off", ru: "Шумит или сама выключается", fi: "Pitää ääntä tai sammuu itsestään" },
+      mure: { et: "Müriseb või lülitub ise välja", en: "Loud or shuts itself off", ru: "Шумит или сама выключается", fi: "Äänekäs tai sammuu itsestään" },
       pohjus: {
         et: "Konsool kuumeneb üle, sest sees on tolm ja termopasta on kuivanud. Puhastus aitab.",
         en: "The console overheats because of dust inside and dried thermal paste. Cleaning helps.",
@@ -905,7 +905,7 @@ const MURED = {
       too: "Puhastus + termopasta vahetus",
     },
     {
-      mure: { et: "Pult liigub ise", en: "Controller drifts", ru: "Джойстик «дрейфует»", fi: "Ohjain liikkuu itsestään" },
+      mure: { et: "Puldi juhtkang liigub ise", en: "Controller drifts", ru: "Джойстик «дрейфует»", fi: "Ohjain liikkuu itsestään" },
       pohjus: {
         et: "Puldi juhtkang on kulunud. Juhtkangi vahetus on palju odavam kui uus pult.",
         en: "The controller stick is worn. Replacing the stick is much cheaper than a new controller.",
@@ -961,7 +961,7 @@ const NOUANDED = [
       et: "Esimesed minutid on kõige tähtsamad. Need sammud suurendavad võimalust telefon päästa.",
       en: "The first minutes matter most. These steps improve the chance of saving your phone.",
       ru: "Первые минуты – самые важные. Эти шаги повышают шанс спасти телефон.",
-      fi: "Ensimmäiset minuutit ovat tärkeimmät. Nämä askeleet parantavat mahdollisuutta pelastaa puhelin.",
+      fi: "Ensimmäiset minuutit ovat tärkeimmät. Nämä toimet parantavat mahdollisuutta pelastaa puhelin.",
     },
     sissejuhatus: {
       et: "Vesi ise ei riku telefoni kohe. Kahju teeb elektrivool, mis läheb märjas telefonis valesse kohta, ja aja jooksul tekkiv korrosioon (roostetamine). Seepärast on tähtis tegutseda kiiresti.",
@@ -971,17 +971,17 @@ const NOUANDED = [
     },
     plokid: [
       {
-        pealkiri: { et: "Tee kohe", en: "Do right away", ru: "Сделайте сразу", fi: "Tee heti" },
+        pealkiri: { et: "Tee kohe", en: "Do this right away", ru: "Сделайте сразу", fi: "Tee heti" },
         punktid: [
           { et: "Võta telefon veest välja ja lülita see välja.", en: "Take the phone out of the water and turn it off.", ru: "Достаньте телефон из воды и выключите его.", fi: "Ota puhelin vedestä ja sammuta se." },
           { et: "Ära pane telefoni laadima ega ühenda ühtegi juhet.", en: "Don't charge it or connect any cables.", ru: "Не ставьте на зарядку и не подключайте никаких проводов.", fi: "Älä lataa puhelinta äläkä kytke mitään johtoja." },
           { et: "Eemalda ümbris ja SIM-kaardi alus.", en: "Remove the case and the SIM tray.", ru: "Снимите чехол и выньте лоток SIM-карты.", fi: "Poista suojakuori ja SIM-korttikelkka." },
-          { et: "Kuivata telefon väljast pehme lapiga ja hoia seda laadimispesaga allapoole.", en: "Dry the outside with a soft cloth and hold it with the charging port facing down.", ru: "Протрите телефон снаружи мягкой тканью и держите разъёмом зарядки вниз.", fi: "Kuivaa puhelin ulkoa pehmeällä liinalla ja pidä latausliitäntä alaspäin." },
+          { et: "Kuivata telefon väljastpoolt pehme lapiga ja hoia seda laadimispesaga allapoole.", en: "Dry the outside with a soft cloth and hold it with the charging port facing down.", ru: "Протрите телефон снаружи мягкой тканью и держите разъёмом зарядки вниз.", fi: "Kuivaa puhelin ulkoa pehmeällä liinalla ja pidä latausliitäntä alaspäin." },
           { et: "Too telefon võimalikult kiiresti remonti – kõige parem samal päeval.", en: "Bring the phone for repair as soon as possible – ideally the same day.", ru: "Как можно скорее принесите телефон в ремонт – лучше в тот же день.", fi: "Tuo puhelin korjattavaksi mahdollisimman pian – mieluiten samana päivänä." },
         ],
       },
       {
-        pealkiri: { et: "Ära tee", en: "Don't", ru: "Не делайте", fi: "Älä tee" },
+        pealkiri: { et: "Ära tee", en: "Don't do this", ru: "Не делайте", fi: "Älä tee" },
         hoiatus: true,
         punktid: [
           { et: "Ära pane telefoni riisi sisse – see ei kuivata telefoni seest ja riisitolm võib pesadesse minna.", en: "Don't put it in rice – it doesn't dry the inside and rice dust can get into the ports.", ru: "Не кладите в рис – он не высушит телефон внутри, а рисовая пыль может попасть в разъёмы.", fi: "Älä laita puhelinta riisiin – se ei kuivaa sisältä ja riisipöly voi mennä liitäntöihin." },
@@ -1024,14 +1024,14 @@ const NOUANDED = [
         pealkiri: { et: "Mida saad ise teha", en: "What you can do yourself", ru: "Что можно сделать самому", fi: "Mitä voit tehdä itse" },
         punktid: [
           { et: "Kasuta arvutit kõval ja tasasel pinnal – laual, mitte voodis ega diivanil.", en: "Use the laptop on a hard, flat surface – a desk, not a bed or sofa.", ru: "Ставьте ноутбук на твёрдую ровную поверхность – стол, а не кровать или диван.", fi: "Käytä konetta kovalla ja tasaisella alustalla – pöydällä, ei sängyllä tai sohvalla." },
-          { et: "Ära kata kinni õhuavasid (tavaliselt arvuti all ja küljel).", en: "Don't block the air vents (usually on the bottom and sides).", ru: "Не закрывайте вентиляционные отверстия (обычно снизу и сбоку).", fi: "Älä peitä tuuletusaukkoja (yleensä pohjassa ja sivuilla)." },
+          { et: "Ära kata õhuavasid kinni (need on tavaliselt arvuti all ja küljel).", en: "Don't block the air vents (usually on the bottom and sides).", ru: "Не закрывайте вентиляционные отверстия (обычно снизу и сбоку).", fi: "Älä peitä tuuletusaukkoja (yleensä pohjassa ja sivuilla)." },
           { et: "Sulge programmid, mida sa parajasti ei kasuta.", en: "Close programs you are not using.", ru: "Закрывайте программы, которыми не пользуетесь.", fi: "Sulje ohjelmat, joita et juuri käytä." },
-          { et: "Hoia Windows ja draiverid uuendatud.", en: "Keep Windows and drivers up to date.", ru: "Своевременно обновляйте Windows и драйверы.", fi: "Pidä Windows ja ajurit ajan tasalla." },
+          { et: "Uuenda regulaarselt Windowsi ja draivereid.", en: "Keep Windows and drivers up to date.", ru: "Своевременно обновляйте Windows и драйверы.", fi: "Pidä Windows ja ajurit ajan tasalla." },
           { et: "Vajadusel kasuta jahutusalust.", en: "Use a cooling pad if needed.", ru: "При необходимости используйте охлаждающую подставку.", fi: "Käytä tarvittaessa jäähdytysalustaa." },
         ],
       },
       {
-        pealkiri: { et: "Märgid, et arvuti kuumeneb üle", en: "Signs of overheating", ru: "Признаки перегрева", fi: "Merkit ylikuumenemisesta" },
+        pealkiri: { et: "Märgid, et arvuti kuumeneb üle", en: "Signs of overheating", ru: "Признаки перегрева", fi: "Ylikuumenemisen merkit" },
         punktid: [
           { et: "Ventilaator müriseb pidevalt valjult.", en: "The fan is constantly loud.", ru: "Вентилятор постоянно громко шумит.", fi: "Tuuletin pitää jatkuvasti kovaa ääntä." },
           { et: "Arvuti põhi on nii kuum, et seda on ebamugav süles hoida.", en: "The bottom is too hot to keep on your lap comfortably.", ru: "Дно ноутбука настолько горячее, что его неудобно держать на коленях.", fi: "Pohja on niin kuuma, ettei konetta voi pitää sylissä." },
@@ -1040,7 +1040,7 @@ const NOUANDED = [
       },
     ],
     millal: {
-      et: "Kui arvuti on üle kahe aasta vana ja seda pole kunagi puhastatud, on sees peaaegu kindlasti tolm. Puhastus ja termopasta vahetus annab enamasti suure vahe.",
+      et: "Kui arvuti on üle kahe aasta vana ja seda pole kunagi puhastatud, on sees peaaegu kindlasti tolm. Puhastus ja termopasta vahetus teeb enamasti suure vahe.",
       en: "If the laptop is over two years old and has never been cleaned, there is almost certainly dust inside. Cleaning and new thermal paste usually make a big difference.",
       ru: "Если ноутбуку больше двух лет и его ни разу не чистили, внутри почти наверняка пыль. Чистка и замена термопасты обычно дают заметный результат.",
       fi: "Jos kone on yli kaksi vuotta vanha eikä sitä ole koskaan puhdistettu, sisällä on lähes varmasti pölyä. Puhdistus ja lämpötahnan vaihto tekevät yleensä suuren eron.",
@@ -1050,10 +1050,10 @@ const NOUANDED = [
     id: "aku",
     ikoon: "aku",
     pealkiri: {
-      et: "Märgid, et aku hakkab otsa saama",
+      et: "Märgid, et aku on kulunud",
       en: "Signs your battery is wearing out",
       ru: "Признаки того, что аккумулятор изнашивается",
-      fi: "Merkit siitä, että akku on loppumassa",
+      fi: "Merkit siitä, että akku on kulunut",
     },
     lyhike: {
       et: "Kuidas aru saada, et telefoni või sülearvuti aku vajab vahetust – ja millal on asi ohtlik.",
@@ -1073,7 +1073,7 @@ const NOUANDED = [
         punktid: [
           { et: "Aku tühjeneb palju kiiremini kui varem.", en: "The battery drains much faster than before.", ru: "Батарея садится гораздо быстрее, чем раньше.", fi: "Akku tyhjenee paljon nopeammin kuin ennen." },
           { et: "Seade lülitub välja, kuigi näitab veel 10–30% laetust.", en: "The device shuts off even though it still shows 10–30% charge.", ru: "Устройство выключается, хотя показывает ещё 10–30 % заряда.", fi: "Laite sammuu, vaikka näyttää vielä 10–30 % varausta." },
-          { et: "Laetus hüppab järsku, näiteks 40% pealt 10% peale.", en: "The charge level jumps suddenly, e.g. from 40% to 10%.", ru: "Заряд резко скачет, например с 40 % до 10 %.", fi: "Varaus hyppää äkillisesti, esim. 40 %:sta 10 %:iin." },
+          { et: "Laetuse tase kukub järsku, näiteks 40%-lt 10%-le.", en: "The charge level jumps suddenly, e.g. from 40% to 10%.", ru: "Заряд резко скачет, например с 40 % до 10 %.", fi: "Varaus hyppää äkillisesti, esim. 40 %:sta 10 %:iin." },
           { et: "Seade läheb laadimise ajal tavalisest kuumemaks.", en: "The device gets hotter than usual while charging.", ru: "Во время зарядки устройство греется сильнее обычного.", fi: "Laite kuumenee latauksen aikana tavallista enemmän." },
         ],
       },
@@ -1081,7 +1081,7 @@ const NOUANDED = [
         pealkiri: { et: "Ohtlik: paisunud aku", en: "Dangerous: swollen battery", ru: "Опасно: вздутый аккумулятор", fi: "Vaarallista: turvonnut akku" },
         hoiatus: true,
         punktid: [
-          { et: "Kui ekraan või tagakaas kerkib üles või seade ei ole enam sirge, võib aku olla paisunud.", en: "If the screen or back cover lifts up or the device is no longer flat, the battery may be swollen.", ru: "Если экран или задняя крышка приподнимаются или корпус перестал быть ровным, аккумулятор может быть вздут.", fi: "Jos näyttö tai takakansi nousee tai laite ei ole enää suora, akku voi olla turvonnut." },
+          { et: "Kui ekraan või tagakaas kerkib üles või seade on kõveraks läinud, võib aku olla paisunud.", en: "If the screen or back cover lifts up or the device is no longer flat, the battery may be swollen.", ru: "Если экран или задняя крышка приподнимаются или корпус перестал быть ровным, аккумулятор может быть вздут.", fi: "Jos näyttö tai takakansi nousee tai laite ei ole enää suora, akku voi olla turvonnut." },
           { et: "Lõpeta kohe seadme kasutamine ja laadimine.", en: "Stop using and charging the device immediately.", ru: "Немедленно прекратите пользоваться устройством и заряжать его.", fi: "Lopeta laitteen käyttö ja lataus heti." },
           { et: "Ära vajuta ega torka akut – paisunud aku võib süttida.", en: "Don't press or puncture the battery – a swollen battery can catch fire.", ru: "Не давите и не прокалывайте аккумулятор – вздутый аккумулятор может загореться.", fi: "Älä paina tai puhkaise akkua – turvonnut akku voi syttyä palamaan." },
         ],
@@ -1091,7 +1091,7 @@ const NOUANDED = [
       et: "Kui märkad tavalisi märke, tasub aku vahetada – uue akuga on seade jälle nagu uus. Paisunud aku puhul too seade remonti kohe.",
       en: "If you notice the common signs, it's worth replacing the battery – with a new one the device feels new again. With a swollen battery, bring the device in immediately.",
       ru: "Если заметили обычные признаки, стоит заменить аккумулятор – с новым устройство снова как новое. При вздутом аккумуляторе принесите устройство в ремонт сразу.",
-      fi: "Jos huomaat tavalliset merkit, akku kannattaa vaihtaa – uudella akulla laite on taas kuin uusi. Turvonneen akun kanssa tuo laite korjattavaksi heti.",
+      fi: "Jos huomaat tavalliset merkit, akku kannattaa vaihtaa – uudella akulla laite on taas kuin uusi. Jos akku on turvonnut, tuo laite korjattavaksi heti.",
     },
   },
   {
@@ -1107,7 +1107,7 @@ const NOUANDED = [
       et: "Enne remonti tasub proovida neid lihtsaid samme. Sageli aitavad juba need.",
       en: "Before a repair, try these simple steps. Often they are enough.",
       ru: "Перед ремонтом стоит попробовать эти простые шаги. Часто их уже достаточно.",
-      fi: "Ennen korjausta kannattaa kokeilla näitä yksinkertaisia askeleita. Usein ne riittävät.",
+      fi: "Ennen korjausta kannattaa kokeilla näitä yksinkertaisia toimia. Usein ne riittävät.",
     },
     sissejuhatus: {
       et: "Aeglusel võib olla palju põhjuseid. Osa neist saad ise mõne minutiga kõrvaldada.",
@@ -1117,18 +1117,18 @@ const NOUANDED = [
     },
     plokid: [
       {
-        pealkiri: { et: "Proovi ise", en: "Try yourself", ru: "Попробуйте сами", fi: "Kokeile itse" },
+        pealkiri: { et: "Proovi ise", en: "Try it yourself", ru: "Попробуйте сами", fi: "Kokeile itse" },
         punktid: [
-          { et: "Taaskäivita arvuti – vali menüüst \"Taaskäivita\", mitte ainult kaas kinni ja lahti.", en: "Restart the computer – choose \"Restart\" from the menu, don't just close and open the lid.", ru: "Перезагрузите компьютер – выберите «Перезагрузка» в меню, а не просто закройте и откройте крышку.", fi: "Käynnistä kone uudelleen – valitse valikosta \"Käynnistä uudelleen\", älä vain sulje ja avaa kantta." },
+          { et: "Taaskäivita arvuti – vali menüüst \"Taaskäivita\". Kaane sulgemisest ja avamisest ei piisa.", en: "Restart the computer – choose \"Restart\" from the menu, don't just close and open the lid.", ru: "Перезагрузите компьютер – выберите «Перезагрузка» в меню, а не просто закройте и откройте крышку.", fi: "Käynnistä kone uudelleen – valitse valikosta \"Käynnistä uudelleen\", älä vain sulje ja avaa kantta." },
           { et: "Vaata, mitu programmi käivitub koos arvutiga: vajuta Ctrl + Shift + Esc ja ava vahekaart \"Käivitus\". Lülita välja need, mida sa kohe ei vaja.", en: "Check how many programs start with the computer: press Ctrl + Shift + Esc and open the \"Startup\" tab. Disable the ones you don't need right away.", ru: "Посмотрите, сколько программ запускается вместе с компьютером: нажмите Ctrl + Shift + Esc и откройте вкладку «Автозагрузка». Отключите ненужные.", fi: "Katso, montako ohjelmaa käynnistyy koneen mukana: paina Ctrl + Shift + Esc ja avaa \"Käynnistys\"-välilehti. Poista käytöstä ne, joita et heti tarvitse." },
           { et: "Kontrolli, et kettal oleks vaba ruumi – vähemalt 10–15%.", en: "Make sure the drive has free space – at least 10–15%.", ru: "Проверьте, что на диске есть свободное место – хотя бы 10–15 %.", fi: "Varmista, että levyllä on vapaata tilaa – vähintään 10–15 %." },
-          { et: "Tee Windowsi uuendused ära.", en: "Install Windows updates.", ru: "Установите обновления Windows.", fi: "Asenna Windows-päivitykset." },
-          { et: "Kontrolli arvutit viirusetõrjega – Windowsi enda turbeprogramm on selleks piisav.", en: "Scan the computer for viruses – Windows' own security app is enough.", ru: "Проверьте компьютер антивирусом – встроенной защиты Windows достаточно.", fi: "Tarkista kone virustorjunnalla – Windowsin oma suojaus riittää." },
+          { et: "Paigalda Windowsi uuendused.", en: "Install Windows updates.", ru: "Установите обновления Windows.", fi: "Asenna Windows-päivitykset." },
+          { et: "Kontrolli arvutit viirusetõrjega – Windowsi sisseehitatud viirusetõrjest piisab.", en: "Scan the computer for viruses – Windows' own security app is enough.", ru: "Проверьте компьютер антивирусом – встроенной защиты Windows достаточно.", fi: "Tarkista kone virustorjunnalla – Windowsin oma suojaus riittää." },
         ],
       },
     ],
     millal: {
-      et: "Kui ükski samm ei aidanud, on arvutis tõenäoliselt vana kõvaketas, liiga vähe mälu või riistvara viga. Vana kõvaketta vahetus SSD vastu on sageli suurim kiiruse tõus, mida arvutile teha saab.",
+      et: "Kui ükski samm ei aidanud, on arvutis tõenäoliselt vana kõvaketas, liiga vähe mälu või riistvara viga. Vana kõvaketta vahetamine SSD-ketta vastu annab sageli suurima kiirusevõidu, mida arvutile teha saab.",
       en: "If none of the steps helped, the computer probably has an old hard drive, too little memory or a hardware fault. Replacing an old hard drive with an SSD is often the biggest speed boost you can give a computer.",
       ru: "Если ничего не помогло, вероятно, в компьютере старый жёсткий диск, мало памяти или аппаратная неисправность. Замена старого диска на SSD – часто самое большое ускорение, которое можно дать компьютеру.",
       fi: "Jos mikään ei auttanut, koneessa on todennäköisesti vanha kiintolevy, liian vähän muistia tai laitevika. Vanhan kiintolevyn vaihto SSD:hen on usein suurin nopeusparannus, jonka koneelle voi tehdä.",
@@ -1143,7 +1143,7 @@ const NOUANDED = [
 const PRIVAATSUS = {
   pealkiri: { et: "Privaatsusteave", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
   sissejuhatus: {
-    et: "Siin on lihtsalt kirjas, milliseid andmeid ma kogun, miks ja kuidas neid hoian.",
+    et: "Siin on lihtsas keeles kirjas, milliseid andmeid ma kogun, miks ja kuidas neid hoian.",
     en: "This page explains in plain words what data I collect, why, and how I keep it.",
     ru: "Здесь простыми словами написано, какие данные я собираю, зачем и как их храню.",
     fi: "Tällä sivulla kerrotaan selkeästi, mitä tietoja kerään, miksi ja miten säilytän niitä.",
@@ -1152,16 +1152,16 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Kes andmete eest vastutab", en: "Who is responsible", ru: "Кто отвечает за данные", fi: "Kuka vastaa tiedoista" },
       tekst: {
-        et: "Andmete eest vastutab Karel Saega, Tartu. Küsimuste korral kirjuta {email} või helista {telefon}.",
+        et: "Andmete eest vastutab Karel Saega, Tartu. Küsimuste korral kirjuta aadressil {email} või helista {telefon}.",
         en: "Karel Saega, Tartu, is responsible for the data. For questions, write to {email} or call {telefon}.",
         ru: "За данные отвечает Карел Саэга, Тарту. По вопросам пишите на {email} или звоните {telefon}.",
-        fi: "Tiedoista vastaa Karel Saega, Tartto. Kysymyksissä kirjoita osoitteeseen {email} tai soita {telefon}.",
+        fi: "Tiedoista vastaa Karel Saega, Tartto. Jos sinulla on kysyttävää, kirjoita osoitteeseen {email} tai soita {telefon}.",
       },
     },
     {
       pealkiri: { et: "Milliseid andmeid kogun", en: "What data I collect", ru: "Какие данные я собираю", fi: "Mitä tietoja kerään" },
       tekst: {
-        et: "Kui saadad kontaktivormi kaudu päringu, saan sinu nime, telefoninumbri või e-posti, seadme andmed ja sinu kirjelduse probleemist. Kui helistad või kirjutad (ka WhatsAppis), näen sinu numbrit ja sõnumit.",
+        et: "Kui saadad kontaktivormi kaudu päringu, saan sinu nime, telefoninumbri või e-posti aadressi, seadme andmed ja sinu kirjelduse probleemist. Kui helistad või kirjutad (ka WhatsAppis), näen sinu numbrit ja sõnumit.",
         en: "When you send an enquiry through the contact form, I receive your name, phone number or email, device details and your description of the problem. When you call or write (including on WhatsApp), I see your number and message.",
         ru: "Когда вы отправляете запрос через контактную форму, я получаю ваше имя, номер телефона или эл. почту, данные устройства и описание проблемы. Когда вы звоните или пишете (в том числе в WhatsApp), я вижу ваш номер и сообщение.",
         fi: "Kun lähetät kyselyn yhteydenottolomakkeella, saan nimesi, puhelinnumerosi tai sähköpostisi, laitteen tiedot ja kuvauksesi ongelmasta. Kun soitat tai kirjoitat (myös WhatsAppissa), näen numerosi ja viestisi.",
@@ -1177,7 +1177,7 @@ const PRIVAATSUS = {
       },
     },
     {
-      pealkiri: { et: "Kus andmed liiguvad", en: "Where the data goes", ru: "Куда передаются данные", fi: "Minne tiedot kulkevat" },
+      pealkiri: { et: "Kuhu andmed liiguvad", en: "Where the data goes", ru: "Куда передаются данные", fi: "Minne tiedot kulkevat" },
       tekst: {
         et: "Kontaktivormi sõnum jõuab minuni e-postiga teenuse Web3Forms kaudu ja seda hoitakse minu e-postkastis (Gmail).",
         en: "Messages from the contact form reach me by email via the Web3Forms service and are kept in my mailbox (Gmail).",
@@ -1197,7 +1197,7 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Sinu õigused", en: "Your rights", ru: "Ваши права", fi: "Oikeutesi" },
       tekst: {
-        et: "Sul on õigus küsida, milliseid andmeid sinu kohta hoian, ja paluda neid parandada või kustutada – kirjuta {email}. Kui leiad, et sinu andmeid on kasutatud valesti, võid pöörduda Andmekaitse Inspektsiooni poole (www.aki.ee).",
+        et: "Sul on õigus küsida, milliseid andmeid sinu kohta hoian, ja paluda neid parandada või kustutada – kirjuta aadressil {email}. Kui leiad, et sinu andmeid on kasutatud valesti, võid pöörduda Andmekaitse Inspektsiooni poole (www.aki.ee).",
         en: "You have the right to ask what data I hold about you and to have it corrected or deleted – write to {email}. If you believe your data has been misused, you can contact the Estonian Data Protection Inspectorate (www.aki.ee).",
         ru: "Вы вправе узнать, какие данные о вас я храню, и попросить их исправить или удалить – напишите на {email}. Если считаете, что ваши данные использованы неправильно, можете обратиться в Инспекцию по защите данных Эстонии (www.aki.ee).",
         fi: "Sinulla on oikeus kysyä, mitä tietoja sinusta säilytän, ja pyytää niiden korjaamista tai poistamista – kirjoita osoitteeseen {email}. Jos katsot, että tietojasi on käytetty väärin, voit kääntyä Viron tietosuojaviranomaisen puoleen (www.aki.ee).",
