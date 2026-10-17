@@ -23,12 +23,104 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "KASA",
-    "description": "Arvutite, sülearvutite, nutitelefonide, tahvelarvutite ja mängukonsoolide remont ja hooldus Tartus. Üle 15 aasta kogemust, kodukülastus Tartu linnas, tööle 3 kuud garantiid.",
     "url": "https://kasa.ee/",
-    "image": "https://kasa.ee/img/jagamine.jpg?v=2",
     "telephone": "+37256391019",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tartu", "addressCountry": "EE" },
-    "areaServed": { "@type": "City", "name": "Tartu" }
+    "areaServed": {
+      "@type": "City",
+      "name": "Tartu"
+    },
+    "description": "Arvutite, sülearvutite, nutitelefonide, tahvelarvutite ja mängukonsoolide remont ja hooldus Tartus. Üle 15 aasta kogemust, kodukülastus Tartu linnas, tööle 3 kuud garantiid.",
+    "image": "https://kasa.ee/img/jagamine.jpg?v=2",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tartu",
+      "addressCountry": "EE"
+    },
+    "priceRange": "€€",
+    "knowsLanguage": [
+      "et",
+      "en",
+      "ru",
+      "fi"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Remonditeenused",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Lauaarvuti remont Tartus",
+            "url": "https://kasa.ee/lauaarvutid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sülearvuti remont Tartus",
+            "url": "https://kasa.ee/sulearvutid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Telefoni remont Tartus",
+            "url": "https://kasa.ee/nutitelefonid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Tahvelarvuti remont Tartus",
+            "url": "https://kasa.ee/tahvelarvutid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emaplaadi ja videokaardi remont Tartus",
+            "url": "https://kasa.ee/komponendid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mängukonsooli remont Tartus",
+            "url": "https://kasa.ee/konsoolid",
+            "areaServed": {
+              "@type": "City",
+              "name": "Tartu"
+            }
+          }
+        }
+      ]
+    }
   }
   </script>
   <title>Arvutite ja telefonide remont Tartus – KASA</title>
@@ -42,16 +134,16 @@
     <div class="sisu pais-sisu">
       <a class="logo" href="/" aria-label="KASA">
         <span class="logo-nimi"><span>K</span><span>A</span><span>S</span><span>A</span></span>
-        <span class="logo-alapealkiri" data-t="logo_alapealkiri"></span>
+        <span class="logo-alapealkiri" data-t="logo_alapealkiri">Seadmete remont ja hooldus</span>
       </a>
       <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
       <nav class="menuu">
-        <a href="#teenused" data-t="menuu_teenused"></a>
-        <a href="#kuidas" data-t="menuu_kuidas"></a>
-        <a href="#minust" data-t="menuu_minust"></a>
-        <a href="#nouanded" data-t="menuu_nouanded"></a>
-        <a href="#kkk" data-t="menuu_kkk"></a>
-        <a href="#kontakt" data-t="menuu_kontakt"></a>
+        <a href="#teenused" data-t="menuu_teenused">Teenused</a>
+        <a href="#kuidas" data-t="menuu_kuidas">Kuidas see käib</a>
+        <a href="#minust" data-t="menuu_minust">Minust</a>
+        <a href="#nouanded" data-t="menuu_nouanded">Nõuanded</a>
+        <a href="#kkk" data-t="menuu_kkk">KKK</a>
+        <a href="#kontakt" data-t="menuu_kontakt">Kontakt</a>
       </nav>
       <div class="keel" aria-label="Keel / Language">
         <button data-keel="et">ET</button>
@@ -66,56 +158,110 @@
     <!-- ===== SUUR PEALKIRI ===== -->
     <section class="hero">
       <div class="sisu">
-        <h1 data-t="hero_pealkiri"></h1>
+        <h1 data-t="hero_pealkiri">Arvutite ja telefonide remont Tartus</h1>
       </div>
     </section>
 
     <!-- ===== TEENUSED (seadmete kaardid tulevad failist tekstid.js) ===== -->
     <section id="teenused" class="osa">
       <div class="sisu">
-        <h2 data-t="teenused_pealkiri"></h2>
-        <p class="juhatus" data-t="teenused_tekst"></p>
-        <div id="seadmed" class="ruudustik"></div>
+        <h2 data-t="teenused_pealkiri">Vali seade</h2>
+        <p class="juhatus" data-t="teenused_tekst">Vajuta seadmele, et näha, mida ma sellega teen ja mis see maksab.</p>
+        <div id="seadmed" class="ruudustik">
+      <a class="kaart seadmekaart" href="/lauaarvutid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="4" y="9" width="26" height="19" rx="2"></rect><path d="M13 36h8M17 28v8"></path><rect x="34" y="9" width="10" height="27" rx="1.5"></rect><path d="M37 14h4M37 18h4"></path><circle cx="39" cy="30" r="1.2"></circle></svg></span>
+        <h3>Lauaarvutid</h3>
+        <p>Remont, puhastus, osade vahetus, uue arvuti kokkupanek.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a>
+      <a class="kaart seadmekaart" href="/sulearvutid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="20" rx="2"></rect><path d="M4 36h40l-3-6H7z"></path><path d="M21 33h6"></path></svg></span>
+        <h3>Sülearvutid</h3>
+        <p>Ekraan, klaviatuur, aku, laadimispesa, puhastus, tarkvara.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a>
+      <a class="kaart seadmekaart" href="/nutitelefonid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="3.5"></rect><path d="M21 8h6"></path><circle cx="24" cy="39" r="1.3"></circle></svg></span>
+        <h3>Nutitelefonid</h3>
+        <p>Ekraani ja aku vahetus, laadimispesa, kaamera, tarkvara.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a>
+      <a class="kaart seadmekaart" href="/tahvelarvutid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="7" y="5" width="34" height="38" rx="3"></rect><path d="M11 10h26v26H11z"></path><circle cx="24" cy="39.5" r="1.3"></circle></svg></span>
+        <h3>Tahvelarvutid</h3>
+        <p>Puuteklaas, ekraan, aku, laadimispesa, tarkvara.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a>
+      <a class="kaart seadmekaart" href="/komponendid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="13" y="13" width="22" height="22" rx="2"></rect><rect x="19" y="19" width="10" height="10" rx="1"></rect><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"></path></svg></span>
+        <h3>Emaplaadid ja videokaardid</h3>
+        <p>Remont komponendi tasemel: jootmine, toiteahelad, vedelikukahjustus.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a>
+      <a class="kaart seadmekaart" href="/konsoolid">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><path d="M15 14h18a10 10 0 0 1 10 10v4a8 8 0 0 1-14 5.3L27 31h-6l-2 2.3A8 8 0 0 1 5 28v-4a10 10 0 0 1 10-10z"></path><path d="M14 20v8M10 24h8"></path><circle cx="32" cy="22" r="1.4"></circle><circle cx="36" cy="26" r="1.4"></circle></svg></span>
+        <h3>Mängukonsoolid</h3>
+        <p>PlayStation, Xbox, Nintendo: puhastus, HDMI-pesa, pultide remont.</p>
+        <span class="lisa">Vaata lähemalt →</span>
+      </a></div>
       </div>
     </section>
 
     <!-- ===== "LEIA OMA MURE" ABILINE (mured tulevad failist tekstid.js) ===== -->
     <section id="abiline" class="osa">
       <div class="sisu">
-        <h2 data-t="abiline_pealkiri"></h2>
-        <p class="juhatus" data-t="abiline_tekst"></p>
-        <div id="abiline-sisu" class="kaart abiline"></div>
+        <h2 data-t="abiline_pealkiri">Leia oma mure</h2>
+        <p class="juhatus" data-t="abiline_tekst">Ei tea, mis teenust vajad? Vali seade ja mis juhtus – näed, mis võib viga olla ja mis see umbes maksab.</p>
+        <div id="abiline-sisu" class="kaart abiline"><p class="samm">1. Mis seade?</p><div class="valikud">
+        <button type="button" class="valik-nupp" data-seade="lauaarvutid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><rect x="4" y="9" width="26" height="19" rx="2"></rect><path d="M13 36h8M17 28v8"></path><rect x="34" y="9" width="10" height="27" rx="1.5"></rect><path d="M37 14h4M37 18h4"></path><circle cx="39" cy="30" r="1.2"></circle></svg></span>Lauaarvutid
+        </button>
+        <button type="button" class="valik-nupp" data-seade="sulearvutid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><rect x="9" y="10" width="30" height="20" rx="2"></rect><path d="M4 36h40l-3-6H7z"></path><path d="M21 33h6"></path></svg></span>Sülearvutid
+        </button>
+        <button type="button" class="valik-nupp" data-seade="nutitelefonid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="3.5"></rect><path d="M21 8h6"></path><circle cx="24" cy="39" r="1.3"></circle></svg></span>Nutitelefonid
+        </button>
+        <button type="button" class="valik-nupp" data-seade="tahvelarvutid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><rect x="7" y="5" width="34" height="38" rx="3"></rect><path d="M11 10h26v26H11z"></path><circle cx="24" cy="39.5" r="1.3"></circle></svg></span>Tahvelarvutid
+        </button>
+        <button type="button" class="valik-nupp" data-seade="komponendid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><rect x="13" y="13" width="22" height="22" rx="2"></rect><rect x="19" y="19" width="10" height="10" rx="1"></rect><path d="M18 13V7M24 13V7M30 13V7M18 41v-6M24 41v-6M30 41v-6M13 18H7M13 24H7M13 30H7M41 18h-6M41 24h-6M41 30h-6"></path></svg></span>Emaplaadid ja videokaardid
+        </button>
+        <button type="button" class="valik-nupp" data-seade="konsoolid" aria-pressed="false">
+          <span class="ikoon vaike"><svg viewBox="0 0 48 48"><path d="M15 14h18a10 10 0 0 1 10 10v4a8 8 0 0 1-14 5.3L27 31h-6l-2 2.3A8 8 0 0 1 5 28v-4a10 10 0 0 1 10-10z"></path><path d="M14 20v8M10 24h8"></path><circle cx="32" cy="22" r="1.4"></circle><circle cx="36" cy="26" r="1.4"></circle></svg></span>Mängukonsoolid
+        </button></div></div>
       </div>
     </section>
 
     <!-- ===== KUIDAS SEE KÄIB ===== -->
     <section id="kuidas" class="osa">
       <div class="sisu">
-        <h2 data-t="kuidas_pealkiri"></h2>
+        <h2 data-t="kuidas_pealkiri">Kuidas see käib</h2>
         <div class="ruudustik kolm">
           <div class="kaart">
-            <h3 data-t="koju_pealkiri"></h3>
-            <p data-t="koju_tekst"></p>
+            <h3 data-t="koju_pealkiri">Tulen sinu juurde</h3>
+            <p data-t="koju_tekst">Tulen koju või kontorisse Tartu linna piires. Väljakutsetasu on 20 €, millele lisandub tehtud töö hind.</p>
           </div>
           <div class="kaart">
-            <h3 data-t="too_pealkiri"></h3>
-            <p data-t="too_tekst"></p>
+            <h3 data-t="too_pealkiri">Too seade minu juurde</h3>
+            <p data-t="too_tekst">Lepime kokku sobiva aja ja ütlen sulle aadressi. Väljakutsetasu sel juhul ei ole.</p>
           </div>
           <div class="kaart">
-            <h3 data-t="hind_pealkiri"></h3>
-            <p data-t="hind_tekst"></p>
+            <h3 data-t="hind_pealkiri">Hind enne tööd</h3>
+            <p data-t="hind_tekst">Enne remonti ütlen sulle hinna. Kui töö käigus selgub midagi uut, küsin enne jätkamist sinu nõusolekut.</p>
           </div>
           <div class="kaart">
-            <h3 data-t="garantii_pealkiri"></h3>
-            <p data-t="garantii_tekst"></p>
+            <h3 data-t="garantii_pealkiri">Garantii</h3>
+            <p data-t="garantii_tekst">Tehtud tööle annan 3 kuud garantiid. Uutele varuosadele kehtib tootja garantii.</p>
           </div>
           <div class="kaart">
-            <h3 data-t="tooaeg_pealkiri"></h3>
-            <p data-t="tooaeg_tekst"></p>
+            <h3 data-t="tooaeg_pealkiri">Tööaeg</h3>
+            <p data-t="tooaeg_tekst">Esmaspäevast reedeni. Nädalavahetusel eelneval kokkuleppel.</p>
           </div>
           <div class="kaart">
-            <h3 data-t="maksmine_pealkiri"></h3>
-            <p data-t="maksmine_tekst"></p>
+            <h3 data-t="maksmine_pealkiri">Maksmine</h3>
+            <p data-t="maksmine_tekst">Maksad alles pärast töö tegemist – sularahas või pangaülekandega.</p>
           </div>
         </div>
       </div>
@@ -126,85 +272,137 @@
       <div class="sisu minust">
         <div class="kogemus">
           <strong>15+</strong>
-          <span data-t="aastat_kogemust"></span>
+          <span data-t="aastat_kogemust">aastat kogemust</span>
         </div>
         <div>
-          <h2 data-t="minust_pealkiri"></h2>
-          <p data-t="minust_tekst"></p>
+          <h2 data-t="minust_pealkiri">Minust</h2>
+          <p data-t="minust_tekst">Olen seadmeid parandanud üle 15 aasta. Tegelen nii lihtsamate töödega, nagu puhastus ja tarkvara paigaldus, kui ka keerulisemate töödega, nagu emaplaatide ja videokaartide remont. Selgitan alati lihtsas keeles, mis seadmel viga on ja mida saab teha.</p>
         </div>      </div>
     </section>
 
     <!-- ===== NÕUANDED (juhendid tulevad failist tekstid.js) ===== -->
     <section id="nouanded" class="osa">
       <div class="sisu">
-        <h2 data-t="nouanded_pealkiri"></h2>
-        <p class="juhatus" data-t="nouanded_tekst"></p>
-        <div id="nouanded-nimekiri" class="ruudustik nouanded"></div>
+        <h2 data-t="nouanded_pealkiri">Kasulikud nõuanded</h2>
+        <p class="juhatus" data-t="nouanded_tekst">Lühikesed juhendid, mis aitavad sul seadet hoida ja hädaolukorras õigesti käituda.</p>
+        <div id="nouanded-nimekiri" class="ruudustik nouanded">
+      <a class="kaart nouandekaart" href="/nouanded/vesi">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><path d="M24 5C24 5 11 20 11 29a13 13 0 0 0 26 0C37 20 24 5 24 5z"></path><path d="M18 30a6 6 0 0 0 6 6"></path></svg></span>
+        <h3>Telefon kukkus vette – mida teha kohe</h3>
+        <p>Esimesed minutid on kõige tähtsamad. Need sammud suurendavad võimalust telefon päästa.</p>
+        <span class="lisa">Loe edasi →</span>
+      </a>
+      <a class="kaart nouandekaart" href="/nouanded/kuumus">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><path d="M20 28V9a4 4 0 0 1 8 0v19a8 8 0 1 1-8 0z"></path><path d="M24 31V16"></path><circle cx="24" cy="34" r="3"></circle><path d="M32 12h4M32 18h4M32 24h4"></path></svg></span>
+        <h3>Kuidas hoida sülearvutit jahedana</h3>
+        <p>Ülekuumenemine teeb arvuti aeglaseks ja lühendab selle eluiga. Mõned lihtsad nipid aitavad.</p>
+        <span class="lisa">Loe edasi →</span>
+      </a>
+      <a class="kaart nouandekaart" href="/nouanded/aku">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><rect x="15" y="9" width="18" height="34" rx="3"></rect><path d="M20 5h8"></path><path d="M26 17l-5 9h6l-5 9"></path></svg></span>
+        <h3>Märgid, et aku on kulunud</h3>
+        <p>Kuidas aru saada, et telefoni või sülearvuti aku vajab vahetust – ja millal on asi ohtlik.</p>
+        <span class="lisa">Loe edasi →</span>
+      </a>
+      <a class="kaart nouandekaart" href="/nouanded/aeglane">
+        <span class="ikoon"><svg viewBox="0 0 48 48"><path d="M8 34a16 16 0 1 1 32 0"></path><path d="M24 34l-7-9"></path><circle cx="24" cy="34" r="2.5"></circle><path d="M12 22l2.5 1.5M24 16v3M36 22l-2.5 1.5"></path></svg></span>
+        <h3>Arvuti on aeglane – mida ise proovida</h3>
+        <p>Enne remonti tasub proovida neid lihtsaid samme. Sageli aitavad juba need.</p>
+        <span class="lisa">Loe edasi →</span>
+      </a></div>
       </div>
     </section>
 
     <!-- ===== KKK (küsimused tulevad failist tekstid.js) ===== -->
     <section id="kkk" class="osa">
       <div class="sisu">
-        <h2 data-t="kkk_pealkiri"></h2>
-        <div id="kkk-nimekiri" class="kkk"></div>
+        <h2 data-t="kkk_pealkiri">Korduma kippuvad küsimused</h2>
+        <div id="kkk-nimekiri" class="kkk">
+      <details class="kaart">
+        <summary>Kas mu failid ja pildid jäävad remondi ajal alles?</summary>
+        <p>Enamasti jah – suurem osa remonditöödest andmeid ei puuduta. Kui töö võib andmeid ohustada (nt ketta vahetus või süsteemi uuesti paigaldamine), ütlen seda enne ja vajadusel teen varukoopia.</p>
+      </details>
+      <details class="kaart">
+        <summary>Kas tasub parandada või osta uus?</summary>
+        <p>Ütlen ausalt. Kui remont maksab peaaegu sama palju kui uus seade või seade on nii vana, et remont ei tasu end ära, ütlen seda kohe ja aitan leida parema lahenduse.</p>
+      </details>
+      <details class="kaart">
+        <summary>Mis saab siis, kui seadet ei õnnestu parandada?</summary>
+        <p>Siis maksad ainult diagnostika eest. Selgitan, mis on viga ja millised on edasised võimalused.</p>
+      </details>
+      <details class="kaart">
+        <summary>Kui kaua remont aega võtab?</summary>
+        <p>Lihtsamad tööd (puhastus, tarkvara, aku vahetus) saavad sageli valmis samal päeval. Kui varuosa tuleb tellida, võtab see tavaliselt mõnest päevast kuni nädalani. Ütlen aja enne töö algust.</p>
+      </details>
+      <details class="kaart">
+        <summary>Kas kasutad originaalvaruosi?</summary>
+        <p>Võimalusel pakun valikut: originaalosa või kvaliteetne asendusosa, mis on tavaliselt odavam. Selgitan erinevuse ja hinna ning sina otsustad.</p>
+      </details>
+      <details class="kaart">
+        <summary>Kas pean seadme ise sinu juurde tooma?</summary>
+        <p>Ei pea. Tartu linnas tulen ka koju või kontorisse – väljakutsetasu on 20 €. Kui tood seadme ise, väljakutsetasu ei ole.</p>
+      </details>
+      <details class="kaart">
+        <summary>Kas parandad ka vanemaid seadmeid?</summary>
+        <p>Jah. Vanemate seadmete puhul sõltub palju sellest, kas varuosi on veel saada – selle kontrollin enne ja annan teada.</p>
+      </details></div>
       </div>
     </section>
 
     <!-- ===== KONTAKT ===== -->
     <section id="kontakt" class="osa">
       <div class="sisu">
-        <h2 data-t="kontakt_pealkiri"></h2>
-        <p class="juhatus" data-t="kontakt_tekst"></p>
+        <h2 data-t="kontakt_pealkiri">Kontakt</h2>
+        <p class="juhatus" data-t="kontakt_tekst">Kirjelda oma muret ja seadet. Vastan esimesel võimalusel.</p>
         <div class="kontakt-ala">
 
           <!-- Kirjutamisvorm (praegu näidis, ei saada veel midagi) -->
           <form id="vorm" class="kaart vorm">
-            <h3 data-t="vorm_pealkiri"></h3>
+            <h3 data-t="vorm_pealkiri">Kirjelda oma muret</h3>
             <div class="vorm-rida">
               <label>
-                <span data-t="vorm_nimi"></span>
+                <span data-t="vorm_nimi">Sinu nimi</span>
                 <input type="text" name="nimi" required autocomplete="name">
               </label>
               <label>
-                <span data-t="vorm_kontakt"></span>
+                <span data-t="vorm_kontakt">Telefon või e-post</span>
                 <input type="text" name="kontakt" required autocomplete="email">
               </label>
             </div>
             <label>
-              <span data-t="vorm_seade"></span>
-              <select id="vorm-seade" name="seade" required></select>
+              <span data-t="vorm_seade">Seade</span>
+              <select id="vorm-seade" name="seade" required><option value="">Vali seade…</option><option value="lauaarvutid">Lauaarvutid</option><option value="sulearvutid">Sülearvutid</option><option value="nutitelefonid">Nutitelefonid</option><option value="tahvelarvutid">Tahvelarvutid</option><option value="komponendid">Emaplaadid ja videokaardid</option><option value="konsoolid">Mängukonsoolid</option><option value="muu">Muu seade</option></select>
             </label>
             <fieldset>
-              <legend data-t="vorm_viis"></legend>
-              <label class="valik"><input type="radio" name="viis" value="koju"> <span data-t="vorm_viis_koju"></span></label>
-              <label class="valik"><input type="radio" name="viis" value="toon"> <span data-t="vorm_viis_toon"></span></label>
-              <label class="valik"><input type="radio" name="viis" value="ei-tea" checked> <span data-t="vorm_viis_ei_tea"></span></label>
+              <legend data-t="vorm_viis">Kuidas sulle sobib?</legend>
+              <label class="valik"><input type="radio" name="viis" value="koju"> <span data-t="vorm_viis_koju">Tule minu juurde (+20 €)</span></label>
+              <label class="valik"><input type="radio" name="viis" value="toon"> <span data-t="vorm_viis_toon">Toon seadme ise</span></label>
+              <label class="valik"><input type="radio" name="viis" value="ei-tea" checked> <span data-t="vorm_viis_ei_tea">Ei tea veel</span></label>
             </fieldset>
             <label>
-              <span data-t="vorm_kirjeldus"></span>
-              <textarea name="kirjeldus" rows="5" required data-tp="vorm_kirjeldus_vihje"></textarea>
+              <span data-t="vorm_kirjeldus">Mis seadmega juhtus?</span>
+              <textarea name="kirjeldus" rows="5" required data-tp="vorm_kirjeldus_vihje" placeholder="Nt: sülearvuti mudel, mis juhtus, millal probleem algas…"></textarea>
             </label>
             <!-- Robotite lõks: inimene seda lahtrit ei näe ega täida -->
             <input type="checkbox" name="botcheck" class="robotilõks" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button type="submit" class="nupp" data-t="vorm_saada"></button>
+            <button type="submit" class="nupp" data-t="vorm_saada">Saada</button>
             <p class="vorm-privaatsus">
-              <span data-t="vorm_privaatsus"></span>
-              <a href="/privaatsus" data-t="privaatsus_link"></a>
+              <span data-t="vorm_privaatsus">Kasutan sinu andmeid ainult sinu päringule vastamiseks.</span>
+              <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
             </p>
             <p id="vorm-teade" class="vorm-teade" hidden></p>
           </form>
 
           <!-- Otse ühendust võtmine -->
           <div class="kontaktid">
-            <h3 data-t="voi_kirjuta_otse"></h3>
+            <h3 data-t="voi_kirjuta_otse">Või võta otse ühendust</h3>
             <div class="kaart kontakt">
-              <h3 data-t="telefon"></h3>
-              <a data-kontakt="telefon" href="#"></a>
+              <h3 data-t="telefon">Telefon</h3>
+              <a data-kontakt="telefon" href="tel:+37256391019">+372 5639 1019</a>
             </div>
             <div class="kaart kontakt">
-              <h3 data-t="whatsapp"></h3>
-              <a data-kontakt="whatsapp" href="#" target="_blank" rel="noopener" data-t="whatsapp_tekst"></a>
+              <h3 data-t="whatsapp">WhatsApp</h3>
+              <a data-kontakt="whatsapp" href="https://wa.me/37256391019?text=Tere!%20Kirjutan%20veebilehe%20kaudu.%20Mul%20on%20mure%20seadmega%3A%20" target="_blank" rel="noopener" data-t="whatsapp_tekst">Kirjuta mulle</a>
             </div>
           </div>
         </div>
@@ -215,13 +413,13 @@
   <!-- ===== JALUS ===== -->
   <footer class="jalus">
     <div class="sisu">
-      © <span id="aasta"></span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
-      · <a href="/privaatsus" data-t="privaatsus_link"></a>
+      © <span id="aasta">2026</span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
+      · <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=2be2ecc5"></script>
-  <script src="/js/leht.js?v=06ee0828"></script>
+  <script src="/js/tekstid.js?v=c167854e"></script>
+  <script src="/js/leht.js?v=47ee5b15"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

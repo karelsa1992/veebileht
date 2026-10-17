@@ -304,6 +304,7 @@ const TEKSTID = {
 //    id        – lühike nimi lehe aadressi jaoks (ära muuda)
 //    ikoon     – pildi nimi (ära muuda)
 //    nimi      – seadme nimi
+//    lehe_pealkiri – seadme lehe pealkiri brauseri vahelehel ja Google'is (otsingusõnadega)
 //    lyhike    – lühike kirjeldus avalehe kaardil
 //    kirjeldus – pikem tekst seadme lehel
 //    mida      – nimekiri asjadest, mida teen
@@ -314,6 +315,7 @@ const SEADMED = [
     id: "lauaarvutid",
     ikoon: "lauaarvuti",
     nimi: { et: "Lauaarvutid", en: "Desktop computers", ru: "Настольные компьютеры", fi: "Pöytäkoneet" },
+    lehe_pealkiri: { et: "Lauaarvuti remont Tartus", en: "Desktop PC repair in Tartu", ru: "Ремонт компьютеров в Тарту", fi: "Pöytäkoneen korjaus Tartossa" },
     lyhike: {
       et: "Remont, puhastus, osade vahetus, uue arvuti kokkupanek.",
       en: "Repair, cleaning, part replacement, building new PCs.",
@@ -347,6 +349,7 @@ const SEADMED = [
     id: "sulearvutid",
     ikoon: "sulearvuti",
     nimi: { et: "Sülearvutid", en: "Laptops", ru: "Ноутбуки", fi: "Kannettavat" },
+    lehe_pealkiri: { et: "Sülearvuti remont Tartus", en: "Laptop repair in Tartu", ru: "Ремонт ноутбуков в Тарту", fi: "Kannettavan korjaus Tartossa" },
     lyhike: {
       et: "Ekraan, klaviatuur, aku, laadimispesa, puhastus, tarkvara.",
       en: "Screen, keyboard, battery, charging port, cleaning, software.",
@@ -381,6 +384,7 @@ const SEADMED = [
     id: "nutitelefonid",
     ikoon: "telefon",
     nimi: { et: "Nutitelefonid", en: "Smartphones", ru: "Смартфоны", fi: "Älypuhelimet" },
+    lehe_pealkiri: { et: "Telefoni remont Tartus", en: "Phone repair in Tartu", ru: "Ремонт телефонов в Тарту", fi: "Puhelimen korjaus Tartossa" },
     lyhike: {
       et: "Ekraani ja aku vahetus, laadimispesa, kaamera, tarkvara.",
       en: "Screen and battery replacement, charging port, camera, software.",
@@ -415,6 +419,7 @@ const SEADMED = [
     id: "tahvelarvutid",
     ikoon: "tahvel",
     nimi: { et: "Tahvelarvutid", en: "Tablets", ru: "Планшеты", fi: "Tabletit" },
+    lehe_pealkiri: { et: "Tahvelarvuti remont Tartus", en: "Tablet repair in Tartu", ru: "Ремонт планшетов в Тарту", fi: "Tabletin korjaus Tartossa" },
     lyhike: {
       et: "Puuteklaas, ekraan, aku, laadimispesa, tarkvara.",
       en: "Touch glass, screen, battery, charging port, software.",
@@ -445,6 +450,7 @@ const SEADMED = [
     id: "komponendid",
     ikoon: "kiip",
     nimi: { et: "Emaplaadid ja videokaardid", en: "Motherboards and graphics cards", ru: "Материнские платы и видеокарты", fi: "Emolevyt ja näytönohjaimet" },
+    lehe_pealkiri: { et: "Emaplaadi ja videokaardi remont Tartus", en: "Motherboard and graphics card repair in Tartu", ru: "Ремонт материнских плат и видеокарт в Тарту", fi: "Emolevyjen ja näytönohjainten korjaus Tartossa" },
     lyhike: {
       et: "Remont komponendi tasemel: jootmine, toiteahelad, vedelikukahjustus.",
       en: "Component-level repair: soldering, power circuits, liquid damage.",
@@ -477,6 +483,7 @@ const SEADMED = [
     id: "konsoolid",
     ikoon: "konsool",
     nimi: { et: "Mängukonsoolid", en: "Game consoles", ru: "Игровые приставки", fi: "Pelikonsolit" },
+    lehe_pealkiri: { et: "Mängukonsooli remont Tartus", en: "Game console repair in Tartu", ru: "Ремонт игровых приставок в Тарту", fi: "Pelikonsolin korjaus Tartossa" },
     lyhike: {
       et: "PlayStation, Xbox, Nintendo: puhastus, HDMI-pesa, pultide remont.",
       en: "PlayStation, Xbox, Nintendo: cleaning, HDMI port, controller repair.",

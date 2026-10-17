@@ -29,16 +29,16 @@
     <div class="sisu pais-sisu">
       <a class="logo" href="/" aria-label="KASA">
         <span class="logo-nimi"><span>K</span><span>A</span><span>S</span><span>A</span></span>
-        <span class="logo-alapealkiri" data-t="logo_alapealkiri"></span>
+        <span class="logo-alapealkiri" data-t="logo_alapealkiri">Seadmete remont ja hooldus</span>
       </a>
       <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
       <nav class="menuu">
-        <a href="/#teenused" data-t="menuu_teenused"></a>
-        <a href="/#kuidas" data-t="menuu_kuidas"></a>
-        <a href="/#minust" data-t="menuu_minust"></a>
-        <a href="/#nouanded" data-t="menuu_nouanded"></a>
-        <a href="/#kkk" data-t="menuu_kkk"></a>
-        <a href="/#kontakt" data-t="menuu_kontakt"></a>
+        <a href="/#teenused" data-t="menuu_teenused">Teenused</a>
+        <a href="/#kuidas" data-t="menuu_kuidas">Kuidas see käib</a>
+        <a href="/#minust" data-t="menuu_minust">Minust</a>
+        <a href="/#nouanded" data-t="menuu_nouanded">Nõuanded</a>
+        <a href="/#kkk" data-t="menuu_kkk">KKK</a>
+        <a href="/#kontakt" data-t="menuu_kontakt">Kontakt</a>
       </nav>
       <div class="keel" aria-label="Keel / Language">
         <button data-keel="et">ET</button>
@@ -51,22 +51,48 @@
 
   <main class="osa">
     <div class="sisu">
-      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded"></a>
+      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded">← Kõik nõuanded</a>
       <!-- Nõuande sisu tuleb failist tekstid.js -->
-      <div id="nouanne"></div>
+      <div id="nouanne">
+    <article class="artikkel">
+      <div class="seade-pais">
+        <span class="ikoon suur"><svg viewBox="0 0 48 48"><rect x="15" y="9" width="18" height="34" rx="3"></rect><path d="M20 5h8"></path><path d="M26 17l-5 9h6l-5 9"></path></svg></span>
+        <div>
+          <h1>Märgid, et aku on kulunud</h1>
+          <p class="juhatus">Aku kulub iga laadimisega natuke. Tavaliselt on telefoni aku paari-kolme aasta pärast märgatavalt nõrgem kui uuena.</p>
+        </div>
+      </div>
+      
+      <section class="kaart">
+        <h2>Tavalised märgid</h2>
+        <ul class="nimekiri"><li>Aku tühjeneb palju kiiremini kui varem.</li><li>Seade lülitub välja, kuigi näitab veel 10–30% laetust.</li><li>Laetuse tase kukub järsku, näiteks 40%-lt 10%-le.</li><li>Seade läheb laadimise ajal tavalisest kuumemaks.</li></ul>
+      </section>
+      <section class="kaart hoiatus">
+        <h2>Ohtlik: paisunud aku</h2>
+        <ul class="nimekiri"><li>Kui ekraan või tagakaas kerkib üles või seade on kõveraks läinud, võib aku olla paisunud.</li><li>Lõpeta kohe seadme kasutamine ja laadimine.</li><li>Ära vajuta ega torka akut – paisunud aku võib süttida.</li></ul>
+      </section>
+      <section class="kaart">
+        <h2>Millal remonti tuua?</h2>
+        <p>Kui märkad tavalisi märke, tasub aku vahetada – uue akuga on seade jälle nagu uus. Paisunud aku puhul too seade remonti kohe.</p>
+      </section>
+      <div class="kaart uleskutse">
+        <p>Kas vajad abi? Kirjuta või helista – vastan esimesel võimalusel.</p>
+        <a class="nupp" href="/#kontakt">Võta ühendust</a>
+      </div>
+    </article></div>
     </div>
   </main>
 
   <!-- ===== JALUS ===== -->
   <footer class="jalus">
     <div class="sisu">
-      © <span id="aasta"></span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
-      · <a href="/privaatsus" data-t="privaatsus_link"></a>
+      © <span id="aasta">2026</span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
+      · <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=2be2ecc5"></script>
-  <script src="/js/leht.js?v=06ee0828"></script>
+  <script src="/js/tekstid.js?v=c167854e"></script>
+  <script src="/js/leht.js?v=47ee5b15"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

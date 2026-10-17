@@ -29,16 +29,16 @@
     <div class="sisu pais-sisu">
       <a class="logo" href="/" aria-label="KASA">
         <span class="logo-nimi"><span>K</span><span>A</span><span>S</span><span>A</span></span>
-        <span class="logo-alapealkiri" data-t="logo_alapealkiri"></span>
+        <span class="logo-alapealkiri" data-t="logo_alapealkiri">Seadmete remont ja hooldus</span>
       </a>
       <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
       <nav class="menuu">
-        <a href="/#teenused" data-t="menuu_teenused"></a>
-        <a href="/#kuidas" data-t="menuu_kuidas"></a>
-        <a href="/#minust" data-t="menuu_minust"></a>
-        <a href="/#nouanded" data-t="menuu_nouanded"></a>
-        <a href="/#kkk" data-t="menuu_kkk"></a>
-        <a href="/#kontakt" data-t="menuu_kontakt"></a>
+        <a href="/#teenused" data-t="menuu_teenused">Teenused</a>
+        <a href="/#kuidas" data-t="menuu_kuidas">Kuidas see käib</a>
+        <a href="/#minust" data-t="menuu_minust">Minust</a>
+        <a href="/#nouanded" data-t="menuu_nouanded">Nõuanded</a>
+        <a href="/#kkk" data-t="menuu_kkk">KKK</a>
+        <a href="/#kontakt" data-t="menuu_kontakt">Kontakt</a>
       </nav>
       <div class="keel" aria-label="Keel / Language">
         <button data-keel="et">ET</button>
@@ -51,22 +51,48 @@
 
   <main class="osa">
     <div class="sisu">
-      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded"></a>
+      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded">← Kõik nõuanded</a>
       <!-- Nõuande sisu tuleb failist tekstid.js -->
-      <div id="nouanne"></div>
+      <div id="nouanne">
+    <article class="artikkel">
+      <div class="seade-pais">
+        <span class="ikoon suur"><svg viewBox="0 0 48 48"><path d="M24 5C24 5 11 20 11 29a13 13 0 0 0 26 0C37 20 24 5 24 5z"></path><path d="M18 30a6 6 0 0 0 6 6"></path></svg></span>
+        <div>
+          <h1>Telefon kukkus vette – mida teha kohe</h1>
+          <p class="juhatus">Vesi ise ei riku telefoni kohe. Kahju teeb elektrivool, mis läheb märjas telefonis valesse kohta, ja aja jooksul tekkiv korrosioon (roostetamine). Seepärast on tähtis tegutseda kiiresti.</p>
+        </div>
+      </div>
+      
+      <section class="kaart">
+        <h2>Tee kohe</h2>
+        <ul class="nimekiri"><li>Võta telefon veest välja ja lülita see välja.</li><li>Ära pane telefoni laadima ega ühenda ühtegi juhet.</li><li>Eemalda ümbris ja SIM-kaardi alus.</li><li>Kuivata telefon väljastpoolt pehme lapiga ja hoia seda laadimispesaga allapoole.</li><li>Too telefon võimalikult kiiresti remonti – kõige parem samal päeval.</li></ul>
+      </section>
+      <section class="kaart hoiatus">
+        <h2>Ära tee</h2>
+        <ul class="nimekiri"><li>Ära pane telefoni riisi sisse – see ei kuivata telefoni seest ja riisitolm võib pesadesse minna.</li><li>Ära kuivata fööniga ega radiaatoril – kuumus võib telefoni kahjustada.</li><li>Ära raputa telefoni – vesi võib liikuda veel sügavamale.</li><li>Ära lülita telefoni sisse "proovimiseks".</li></ul>
+      </section>
+      <section class="kaart">
+        <h2>Millal remonti tuua?</h2>
+        <p>Kohe. Isegi kui telefon tundub töötavat, võib korrosioon selle mõne päeva või nädala pärast rikkuda. Mida varem telefon puhastatakse, seda suurem on võimalus see päästa.</p>
+      </section>
+      <div class="kaart uleskutse">
+        <p>Kas vajad abi? Kirjuta või helista – vastan esimesel võimalusel.</p>
+        <a class="nupp" href="/#kontakt">Võta ühendust</a>
+      </div>
+    </article></div>
     </div>
   </main>
 
   <!-- ===== JALUS ===== -->
   <footer class="jalus">
     <div class="sisu">
-      © <span id="aasta"></span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
-      · <a href="/privaatsus" data-t="privaatsus_link"></a>
+      © <span id="aasta">2026</span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
+      · <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=2be2ecc5"></script>
-  <script src="/js/leht.js?v=06ee0828"></script>
+  <script src="/js/tekstid.js?v=c167854e"></script>
+  <script src="/js/leht.js?v=47ee5b15"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

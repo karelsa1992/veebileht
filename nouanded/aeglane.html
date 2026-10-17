@@ -29,16 +29,16 @@
     <div class="sisu pais-sisu">
       <a class="logo" href="/" aria-label="KASA">
         <span class="logo-nimi"><span>K</span><span>A</span><span>S</span><span>A</span></span>
-        <span class="logo-alapealkiri" data-t="logo_alapealkiri"></span>
+        <span class="logo-alapealkiri" data-t="logo_alapealkiri">Seadmete remont ja hooldus</span>
       </a>
       <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
       <nav class="menuu">
-        <a href="/#teenused" data-t="menuu_teenused"></a>
-        <a href="/#kuidas" data-t="menuu_kuidas"></a>
-        <a href="/#minust" data-t="menuu_minust"></a>
-        <a href="/#nouanded" data-t="menuu_nouanded"></a>
-        <a href="/#kkk" data-t="menuu_kkk"></a>
-        <a href="/#kontakt" data-t="menuu_kontakt"></a>
+        <a href="/#teenused" data-t="menuu_teenused">Teenused</a>
+        <a href="/#kuidas" data-t="menuu_kuidas">Kuidas see käib</a>
+        <a href="/#minust" data-t="menuu_minust">Minust</a>
+        <a href="/#nouanded" data-t="menuu_nouanded">Nõuanded</a>
+        <a href="/#kkk" data-t="menuu_kkk">KKK</a>
+        <a href="/#kontakt" data-t="menuu_kontakt">Kontakt</a>
       </nav>
       <div class="keel" aria-label="Keel / Language">
         <button data-keel="et">ET</button>
@@ -51,22 +51,44 @@
 
   <main class="osa">
     <div class="sisu">
-      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded"></a>
+      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded">← Kõik nõuanded</a>
       <!-- Nõuande sisu tuleb failist tekstid.js -->
-      <div id="nouanne"></div>
+      <div id="nouanne">
+    <article class="artikkel">
+      <div class="seade-pais">
+        <span class="ikoon suur"><svg viewBox="0 0 48 48"><path d="M8 34a16 16 0 1 1 32 0"></path><path d="M24 34l-7-9"></path><circle cx="24" cy="34" r="2.5"></circle><path d="M12 22l2.5 1.5M24 16v3M36 22l-2.5 1.5"></path></svg></span>
+        <div>
+          <h1>Arvuti on aeglane – mida ise proovida</h1>
+          <p class="juhatus">Aeglusel võib olla palju põhjuseid. Osa neist saad ise mõne minutiga kõrvaldada.</p>
+        </div>
+      </div>
+      
+      <section class="kaart">
+        <h2>Proovi ise</h2>
+        <ul class="nimekiri"><li>Taaskäivita arvuti – vali menüüst "Taaskäivita". Kaane sulgemisest ja avamisest ei piisa.</li><li>Vaata, mitu programmi käivitub koos arvutiga: vajuta Ctrl + Shift + Esc ja ava vahekaart "Käivitus". Lülita välja need, mida sa kohe ei vaja.</li><li>Kontrolli, et kettal oleks vaba ruumi – vähemalt 10–15%.</li><li>Paigalda Windowsi uuendused.</li><li>Kontrolli arvutit viirusetõrjega – Windowsi sisseehitatud viirusetõrjest piisab.</li></ul>
+      </section>
+      <section class="kaart">
+        <h2>Millal remonti tuua?</h2>
+        <p>Kui ükski samm ei aidanud, on arvutis tõenäoliselt vana kõvaketas, liiga vähe mälu või riistvara viga. Vana kõvaketta vahetamine SSD-ketta vastu annab sageli suurima kiirusevõidu, mida arvutile teha saab.</p>
+      </section>
+      <div class="kaart uleskutse">
+        <p>Kas vajad abi? Kirjuta või helista – vastan esimesel võimalusel.</p>
+        <a class="nupp" href="/#kontakt">Võta ühendust</a>
+      </div>
+    </article></div>
     </div>
   </main>
 
   <!-- ===== JALUS ===== -->
   <footer class="jalus">
     <div class="sisu">
-      © <span id="aasta"></span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
-      · <a href="/privaatsus" data-t="privaatsus_link"></a>
+      © <span id="aasta">2026</span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
+      · <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=2be2ecc5"></script>
-  <script src="/js/leht.js?v=06ee0828"></script>
+  <script src="/js/tekstid.js?v=c167854e"></script>
+  <script src="/js/leht.js?v=47ee5b15"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

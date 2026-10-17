@@ -29,16 +29,16 @@
     <div class="sisu pais-sisu">
       <a class="logo" href="/" aria-label="KASA">
         <span class="logo-nimi"><span>K</span><span>A</span><span>S</span><span>A</span></span>
-        <span class="logo-alapealkiri" data-t="logo_alapealkiri"></span>
+        <span class="logo-alapealkiri" data-t="logo_alapealkiri">Seadmete remont ja hooldus</span>
       </a>
       <button class="menuu-nupp" aria-label="Menüü" aria-expanded="false">☰</button>
       <nav class="menuu">
-        <a href="/#teenused" data-t="menuu_teenused"></a>
-        <a href="/#kuidas" data-t="menuu_kuidas"></a>
-        <a href="/#minust" data-t="menuu_minust"></a>
-        <a href="/#nouanded" data-t="menuu_nouanded"></a>
-        <a href="/#kkk" data-t="menuu_kkk"></a>
-        <a href="/#kontakt" data-t="menuu_kontakt"></a>
+        <a href="/#teenused" data-t="menuu_teenused">Teenused</a>
+        <a href="/#kuidas" data-t="menuu_kuidas">Kuidas see käib</a>
+        <a href="/#minust" data-t="menuu_minust">Minust</a>
+        <a href="/#nouanded" data-t="menuu_nouanded">Nõuanded</a>
+        <a href="/#kkk" data-t="menuu_kkk">KKK</a>
+        <a href="/#kontakt" data-t="menuu_kontakt">Kontakt</a>
       </nav>
       <div class="keel" aria-label="Keel / Language">
         <button data-keel="et">ET</button>
@@ -51,22 +51,48 @@
 
   <main class="osa">
     <div class="sisu">
-      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded"></a>
+      <a class="tagasi" href="/#nouanded" data-t="koik_nouanded">← Kõik nõuanded</a>
       <!-- Nõuande sisu tuleb failist tekstid.js -->
-      <div id="nouanne"></div>
+      <div id="nouanne">
+    <article class="artikkel">
+      <div class="seade-pais">
+        <span class="ikoon suur"><svg viewBox="0 0 48 48"><path d="M20 28V9a4 4 0 0 1 8 0v19a8 8 0 1 1-8 0z"></path><path d="M24 31V16"></path><circle cx="24" cy="34" r="3"></circle><path d="M32 12h4M32 18h4M32 24h4"></path></svg></span>
+        <div>
+          <h1>Kuidas hoida sülearvutit jahedana</h1>
+          <p class="juhatus">Kui arvuti läheb liiga kuumaks, aeglustab see end ise, et mitte kahjustuda. Pikemas plaanis kannatavad kuumuse tõttu aku ja teised osad.</p>
+        </div>
+      </div>
+      
+      <section class="kaart">
+        <h2>Mida saad ise teha</h2>
+        <ul class="nimekiri"><li>Kasuta arvutit kõval ja tasasel pinnal – laual, mitte voodis ega diivanil.</li><li>Ära kata õhuavasid kinni (need on tavaliselt arvuti all ja küljel).</li><li>Sulge programmid, mida sa parajasti ei kasuta.</li><li>Uuenda regulaarselt Windowsi ja draivereid.</li><li>Vajadusel kasuta jahutusalust.</li></ul>
+      </section>
+      <section class="kaart">
+        <h2>Märgid, et arvuti kuumeneb üle</h2>
+        <ul class="nimekiri"><li>Ventilaator müriseb pidevalt valjult.</li><li>Arvuti põhi on nii kuum, et seda on ebamugav süles hoida.</li><li>Arvuti aeglustub või lülitub ootamatult välja.</li></ul>
+      </section>
+      <section class="kaart">
+        <h2>Millal remonti tuua?</h2>
+        <p>Kui arvuti on üle kahe aasta vana ja seda pole kunagi puhastatud, on sees peaaegu kindlasti tolm. Puhastus ja termopasta vahetus teeb enamasti suure vahe.</p>
+      </section>
+      <div class="kaart uleskutse">
+        <p>Kas vajad abi? Kirjuta või helista – vastan esimesel võimalusel.</p>
+        <a class="nupp" href="/#kontakt">Võta ühendust</a>
+      </div>
+    </article></div>
     </div>
   </main>
 
   <!-- ===== JALUS ===== -->
   <footer class="jalus">
     <div class="sisu">
-      © <span id="aasta"></span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
-      · <a href="/privaatsus" data-t="privaatsus_link"></a>
+      © <span id="aasta">2026</span> <span data-kontakt="lehe_nimi">KASA</span> · Tartu
+      · <a href="/privaatsus" data-t="privaatsus_link">Privaatsusteave</a>
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=2be2ecc5"></script>
-  <script src="/js/leht.js?v=06ee0828"></script>
+  <script src="/js/tekstid.js?v=c167854e"></script>
+  <script src="/js/leht.js?v=47ee5b15"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

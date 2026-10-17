@@ -444,7 +444,7 @@ function taidaSeadmeLeht() {
     return;
   }
 
-  document.title = t(s.nimi) + " – " + KONTAKT.lehe_nimi;
+  document.title = t(s.lehe_pealkiri || s.nimi) + " – " + KONTAKT.lehe_nimi;
 
   // Eelmise ja järgmise seadme lingid + täpid, millisel seadmel oled
   const { eelmine, jargmine, koht: nr } = naabrid(s.id);
@@ -652,6 +652,8 @@ function lisaIlmumine() {
     { threshold: 0 }
   );
   document.querySelectorAll("main .kaart, .kogemus").forEach((el) => {
+    // Kohe ekraanil olevad kaardid on lehe failis juba olemas – need jäävad paigale (muidu vilksataks)
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
     el.classList.add("ilmub");
     vaatleja.observe(el);
   });
