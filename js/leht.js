@@ -71,7 +71,6 @@ function t(tekst) {
   const s = tekst[keel] || tekst.et || "";
   return s
     .replaceAll("{tasu}", VALJAKUTSE_TASU)
-    .replaceAll("{email}", KONTAKT.email)
     .replaceAll("{telefon}", KONTAKT.telefon);
 }
 
@@ -102,14 +101,10 @@ function taidaTekstid() {
   // Kontaktandmed
   document.querySelectorAll("[data-kontakt]").forEach((el) => {
     const liik = el.dataset.kontakt;
-    if (liik === "nimi") el.textContent = KONTAKT.nimi;
+    if (liik === "lehe_nimi") el.textContent = KONTAKT.lehe_nimi;
     if (liik === "telefon") {
       el.textContent = KONTAKT.telefon;
       el.href = "tel:" + KONTAKT.telefon.replaceAll(" ", "");
-    }
-    if (liik === "email") {
-      el.textContent = KONTAKT.email;
-      el.href = "mailto:" + KONTAKT.email;
     }
     if (liik === "whatsapp") {
       el.href = KONTAKT.whatsapp ? whatsappLink() : "#";

@@ -7,10 +7,8 @@
 
 // ---- Kontaktandmed (vaheta need oma päris andmete vastu) ----
 const KONTAKT = {
-  nimi: "Karel Saega",
-  lehe_nimi: "KASA", // brauseri vahelehe pealkirjas ja lingi jagamisel
+  lehe_nimi: "KASA", // brauseri vahelehe pealkirjas, lingi jagamisel ja lehe all
   telefon: "+372 5639 1019",
-  email: "karelsaega1992@gmail.com",
   whatsapp: "+372 5639 1019", // kui see on tühi (""), WhatsAppi nuppe ei näidata
 };
 
@@ -184,7 +182,6 @@ const TEKSTID = {
     fi: "Kuvaile ongelmasi ja laitteesi. Vastaan mahdollisimman pian.",
   },
   telefon: { et: "Telefon", en: "Phone", ru: "Телефон", fi: "Puhelin" },
-  email: { et: "E-post", en: "Email", ru: "Эл. почта", fi: "Sähköposti" },
   voi_kirjuta_otse: {
     et: "Või võta otse ühendust",
     en: "Or contact me directly",
@@ -222,10 +219,10 @@ const TEKSTID = {
   },
   vorm_saada: { et: "Saada", en: "Send", ru: "Отправить", fi: "Lähetä" },
   vorm_naidis_teade: {
-    et: "See vorm on praegu näidis ja sõnumit veel ära ei saadeta. Palun helista või kirjuta e-posti teel.",
-    en: "This form is a demo for now and the message is not sent yet. Please call or send an email.",
-    ru: "Сейчас эта форма – образец, и сообщение пока не отправляется. Пожалуйста, позвоните или напишите на эл. почту.",
-    fi: "Tämä lomake on toistaiseksi esimerkki, eikä viestiä vielä lähetetä. Soita tai lähetä sähköpostia.",
+    et: "See vorm on praegu näidis ja sõnumit veel ära ei saadeta. Palun helista või kirjuta WhatsAppis.",
+    en: "This form is a demo for now and the message is not sent yet. Please call or write on WhatsApp.",
+    ru: "Сейчас эта форма – образец, и сообщение пока не отправляется. Пожалуйста, позвоните или напишите в WhatsApp.",
+    fi: "Tämä lomake on toistaiseksi esimerkki, eikä viestiä vielä lähetetä. Soita tai kirjoita WhatsAppissa.",
   },
   vorm_saadan: { et: "Saadan…", en: "Sending…", ru: "Отправка…", fi: "Lähetetään…" },
   vorm_saadetud: {
@@ -235,10 +232,10 @@ const TEKSTID = {
     fi: "Kiitos! Viesti on lähetetty. Vastaan mahdollisimman pian.",
   },
   vorm_viga: {
-    et: "Saatmine ebaõnnestus. Palun proovi uuesti, helista või saada e-kiri.",
-    en: "Sending failed. Please try again or call / send an email.",
-    ru: "Не удалось отправить. Попробуйте ещё раз или позвоните / напишите на эл. почту.",
-    fi: "Lähetys epäonnistui. Yritä uudelleen tai soita / lähetä sähköpostia.",
+    et: "Saatmine ebaõnnestus. Palun proovi uuesti, helista või kirjuta WhatsAppis.",
+    en: "Sending failed. Please try again, call or write on WhatsApp.",
+    ru: "Не удалось отправить. Попробуйте ещё раз, позвоните или напишите в WhatsApp.",
+    fi: "Lähetys epäonnistui. Yritä uudelleen, soita tai kirjoita WhatsAppissa.",
   },
   vorm_privaatsus: {
     et: "Kasutan sinu andmeid ainult sinu päringule vastamiseks.",
@@ -1140,7 +1137,7 @@ const NOUANDED = [
 
 // =====================================================================
 //  PRIVAATSUSTEAVE (leht privaatsus.html)
-//  {email} ja {telefon} asendatakse automaatselt kontaktandmetega.
+//  {telefon} asendatakse automaatselt kontaktandmetega.
 // =====================================================================
 const PRIVAATSUS = {
   pealkiri: { et: "Privaatsusteave", en: "Privacy notice", ru: "Политика конфиденциальности", fi: "Tietosuojaseloste" },
@@ -1154,10 +1151,10 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Kes andmete eest vastutab", en: "Who is responsible", ru: "Кто отвечает за данные", fi: "Kuka vastaa tiedoista" },
       tekst: {
-        et: "Andmete eest vastutab Karel Saega, Tartu. Küsimuste korral kirjuta aadressil {email} või helista {telefon}.",
-        en: "Karel Saega, Tartu, is responsible for the data. For questions, write to {email} or call {telefon}.",
-        ru: "За данные отвечает Карел Саэга, Тарту. По вопросам пишите на {email} или звоните {telefon}.",
-        fi: "Tiedoista vastaa Karel Saega, Tartto. Jos sinulla on kysyttävää, kirjoita osoitteeseen {email} tai soita {telefon}.",
+        et: "Andmete eest vastutab Karel Saega, Tartu. Küsimuste korral helista {telefon} või kirjuta kontaktivormi kaudu.",
+        en: "Karel Saega, Tartu, is responsible for the data. For questions, call {telefon} or write via the contact form.",
+        ru: "За данные отвечает Карел Саэга, Тарту. По вопросам звоните {telefon} или пишите через контактную форму.",
+        fi: "Tiedoista vastaa Karel Saega, Tartto. Jos sinulla on kysyttävää, soita {telefon} tai kirjoita yhteydenottolomakkeella.",
       },
     },
     {
@@ -1199,10 +1196,10 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Sinu õigused", en: "Your rights", ru: "Ваши права", fi: "Oikeutesi" },
       tekst: {
-        et: "Sul on õigus küsida, milliseid andmeid sinu kohta hoian, ja paluda neid parandada või kustutada – kirjuta aadressil {email}. Kui leiad, et sinu andmeid on kasutatud valesti, võid pöörduda Andmekaitse Inspektsiooni poole (www.aki.ee).",
-        en: "You have the right to ask what data I hold about you and to have it corrected or deleted – write to {email}. If you believe your data has been misused, you can contact the Estonian Data Protection Inspectorate (www.aki.ee).",
-        ru: "Вы вправе узнать, какие данные о вас я храню, и попросить их исправить или удалить – напишите на {email}. Если считаете, что ваши данные использованы неправильно, можете обратиться в Инспекцию по защите данных Эстонии (www.aki.ee).",
-        fi: "Sinulla on oikeus kysyä, mitä tietoja sinusta säilytän, ja pyytää niiden korjaamista tai poistamista – kirjoita osoitteeseen {email}. Jos katsot, että tietojasi on käytetty väärin, voit kääntyä Viron tietosuojaviranomaisen puoleen (www.aki.ee).",
+        et: "Sul on õigus küsida, milliseid andmeid sinu kohta hoian, ja paluda neid parandada või kustutada – helista {telefon} või kirjuta kontaktivormi kaudu. Kui leiad, et sinu andmeid on kasutatud valesti, võid pöörduda Andmekaitse Inspektsiooni poole (www.aki.ee).",
+        en: "You have the right to ask what data I hold about you and to have it corrected or deleted – call {telefon} or write via the contact form. If you believe your data has been misused, you can contact the Estonian Data Protection Inspectorate (www.aki.ee).",
+        ru: "Вы вправе узнать, какие данные о вас я храню, и попросить их исправить или удалить – позвоните {telefon} или напишите через контактную форму. Если считаете, что ваши данные использованы неправильно, можете обратиться в Инспекцию по защите данных Эстонии (www.aki.ee).",
+        fi: "Sinulla on oikeus kysyä, mitä tietoja sinusta säilytän, ja pyytää niiden korjaamista tai poistamista – soita {telefon} tai kirjoita yhteydenottolomakkeella. Jos katsot, että tietojasi on käytetty väärin, voit kääntyä Viron tietosuojaviranomaisen puoleen (www.aki.ee).",
       },
     },
     {
