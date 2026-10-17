@@ -258,6 +258,7 @@ const TEKSTID = {
     fi: "Hei! Kirjoitan verkkosivun kautta. Minulla on ongelma laitteen kanssa: ",
   },
   helista: { et: "Helista", en: "Call", ru: "Позвонить", fi: "Soita" },
+  ules: { et: "Tagasi üles", en: "Back to top", ru: "Наверх", fi: "Takaisin ylös" },
 
   // Seadme leht
   tagasi_avalehele: { et: "← Avalehele", en: "← Home", ru: "← На главную", fi: "← Etusivulle" },

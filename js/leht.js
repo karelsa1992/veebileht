@@ -36,6 +36,8 @@ const IKOONID = {
     '<svg viewBox="0 0 48 48"><rect x="15" y="9" width="18" height="34" rx="3"/><path d="M20 5h8"/><path d="M26 17l-5 9h6l-5 9"/></svg>',
   kiirus:
     '<svg viewBox="0 0 48 48"><path d="M8 34a16 16 0 1 1 32 0"/><path d="M24 34l-7-9"/><circle cx="24" cy="34" r="2.5"/><path d="M12 22l2.5 1.5M24 16v3M36 22l-2.5 1.5"/></svg>',
+  ules:
+    '<svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>',
   helista:
     '<svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
   whatsapp:
@@ -133,18 +135,27 @@ function taidaTekstid() {
   taidaKiirnupud();
 }
 
-// ---- Telefoni nurganupud: Helista ja WhatsApp ----
+// ---- Telefoni nurganupud: Üles, WhatsApp ja Helista ----
 function taidaKiirnupud() {
   let koht = document.querySelector(".kiirnupud");
   if (!koht) {
     koht = document.createElement("div");
     koht.className = "kiirnupud";
     document.body.appendChild(koht);
+    // Üles-nupp: viib lehe algusesse
+    koht.addEventListener("click", (e) => {
+      if (e.target.closest(".ules-nupp")) window.scrollTo({ top: 0 });
+    });
+    // Üles-nupp on näha alles siis, kui lehel on natuke alla keritud
+    const naitaUles = () => koht.classList.toggle("keritud", window.scrollY > 400);
+    window.addEventListener("scroll", naitaUles, { passive: true });
+    naitaUles();
   }
   const whatsapp = KONTAKT.whatsapp
     ? `<a class="kiirnupp" href="${whatsappLink()}" target="_blank" rel="noopener" aria-label="WhatsApp">${IKOONID.whatsapp}</a>`
     : "";
   koht.innerHTML =
+    `<button type="button" class="kiirnupp ules-nupp" aria-label="${t(TEKSTID.ules)}" title="${t(TEKSTID.ules)}">${IKOONID.ules}</button>` +
     whatsapp +
     `<a class="kiirnupp" href="tel:${KONTAKT.telefon.replaceAll(" ", "")}" aria-label="${t(TEKSTID.helista)}">${IKOONID.helista}</a>`;
 }

@@ -550,8 +550,30 @@ body::before {
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+  /* Üles-nupp: heledam ja väiksem, ilmub alles pärast allakerimist */
+  .ules-nupp {
+    width: 44px;
+    height: 44px;
+    align-self: center;
+    padding: 0;
+    border: 1px solid var(--joon);
+    background: var(--kaart);
+    color: var(--rohk);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(28, 46, 79, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  }
+  .ules-nupp svg { width: 22px; height: 22px; }
+  .kiirnupud.keritud .ules-nupp {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
   /* Jaluse tekst ei jää nuppude alla */
-  body .jalus { padding-bottom: 140px; }
+  body .jalus { padding-bottom: 200px; }
 }
 
 /* ---------- Jalus ---------- */
