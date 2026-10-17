@@ -401,8 +401,11 @@ if (vorm) {
       "Mure": v.get("kirjeldus"),
       "Lehe keel": keel,
     };
-    // Kui klient andis e-posti, saad meilile otse "Vasta" vajutada
-    if (email) andmed.email = email;
+    // Kui klient andis e-posti, saad meilile otse "Vasta" vajutada (vastus läheb kliendile)
+    if (email) {
+      andmed.email = email;
+      andmed.replyto = email;
+    }
 
     nupp.disabled = true;
     nupp.textContent = t(TEKSTID.vorm_saadan);
