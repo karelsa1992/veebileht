@@ -43,7 +43,8 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* scroll-padding-top: menüülingiga hüpates ei jää pealkiri kleepuva päise alla */
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
 body {
   margin: 0;
