@@ -528,15 +528,15 @@ body::before {
   .kiirnupud {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     position: fixed;
-    right: 16px;
-    bottom: 16px;
+    right: 12px;
+    bottom: 12px;
     z-index: 20;
   }
   .kiirnupp {
-    width: 54px;
-    height: 54px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -546,8 +546,8 @@ body::before {
     box-shadow: 0 6px 16px rgba(28, 46, 79, 0.28);
   }
   .kiirnupp svg {
-    width: 26px;
-    height: 26px;
+    width: 21px;
+    height: 21px;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -556,8 +556,8 @@ body::before {
   }
   /* Üles-nupp: heledam ja väiksem, ilmub alles pärast allakerimist */
   .ules-nupp {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     align-self: center;
     padding: 0;
     border: 1px solid var(--joon);
@@ -570,14 +570,14 @@ body::before {
     transform: translateY(8px);
     transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
   }
-  .ules-nupp svg { width: 22px; height: 22px; }
+  .ules-nupp svg { width: 18px; height: 18px; }
   .kiirnupud.keritud .ules-nupp {
     opacity: 1;
     visibility: visible;
     transform: none;
   }
   /* Jaluse tekst ei jää nuppude alla */
-  body .jalus { padding-bottom: 200px; }
+  body .jalus { padding-bottom: 160px; }
 }
 
 /* ---------- Jalus ---------- */
