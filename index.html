@@ -37,6 +37,20 @@
       "addressCountry": "EE"
     },
     "priceRange": "€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "knowsLanguage": [
       "et",
       "en",
@@ -125,7 +139,7 @@
   </script>
   <title>Arvutite ja telefonide remont Tartus – KASA</title>
   <link rel="preload" href="/fondid/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/stiil.css?v=64ac1f7a">
+  <link rel="stylesheet" href="/css/stiil.css?v=9f88dbed">
 </head>
 <body>
 
@@ -257,7 +271,7 @@
           </div>
           <div class="kaart">
             <h3 data-t="tooaeg_pealkiri">Tööaeg</h3>
-            <p data-t="tooaeg_tekst">Esmaspäevast reedeni. Nädalavahetusel eelneval kokkuleppel.</p>
+            <p data-t="tooaeg_tekst">Esmaspäevast reedeni kell 9–18. Nädalavahetusel eelneval kokkuleppel.</p>
           </div>
           <div class="kaart">
             <h3 data-t="maksmine_pealkiri">Maksmine</h3>
@@ -359,16 +373,21 @@
           <!-- Kirjutamisvorm (praegu näidis, ei saada veel midagi) -->
           <form id="vorm" class="kaart vorm">
             <h3 data-t="vorm_pealkiri">Kirjelda oma muret</h3>
+            <label>
+              <span data-t="vorm_nimi">Sinu nimi</span>
+              <input type="text" name="nimi" required autocomplete="name">
+            </label>
             <div class="vorm-rida">
               <label>
-                <span data-t="vorm_nimi">Sinu nimi</span>
-                <input type="text" name="nimi" required autocomplete="name">
+                <span data-t="vorm_email">E-post</span>
+                <input type="email" name="email" autocomplete="email">
               </label>
               <label>
-                <span data-t="vorm_kontakt">Telefon või e-post</span>
-                <input type="text" name="kontakt" required autocomplete="email">
+                <span data-t="vorm_telefon">Telefon</span>
+                <input type="tel" name="telefon" autocomplete="tel">
               </label>
             </div>
+            <p class="vorm-vihje" data-t="vorm_kontakt_vihje">Täida vähemalt üks – eelistatult e-post.</p>
             <label>
               <span data-t="vorm_seade">Seade</span>
               <select id="vorm-seade" name="seade" required><option value="">Vali seade…</option><option value="lauaarvutid">Lauaarvutid</option><option value="sulearvutid">Sülearvutid</option><option value="nutitelefonid">Nutitelefonid</option><option value="tahvelarvutid">Tahvelarvutid</option><option value="komponendid">Emaplaadid ja videokaardid</option><option value="konsoolid">Mängukonsoolid</option><option value="muu">Muu seade</option></select>
@@ -418,8 +437,8 @@
     </div>
   </footer>
 
-  <script src="/js/tekstid.js?v=c167854e"></script>
-  <script src="/js/leht.js?v=47ee5b15"></script>
+  <script src="/js/tekstid.js?v=83265745"></script>
+  <script src="/js/leht.js?v=9b0d6da8"></script>
   <!-- Külastuste loendur (GoatCounter, ilma küpsisteta) -->
   <script data-goatcounter="https://karelsa1992.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

@@ -127,6 +127,12 @@ avalehe_info = {
     "image": re.search(r'<meta property="og:image" content="([^"]*)"', avaleht).group(1),
     "address": {"@type": "PostalAddress", "addressLocality": "Tartu", "addressCountry": "EE"},
     "priceRange": "€€",
+    "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00",
+    }],
     "knowsLanguage": ["et", "en", "ru", "fi"],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",

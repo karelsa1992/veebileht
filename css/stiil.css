@@ -398,6 +398,8 @@ body::before {
 .vorm-rida { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .vorm label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; font-weight: 500; }
 .vorm input[type="text"],
+.vorm input[type="email"],
+.vorm input[type="tel"],
 .vorm select,
 .vorm textarea {
   font: inherit;
@@ -514,6 +516,7 @@ body::before {
 
 /* Vormi privaatsuse märkus, robotite lõks ja saatmise teated */
 .robotilõks { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.vorm-vihje { margin: -8px 0 0; font-size: 0.85rem; color: var(--tekst-hall); }
 .vorm-privaatsus { margin: -6px 0 0; font-size: 0.85rem; color: var(--tekst-hall); }
 .vorm-teade.onnestus { border-left-color: #2f7d57; }
 .vorm-teade.viga { border-left-color: #a33a3a; }

@@ -99,10 +99,10 @@ const TEKSTID = {
   },
   tooaeg_pealkiri: { et: "Tööaeg", en: "Working hours", ru: "Время работы", fi: "Työajat" },
   tooaeg_tekst: {
-    et: "Esmaspäevast reedeni. Nädalavahetusel eelneval kokkuleppel.",
-    en: "Monday to Friday. Weekends by prior arrangement.",
-    ru: "С понедельника по пятницу. В выходные – по предварительной договорённости.",
-    fi: "Maanantaista perjantaihin. Viikonloppuisin sopimuksen mukaan.",
+    et: "Esmaspäevast reedeni kell 9–18. Nädalavahetusel eelneval kokkuleppel.",
+    en: "Monday to Friday, 9:00–18:00. Weekends by prior arrangement.",
+    ru: "С понедельника по пятницу, с 9 до 18. В выходные – по предварительной договорённости.",
+    fi: "Maanantaista perjantaihin klo 9–18. Viikonloppuisin sopimuksen mukaan.",
   },
   maksmine_pealkiri: { et: "Maksmine", en: "Payment", ru: "Оплата", fi: "Maksaminen" },
   maksmine_tekst: {
@@ -192,11 +192,19 @@ const TEKSTID = {
   // Kirjutamisvorm
   vorm_pealkiri: { et: "Kirjelda oma muret", en: "Describe your problem", ru: "Опишите проблему", fi: "Kuvaile ongelmasi" },
   vorm_nimi: { et: "Sinu nimi", en: "Your name", ru: "Ваше имя", fi: "Nimesi" },
-  vorm_kontakt: {
-    et: "Telefon või e-post",
-    en: "Phone or email",
-    ru: "Телефон или эл. почта",
-    fi: "Puhelin tai sähköposti",
+  vorm_email: { et: "E-post", en: "Email", ru: "Эл. почта", fi: "Sähköposti" },
+  vorm_telefon: { et: "Telefon", en: "Phone", ru: "Телефон", fi: "Puhelin" },
+  vorm_kontakt_vihje: {
+    et: "Täida vähemalt üks – eelistatult e-post.",
+    en: "Fill in at least one – preferably email.",
+    ru: "Заполните хотя бы одно поле – лучше эл. почту.",
+    fi: "Täytä vähintään yksi – mieluiten sähköposti.",
+  },
+  vorm_kontakt_puudu: {
+    et: "Palun kirjuta oma e-post või telefoninumber.",
+    en: "Please enter your email or phone number.",
+    ru: "Пожалуйста, укажите эл. почту или номер телефона.",
+    fi: "Kirjoita sähköpostiosoitteesi tai puhelinnumerosi.",
   },
   vorm_seade: { et: "Seade", en: "Device", ru: "Устройство", fi: "Laite" },
   vorm_seade_vali: { et: "Vali seade…", en: "Choose a device…", ru: "Выберите устройство…", fi: "Valitse laite…" },
@@ -1167,10 +1175,10 @@ const PRIVAATSUS = {
     {
       pealkiri: { et: "Milliseid andmeid kogun", en: "What data I collect", ru: "Какие данные я собираю", fi: "Mitä tietoja kerään" },
       tekst: {
-        et: "Kui saadad kontaktivormi kaudu päringu, saan sinu nime, telefoninumbri või e-posti aadressi, seadme andmed ja sinu kirjelduse probleemist. Kui helistad või kirjutad (ka WhatsAppis), näen sinu numbrit ja sõnumit.",
-        en: "When you send an enquiry through the contact form, I receive your name, phone number or email, device details and your description of the problem. When you call or write (including on WhatsApp), I see your number and message.",
-        ru: "Когда вы отправляете запрос через контактную форму, я получаю ваше имя, номер телефона или эл. почту, данные устройства и описание проблемы. Когда вы звоните или пишете (в том числе в WhatsApp), я вижу ваш номер и сообщение.",
-        fi: "Kun lähetät kyselyn yhteydenottolomakkeella, saan nimesi, puhelinnumerosi tai sähköpostisi, laitteen tiedot ja kuvauksesi ongelmasta. Kun soitat tai kirjoitat (myös WhatsAppissa), näen numerosi ja viestisi.",
+        et: "Kui saadad kontaktivormi kaudu päringu, saan sinu nime, e-posti aadressi ja/või telefoninumbri, seadme andmed ja sinu kirjelduse probleemist. Kui helistad või kirjutad (ka WhatsAppis), näen sinu numbrit ja sõnumit.",
+        en: "When you send an enquiry through the contact form, I receive your name, email and/or phone number, device details and your description of the problem. When you call or write (including on WhatsApp), I see your number and message.",
+        ru: "Когда вы отправляете запрос через контактную форму, я получаю ваше имя, эл. почту и/или номер телефона, данные устройства и описание проблемы. Когда вы звоните или пишете (в том числе в WhatsApp), я вижу ваш номер и сообщение.",
+        fi: "Kun lähetät kyselyn yhteydenottolomakkeella, saan nimesi, sähköpostiosoitteesi ja/tai puhelinnumerosi, laitteen tiedot ja kuvauksesi ongelmasta. Kun soitat tai kirjoitat (myös WhatsAppissa), näen numerosi ja viestisi.",
       },
     },
     {

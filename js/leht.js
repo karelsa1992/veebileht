@@ -359,6 +359,14 @@ function taidaVormiSeadmed() {
 // Vormi saatmine. Kui VORMI_VOTI (tekstid.js) on tühi, on vorm ainult näidis.
 const vorm = document.getElementById("vorm");
 if (vorm) {
+  // E-post või telefon: vähemalt üks peab olema täidetud.
+  // Kontrollitakse saatmisnupu vajutamisel, enne brauseri enda kontrolli.
+  vorm.querySelector('button[type="submit"]').addEventListener("click", () => {
+    const lahter = vorm.querySelector('[name="email"]');
+    const kumbki = lahter.value.trim() || vorm.querySelector('[name="telefon"]').value.trim();
+    lahter.setCustomValidity(kumbki ? "" : t(TEKSTID.vorm_kontakt_puudu));
+  });
+
   vorm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const teade = document.getElementById("vorm-teade");
@@ -376,7 +384,8 @@ if (vorm) {
 
     const seade = SEADMED.find((s) => s.id === v.get("seade"));
     const viisid = { koju: TEKSTID.vorm_viis_koju, toon: TEKSTID.vorm_viis_toon, "ei-tea": TEKSTID.vorm_viis_ei_tea };
-    const kontakt = String(v.get("kontakt")).trim();
+    const email = String(v.get("email")).trim();
+    const telefon = String(v.get("telefon")).trim();
     const seadmeNimi = seade ? eestiKeeles(seade.nimi) : eestiKeeles(TEKSTID.vorm_muu);
 
     // Need andmed tulevad sulle meilile
@@ -385,14 +394,15 @@ if (vorm) {
       subject: "Uus päring veebilehelt: " + seadmeNimi,
       from_name: "Veebileht",
       "Nimi": v.get("nimi"),
-      "Telefon või e-post": kontakt,
+      "E-post": email || "–",
+      "Telefon": telefon || "–",
       "Seade": seadmeNimi,
       "Kuidas sobib": eestiKeeles(viisid[v.get("viis")] || TEKSTID.vorm_viis_ei_tea),
       "Mure": v.get("kirjeldus"),
       "Lehe keel": keel,
     };
     // Kui klient andis e-posti, saad meilile otse "Vasta" vajutada
-    if (kontakt.includes("@")) andmed.email = kontakt;
+    if (email) andmed.email = email;
 
     nupp.disabled = true;
     nupp.textContent = t(TEKSTID.vorm_saadan);
